@@ -155,7 +155,7 @@ export default function Header() {
                             variant="contained"
                             color="primary"
                         >
-                            Offerte aanvragen
+                            Contact
                         </Button>
                     </div>
                 </Container>

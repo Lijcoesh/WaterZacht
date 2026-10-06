@@ -8,6 +8,7 @@ import About from 'src/Modules/About/Scenes/About/About';
 import Contact from 'src/Modules/Contact/Scenes/Contact/Contact';
 import Faq from 'src/Modules/Faq/Scenes/Faq/Faq';
 import Home from 'src/Modules/Home/Scenes/Home/Home';
+import SaltOrder from 'src/Modules/SaltOrder/Scenes/SaltOrder/SaltOrder';
 
 // Minstens schermhoog, zodat de footer op korte pagina's onderaan blijft
 // in plaats van dat de body-achtergrond eronder zichtbaar wordt.
@@ -38,6 +39,7 @@ export default function App() {
                     <Route path="/over-ons" element={<About />} />
                     <Route path="/contact" element={<Contact />} />
                     <Route path="/faq" element={<Faq />} />
+                    <Route path="/zout-bestellen" element={<SaltOrder />} />
                     <Route path="*" element={<Navigate to="/" replace />} />
                 </Routes>
             </main>

@@ -64,3 +64,10 @@ Uit de bouw van de homepage naar het Claude Design "Variant B" (oktober 2026):
 - **Logo**: bevestigen dat `logo.png`/`droplet.png` van Water Zacht zelf zijn (zie `src/Resources/README.md`).
 - **Contrast**: aangepast t.o.v. het design: navy tekst op groene knoppen (wit haalde 2.3:1), en donkerdere tinten voor links, labels en grote cijfers (zie `src/colors.ts`). Laten bevestigen door de eigenaar/ontwerper.
 - **Blok over Loodgietersbedrijf Martin van Wingerden** (Over ons): tekst en dienstenlijst samengevat van lmvw.nl (oktober 2026). Laten bevestigen door de eigenaar, vooral "opgericht in 2006" en "vertrouwd adres in het Westland". Het lidmaatschap van Uneto-VNI van die site is bewust weggelaten (heet nu Techniek Nederland, niet gecontroleerd).
+
+Uit het zoutbestelformulier (`/zout-bestellen`, oktober 2026):
+
+- **Zoutbestelformulier verstuurt niets.** `src/Modules/SaltOrder/Logic/sendSaltOrder.ts` faalt expres, net als het offerteformulier. De mail aan Martin staat klaar in `formatSaltOrderMail()`. Nodig: dezelfde backend/formulierdienst, plus de bevestigingsmail aan de klant die de PO wil ("bestelling is verzonden").
+- **Ontvangstadres** `zout@waterzacht.nl` (`src/Config/saltOrder.ts`) was een voorbeeld van de PO; laten bevestigen en het adres aanmaken.
+- **Verwachte ophaaldatum**: de PO wil die tonen bij afhalen, maar de levertijd is onbekend. Zet `pickupLeadWorkdays` in `src/Config/saltOrder.ts` zodra die bekend is; tot dan staat er "Wij laten u weten wanneer uw zout klaarstaat". Ook openingstijden/afspraak voor afhalen ontbreken.
+- **Formulier**: link naar het privacybeleid ontbreekt (zelfde punt als het offerteformulier). Adresvelden zijn alleen verplicht bij bezorgen.

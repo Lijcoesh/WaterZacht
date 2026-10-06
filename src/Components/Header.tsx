@@ -14,6 +14,7 @@ const navItems = [
     { to: '/#werking', label: 'Werking' },
     { to: '/#systemen', label: 'Systemen' },
     { to: '/over-ons', label: 'Over ons' },
+    { to: '/faq', label: 'FAQ' },
 ];
 
 const useStyles = makeStyles()(theme => ({
@@ -41,6 +42,9 @@ const useStyles = makeStyles()(theme => ({
         gap: 30,
         paddingTop: 14,
         paddingBottom: 14,
+        [theme.breakpoints.down('lg')]: {
+            gap: 24,
+        },
         [theme.breakpoints.down('sm')]: {
             gap: theme.spacing(2),
         },
@@ -74,7 +78,7 @@ const useStyles = makeStyles()(theme => ({
         letterSpacing: '0.22em',
         textTransform: 'uppercase',
         color: onDarkMuted,
-        [theme.breakpoints.down('sm')]: {
+        [theme.breakpoints.down('lg')]: {
             display: 'none',
         },
     },
@@ -84,6 +88,10 @@ const useStyles = makeStyles()(theme => ({
         gap: 24,
         fontWeight: 500,
         fontSize: 14,
+        whiteSpace: 'nowrap',
+        [theme.breakpoints.down('lg')]: {
+            gap: 18,
+        },
         [theme.breakpoints.down('md')]: {
             display: 'none',
         },
@@ -93,6 +101,8 @@ const useStyles = makeStyles()(theme => ({
     },
     actions: {
         display: 'flex',
+        flexShrink: 0,
+        whiteSpace: 'nowrap',
         alignItems: 'center',
         gap: 14,
     },
@@ -106,14 +116,22 @@ const useStyles = makeStyles()(theme => ({
             backgroundColor: alpha(white, 0.12),
         },
     },
+    // Op smalle schermen alleen "Zout", zodat logo en beide knoppen naast elkaar passen
+    wide: {
+        [theme.breakpoints.down('sm')]: {
+            display: 'none',
+        },
+    },
     phone: {
         fontWeight: 600,
         fontSize: 15,
+        whiteSpace: 'nowrap',
         color: white,
         '&:hover': {
             color: greenLight,
         },
-        [theme.breakpoints.down('sm')]: {
+        // Telefoon staat ook in de footer en op de contactpagina
+        [theme.breakpoints.down('lg')]: {
             display: 'none',
         },
     },
@@ -161,11 +179,11 @@ export default function Header() {
                         </Link>
                         <Button
                             component={RouterLink}
-                            to="/faq"
+                            to="/zout-bestellen"
                             variant="outlined"
                             className={classes.outlined}
                         >
-                            FAQ
+                            Zout<span className={classes.wide}>&nbsp;bestellen</span>
                         </Button>
                         <Button
                             component={RouterLink}

@@ -28,6 +28,7 @@ const productLinks = [
 const pageLinks = [
     { to: '/over-ons', label: 'Over ons' },
     { to: '/faq', label: 'Veelgestelde vragen' },
+    { to: '/zout-bestellen', label: 'Zout bestellen' },
     { to: '/contact', label: 'Contact' },
 ];
 

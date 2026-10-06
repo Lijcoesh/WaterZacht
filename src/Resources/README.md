@@ -13,6 +13,9 @@
 | `drinkingWater.jpg` | [engin akyurt / Unsplash](https://unsplash.com/@enginakyurt), photo-1624948465027-6f9b51067557 | Unsplash License |
 | `meterCupboard.jpg` | [Immo Wegmann / Unsplash](https://unsplash.com/@tinkerman), photo-1650551182991-b07558247564 | Unsplash License |
 
+De favicons in `public/` (`favicon.ico`, `favicon-32.png`, `apple-touch-icon.png`) zijn
+gemaakt van `droplet.png` en vallen dus onder hetzelfde eigendom.
+
 De Unsplash License staat commercieel gebruik toe zonder verplichte bronvermelding. Het zijn
 stockfoto's uit het design; vervang ze bij voorkeur door eigen foto's.
 

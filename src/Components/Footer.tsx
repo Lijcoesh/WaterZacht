@@ -18,7 +18,7 @@ import logo from 'src/Resources/Images/logo.png';
 import { footerLogoHeight } from 'src/Theme/sizes';
 
 const productLinks = [
-    { to: '/#systemen', label: 'Waterontharders' },
+    { to: '/systemen', label: 'Waterontharders' },
     { to: '/#drinkwater', label: 'Drinkwaterzuivering' },
     { to: '/#drinkwater', label: 'Ontijzering' },
     { to: '/#drinkwater', label: 'Drukverhoging' },

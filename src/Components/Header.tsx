@@ -12,7 +12,7 @@ import { serifFontFamily } from 'src/Theme/typography';
 const navItems = [
     { to: '/#voordelen', label: 'Voordelen' },
     { to: '/#werking', label: 'Werking' },
-    { to: '/#systemen', label: 'Systemen' },
+    { to: '/systemen', label: 'Systemen' },
     { to: '/over-ons', label: 'Over ons' },
     { to: '/faq', label: 'FAQ' },
 ];

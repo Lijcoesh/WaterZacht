@@ -1,7 +1,7 @@
 import { Container, Typography } from '@mui/material';
 import { makeStyles } from 'tss-react/mui';
 
-import { borderSoft, green, muted, slate, slateDark, white } from 'src/colors';
+import { background, borderSoft, green, muted, slate, slateDark, white } from 'src/colors';
 import Photo from 'src/Components/Photo';
 import SectionHeading from 'src/Components/SectionHeading';
 import { cardRadius, sectionSpacing } from 'src/Theme/sizes';
@@ -24,6 +24,7 @@ const useStyles = makeStyles()({
     root: {
         paddingTop: sectionSpacing,
         paddingBottom: sectionSpacing,
+        backgroundColor: white,
     },
     layout: {
         display: 'flex',
@@ -53,7 +54,7 @@ const useStyles = makeStyles()({
     },
     card: {
         flex: '1 1 380px',
-        backgroundColor: white,
+        backgroundColor: background,
         border: `1px solid ${borderSoft}`,
         borderRadius: cardRadius,
         padding: 'clamp(24px, 3vw, 36px)',

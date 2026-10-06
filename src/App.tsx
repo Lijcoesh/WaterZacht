@@ -9,6 +9,7 @@ import Contact from 'src/Modules/Contact/Scenes/Contact/Contact';
 import Faq from 'src/Modules/Faq/Scenes/Faq/Faq';
 import Home from 'src/Modules/Home/Scenes/Home/Home';
 import SaltOrder from 'src/Modules/SaltOrder/Scenes/SaltOrder/SaltOrder';
+import Systems from 'src/Modules/Systems/Scenes/Systems/Systems';
 
 // Minstens schermhoog, zodat de footer op korte pagina's onderaan blijft
 // in plaats van dat de body-achtergrond eronder zichtbaar wordt.
@@ -36,6 +37,7 @@ export default function App() {
             <main id="main" tabIndex={-1} className={classes.main}>
                 <Routes>
                     <Route path="/" element={<Home />} />
+                    <Route path="/systemen" element={<Systems />} />
                     <Route path="/over-ons" element={<About />} />
                     <Route path="/contact" element={<Contact />} />
                     <Route path="/faq" element={<Faq />} />

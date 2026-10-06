@@ -48,7 +48,7 @@ export default function PhotoStrip(props: IProps) {
     const { classes } = useStyles({ minColumnWidth });
 
     return (
-        <section className={className}>
+        <div className={className}>
             <Container className={classes.grid}>
                 {items.map(item => (
                     <figure key={item.caption} className={classes.figure}>
@@ -59,6 +59,6 @@ export default function PhotoStrip(props: IProps) {
                     </figure>
                 ))}
             </Container>
-        </section>
+        </div>
     );
 }

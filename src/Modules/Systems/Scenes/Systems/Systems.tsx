@@ -3,71 +3,51 @@ import { useState } from 'react';
 import { Link as RouterLink } from 'react-router';
 import { makeStyles } from 'tss-react/mui';
 
-import { border, greenDark, greenTint, muted, navy, slate, surface, white } from 'src/colors';
+import {
+    background,
+    border,
+    greenDark,
+    greenTint,
+    muted,
+    navy,
+    slate,
+    surface,
+    white,
+} from 'src/colors';
 import Photo from 'src/Components/Photo';
 import SectionHeading from 'src/Components/SectionHeading';
+import { specLabels, systems } from 'src/Config/systems';
+import type { SystemKey } from 'src/Config/systems';
+import { useDocumentTitle } from 'src/Hooks/useDocumentTitle';
+import meterCupboard from 'src/Resources/Images/meterCupboard.jpg';
 import { sectionSpacing } from 'src/Theme/sizes';
 import { serifFontFamily } from 'src/Theme/typography';
 
-type SystemKey = 'simplex' | 'duplex' | 'external';
+import PhotoStrip from './Components/PhotoStrip';
+import type { PhotoStripItem } from './Components/PhotoStrip';
 
-const systems: {
-    key: SystemKey;
-    tag: string;
-    highlight?: boolean;
-    title: string;
-    text: string;
-    specs: { tanks: string; rinsing: string; placement: string; suitable: string };
-}[] = [
+const installationPhotos: PhotoStripItem[] = [
     {
-        key: 'simplex',
-        tag: 'Voordeligst',
-        title: 'Simplex systeem',
-        text: 'Eén harstank: het meest compact en hiermee bent u het goedkoopste uit.',
-        specs: {
-            tanks: 'Eén harstank',
-            rinsing: 'Kort in bypass',
-            placement: 'Meterkast of trapkast',
-            suitable: '1–4 personen',
-        },
+        src: meterCupboard,
+        alt: 'Leidingen en meters in een technische ruimte',
+        caption: 'Plaatsing direct na de watermeter — meestal in de meter- of trapkast.',
     },
     {
-        key: 'duplex',
-        tag: 'Altijd zacht water',
-        highlight: true,
-        title: 'Duplex systeem',
-        text: 'Dubbele tank met alternerende spoeling, waardoor u altijd van zacht water geniet.',
-        specs: {
-            tanks: 'Dubbele harstank',
-            rinsing: 'Altijd zacht water',
-            placement: 'Meterkast of trapkast',
-            suitable: 'Elk huishouden',
-        },
-    },
-    {
-        key: 'external',
-        tag: 'Flexibel te plaatsen',
-        title: 'External systeem',
-        text: 'Harstanken en zoutvat los van elkaar te monteren, bijvoorbeeld onder de vloer.',
-        specs: {
-            tanks: 'Losse harstanken',
-            rinsing: 'Afhankelijk van uitvoering',
-            placement: 'Tanks onder de vloer, zoutvat tot 5 m',
-            suitable: 'Krappe ruimtes',
-        },
+        alt: 'Martin tijdens de installatie',
+        placeholder: 'Foto nodig: Martin tijdens de installatie',
+        caption: 'Installatie en service door onze eigen loodgieters.',
     },
 ];
 
-const specLabels = [
-    { key: 'tanks', label: 'Harstanken' },
-    { key: 'rinsing', label: 'Tijdens spoeling' },
-    { key: 'placement', label: 'Plaatsing' },
-    { key: 'suitable', label: 'Geschikt voor' },
-] as const;
-
 const useStyles = makeStyles()(theme => ({
     root: {
+        flex: 1,
+        paddingTop: sectionSpacing,
         paddingBottom: sectionSpacing,
+        backgroundColor: background,
+    },
+    photos: {
+        marginTop: sectionSpacing,
     },
     header: {
         display: 'flex',
@@ -172,6 +152,8 @@ const useStyles = makeStyles()(theme => ({
 export default function Systems() {
     const { classes, cx } = useStyles();
 
+    useDocumentTitle('Onze systemen');
+
     const [selected, setSelected] = useState<SystemKey>('duplex');
 
     const selectedSystem = systems.find(system => system.key === selected) ?? systems[1];
@@ -183,7 +165,8 @@ export default function Systems() {
                     <div>
                         <SectionHeading
                             id="systemen-title"
-                            eyebrow="05 · Onze systemen"
+                            eyebrow="Onze systemen"
+                            level="h1"
                             title="Simplex, duplex of external"
                         />
                     </div>
@@ -261,6 +244,11 @@ export default function Systems() {
                     </Button>
                 </div>
             </Container>
+            <PhotoStrip
+                items={installationPhotos}
+                minColumnWidth={280}
+                className={classes.photos}
+            />
         </section>
     );
 }

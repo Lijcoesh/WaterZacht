@@ -1,7 +1,7 @@
 import { Container, Typography } from '@mui/material';
 import { makeStyles } from 'tss-react/mui';
 
-import { border, slate, slateDark, white } from 'src/colors';
+import { background, border, slate, slateDark, white } from 'src/colors';
 import Photo from 'src/Components/Photo';
 import SectionHeading from 'src/Components/SectionHeading';
 import drinkingWater from 'src/Resources/Images/drinkingWater.jpg';
@@ -15,6 +15,7 @@ const useStyles = makeStyles()({
     root: {
         paddingTop: sectionSpacing,
         paddingBottom: sectionSpacing,
+        backgroundColor: white,
     },
     layout: {
         display: 'flex',
@@ -48,7 +49,7 @@ const useStyles = makeStyles()({
     },
     service: {
         padding: '9px 15px',
-        backgroundColor: white,
+        backgroundColor: background,
         border: `1px solid ${border}`,
         fontWeight: 500,
         fontSize: 14.5,

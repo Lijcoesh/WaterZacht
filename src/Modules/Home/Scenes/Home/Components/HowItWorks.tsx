@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { keyframes } from 'tss-react';
 import { makeStyles } from 'tss-react/mui';
 
-import { blueBright, blueStripe, borderSoft, navy, slate, track, white } from 'src/colors';
+import { background, blueBright, blueStripe, navy, slate, track } from 'src/colors';
 import Photo from 'src/Components/Photo';
 import SectionHeading from 'src/Components/SectionHeading';
 import howItWorks from 'src/Resources/Images/howItWorks.jpg';
@@ -46,8 +46,7 @@ const useStyles = makeStyles()({
     root: {
         paddingTop: sectionSpacing,
         paddingBottom: sectionSpacing,
-        backgroundColor: white,
-        borderBottom: `1px solid ${borderSoft}`,
+        backgroundColor: background,
     },
     layout: {
         display: 'flex',

@@ -4,7 +4,7 @@ import { useRef, useState } from 'react';
 import type { KeyboardEvent, PointerEvent } from 'react';
 import { makeStyles } from 'tss-react/mui';
 
-import { blue, greenDark, navy, placeholderBackground, slate, white } from 'src/colors';
+import { blue, greenDark, navy, onDarkHero, placeholderBackground, white } from 'src/colors';
 import Photo from 'src/Components/Photo';
 import SectionHeading from 'src/Components/SectionHeading';
 import { mediumShadow } from 'src/Theme/shadow';
@@ -21,6 +21,8 @@ function clamp(value: number) {
 const useStyles = makeStyles()({
     root: {
         paddingTop: sectionSpacing,
+        paddingBottom: sectionSpacing,
+        backgroundColor: navy,
     },
     header: {
         display: 'flex',
@@ -33,7 +35,7 @@ const useStyles = makeStyles()({
         maxWidth: 400,
         fontSize: '1rem',
         lineHeight: 1.6,
-        color: slate,
+        color: onDarkHero,
     },
     stage: {
         position: 'relative',
@@ -164,6 +166,7 @@ export default function Comparison() {
                         id="verschil-title"
                         eyebrow="03 · Zie het verschil"
                         title="Hard water tegenover zacht water"
+                        dark
                     />
                 </div>
                 <Typography className={classes.lead}>

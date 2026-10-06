@@ -11,6 +11,7 @@ import { makeStyles } from 'tss-react/mui';
 import { blueBright, border, slate, white } from 'src/colors';
 import SectionHeading from 'src/Components/SectionHeading';
 import { phoneDisplay, phoneHref } from 'src/Config/contact';
+import { useDocumentTitle } from 'src/Hooks/useDocumentTitle';
 import { sectionSpacing } from 'src/Theme/sizes';
 import { serifFontFamily } from 'src/Theme/typography';
 
@@ -59,6 +60,7 @@ const questions = [
 
 const useStyles = makeStyles()({
     root: {
+        flex: 1,
         paddingTop: sectionSpacing,
         paddingBottom: sectionSpacing,
         backgroundColor: white,
@@ -95,13 +97,16 @@ const useStyles = makeStyles()({
 export default function Faq() {
     const { classes } = useStyles();
 
+    useDocumentTitle('Veelgestelde vragen');
+
     return (
-        <section id="faq" className={classes.root} aria-labelledby="faq-title">
+        <div className={classes.root}>
             <Container className={classes.layout}>
                 <div className={classes.intro}>
                     <SectionHeading
                         id="faq-title"
-                        eyebrow="08 · Vragen"
+                        eyebrow="Veelgestelde vragen"
+                        level="h1"
                         title="Alles wat u wilt weten"
                     />
                     <Typography className={classes.lead}>
@@ -128,6 +133,6 @@ export default function Faq() {
                     ))}
                 </div>
             </Container>
-        </section>
+        </div>
     );
 }

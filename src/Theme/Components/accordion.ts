@@ -30,6 +30,8 @@ export function overrideMuiAccordionSummary(theme: Theme): Overrides['MuiAccordi
             root: {
                 padding: 0,
                 gap: theme.spacing(2),
+                // Een <button> erft het lettertype niet van de body
+                fontFamily: theme.typography.fontFamily,
             },
             content: {
                 margin: '20px 0',

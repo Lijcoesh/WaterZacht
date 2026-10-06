@@ -13,7 +13,6 @@ const navItems = [
     { to: '/#voordelen', label: 'Voordelen' },
     { to: '/#werking', label: 'Werking' },
     { to: '/#systemen', label: 'Systemen' },
-    { to: '/#faq', label: 'Vragen' },
 ];
 
 const useStyles = makeStyles()(theme => ({
@@ -96,6 +95,16 @@ const useStyles = makeStyles()(theme => ({
         alignItems: 'center',
         gap: 14,
     },
+    outlined: {
+        // 1px minder padding dan de contained-knop, zodat de rand de hoogte niet vergroot
+        padding: '10px 17px',
+        borderColor: alpha(white, 0.4),
+        color: white,
+        '&:hover': {
+            borderColor: alpha(white, 0.4),
+            backgroundColor: alpha(white, 0.12),
+        },
+    },
     phone: {
         fontWeight: 600,
         fontSize: 15,
@@ -149,6 +158,14 @@ export default function Header() {
                         <Link href={phoneHref} className={classes.phone}>
                             {phoneDisplay}
                         </Link>
+                        <Button
+                            component={RouterLink}
+                            to="/faq"
+                            variant="outlined"
+                            className={classes.outlined}
+                        >
+                            FAQ
+                        </Button>
                         <Button
                             component={RouterLink}
                             to="/contact"

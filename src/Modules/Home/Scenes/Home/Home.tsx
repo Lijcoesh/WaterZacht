@@ -11,7 +11,6 @@ import About from './Components/About';
 import Benefits from './Components/Benefits';
 import Comparison from './Components/Comparison';
 import DrinkingWater from './Components/DrinkingWater';
-import Faq from './Components/Faq';
 import Guarantees from './Components/Guarantees';
 import Hero from './Components/Hero';
 import HowItWorks from './Components/HowItWorks';
@@ -82,7 +81,6 @@ export default function Home() {
             <Guarantees />
             <DrinkingWater />
             <About />
-            <Faq />
             <PhotoStrip
                 items={installationPhotos}
                 minColumnWidth={280}

@@ -8,7 +8,6 @@ import Guarantees from './Components/Guarantees';
 import Hero from './Components/Hero';
 import HowItWorks from './Components/HowItWorks';
 import Kinetico from './Components/Kinetico';
-import SystemsOverview from './Components/SystemsOverview';
 
 export default function Home() {
     useDocumentTitle();
@@ -20,7 +19,6 @@ export default function Home() {
             <HowItWorks />
             <Comparison />
             <Kinetico />
-            <SystemsOverview />
             <Guarantees />
             <DrinkingWater />
             <ClosingCta />

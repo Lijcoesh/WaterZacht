@@ -11,7 +11,7 @@ const advantages = [
     'Geen elektra in of op het toestel: minder storingsgevoelig én energiebesparend',
     'Regeneratie op waterdruk ná volumemeting, dus niet op tijd',
     'Zuinig in zoutverbruik: 30% minder dan andere toestellen',
-    'Geen onderhoudscontract en toch 10 jaar garantie: al snel € 100,- per jaar',
+    'Geen onderhoudscontract en toch 10 jaar garantie',
     'Regenereert met onthard water en is erg stil tijdens de regeneratie',
     'Harsen van de hoogste kwaliteit, gevuld tot aan de hals van de flessen',
     'Zeer laag verbruik van afvalwater bij regeneratie',

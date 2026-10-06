@@ -21,16 +21,8 @@ const questions = [
         answer: 'Een simplex is één harstank en daarom het meest compact — hiermee bent u het goedkoopste uit. Een duplex ontharder heeft een dubbele tank en spoelt alternerend, waardoor u altijd van zacht water geniet.',
     },
     {
-        question: 'Wat zijn de kosten van een waterontharder?',
-        answer: 'Vanaf € 1.700,- incl. btw kunnen wij een waterontharder bij u thuis plaatsen. Dit is afhankelijk van een simplex of duplex ontharder en welke capaciteit gewenst is.',
-    },
-    {
         question: 'Wat is het zoutverbruik per jaar?',
-        answer: 'Ongeveer 1 zak van 25 kg per persoon per jaar. In verband met de garantie willen wij dat u het zout bij ons afneemt: € 15,00 incl. btw per zak. Onze e-mailservice herinnert u iedere twee maanden.',
-    },
-    {
-        question: 'Wat is de besparing per jaar ongeveer?',
-        answer: 'Ongeveer € 250,- per jaar als u er bewust mee omgaat. Komt daar de besparing van geen onderhoudscontract bij, dan loopt dat verder op.',
+        answer: 'Ongeveer 1 zak van 25 kg per persoon per jaar. In verband met de garantie willen wij dat u het zout bij ons afneemt. Onze e-mailservice herinnert u iedere twee maanden.',
     },
     {
         question: 'Waar wordt een waterontharder geplaatst en wat zijn de voorwaarden?',
@@ -54,7 +46,7 @@ const questions = [
     },
     {
         question: 'Moet ik het zout bij Water Zacht afnemen?',
-        answer: "In verband met de garantie willen wij dat u zout bij ons afneemt. De prijs van zo'n zak van 25 kg is € 15,00 incl. btw. Wij hebben een e-mailservice die u iedere twee maanden herinnert.",
+        answer: 'In verband met de garantie willen wij dat u zout bij ons afneemt. Wij hebben een e-mailservice die u iedere twee maanden herinnert.',
     },
 ];
 

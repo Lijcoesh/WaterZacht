@@ -21,7 +21,7 @@ const guarantees = [
         value: 'Elke 2 mnd',
         color: navy,
         title: 'E-mailservice zoutvat',
-        text: 'Wij herinneren u eraan uw zoutvat na te kijken. Een zak van 25 kg kost € 15,- incl. btw.',
+        text: 'Wij herinneren u eraan uw zoutvat na te kijken.',
     },
 ];
 

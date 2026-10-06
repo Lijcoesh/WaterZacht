@@ -17,6 +17,7 @@ React 19 + Vite + TypeScript + MUI.
 - **Imports**: absoluut via `src/*`, relatief binnen dezelfde map, `import type` voor types. Zie @.claude/conventions/imports.md
 - **Theme**: opgesplitst in `src/Theme/` (palette, typography, shadow, sizes, `Components/`), `theme.ts` doet alleen compositie. Zie @.claude/conventions/styling.md
 - **Structuur & naming**: zie @.claude/conventions/structure.md
+- **Content**: geen bedragen op de site (prijzen, kosten, besparingen in euro's, btw), want de PO wil die niet hoeven bijhouden. Voor prijzen verwijzen naar contact of een offerte.
 - **Commits**: subject begint met een werkwoord in de gebiedende wijs, Engels, geen punt.
   `Add hero section`, `Fix avatar overflow`, `Move colors to src/colors.ts` — niet `Added ...` / `hero section`.
 

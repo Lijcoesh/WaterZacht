@@ -5,7 +5,6 @@ import { makeStyles } from 'tss-react/mui';
 
 import { border, greenDark, greenTint, muted, navy, slate, surface, white } from 'src/colors';
 import SectionHeading from 'src/Components/SectionHeading';
-import { formatEuro, minimumPrice } from 'src/Modules/Home/Logic/pricing';
 import { sectionSpacing } from 'src/Theme/sizes';
 import { serifFontFamily } from 'src/Theme/typography';
 
@@ -169,10 +168,6 @@ const useStyles = makeStyles()(theme => ({
         alignItems: 'center',
         marginTop: 30,
     },
-    price: {
-        fontSize: 15.5,
-        color: muted,
-    },
 }));
 
 export default function Systems() {
@@ -265,10 +260,6 @@ export default function Systems() {
                     >
                         Bekijk ons aanbod van waterontharders
                     </Button>
-                    <span className={classes.price}>
-                        Plaatsing vanaf {formatEuro(minimumPrice)} incl. btw, afhankelijk van
-                        systeem en capaciteit.
-                    </span>
                 </div>
             </Container>
         </section>

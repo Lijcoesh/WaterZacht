@@ -1,14 +1,15 @@
 import { Button, ButtonBase, Container, Typography } from '@mui/material';
 import { useState } from 'react';
+import { Link as RouterLink } from 'react-router';
 import { makeStyles } from 'tss-react/mui';
 
 import { border, greenDark, greenTint, muted, navy, slate, surface, white } from 'src/colors';
+import SectionHeading from 'src/Components/SectionHeading';
 import { formatEuro, minimumPrice } from 'src/Modules/Home/Logic/pricing';
 import { sectionSpacing } from 'src/Theme/sizes';
 import { serifFontFamily } from 'src/Theme/typography';
 
 import Photo from './Photo';
-import SectionHeading from './SectionHeading';
 
 type SystemKey = 'simplex' | 'duplex' | 'external';
 
@@ -255,7 +256,13 @@ export default function Systems() {
                 </dl>
 
                 <div className={classes.footer}>
-                    <Button href="#contact" variant="contained" color="primary" size="large">
+                    <Button
+                        component={RouterLink}
+                        to="/contact"
+                        variant="contained"
+                        color="primary"
+                        size="large"
+                    >
                         Bekijk ons aanbod van waterontharders
                     </Button>
                     <span className={classes.price}>

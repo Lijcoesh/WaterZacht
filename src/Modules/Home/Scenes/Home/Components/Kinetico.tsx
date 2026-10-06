@@ -2,10 +2,10 @@ import { Container, Typography } from '@mui/material';
 import { makeStyles } from 'tss-react/mui';
 
 import { borderSoft, green, muted, slate, slateDark, white } from 'src/colors';
+import SectionHeading from 'src/Components/SectionHeading';
 import { cardRadius, sectionSpacing } from 'src/Theme/sizes';
 
 import Photo from './Photo';
-import SectionHeading from './SectionHeading';
 
 const advantages = [
     'Geen elektra in of op het toestel: minder storingsgevoelig én energiebesparend',

@@ -2,11 +2,11 @@ import { Container, Typography } from '@mui/material';
 import { makeStyles } from 'tss-react/mui';
 
 import { border, slate, slateDark, white } from 'src/colors';
+import SectionHeading from 'src/Components/SectionHeading';
 import drinkingWater from 'src/Resources/Images/drinkingWater.jpg';
 import { cardRadius, sectionSpacing } from 'src/Theme/sizes';
 
 import Photo from './Photo';
-import SectionHeading from './SectionHeading';
 import UnderlineLink from './UnderlineLink';
 
 const services = ['Waterontijzering', 'Drukverhoging', 'Vloeistoffilters'];
@@ -89,7 +89,7 @@ export default function DrinkingWater() {
                         ))}
                     </ul>
                     <div className={classes.cta}>
-                        <UnderlineLink href="#contact">Meer over drinkwaterzuivering</UnderlineLink>
+                        <UnderlineLink to="/contact">Meer over drinkwaterzuivering</UnderlineLink>
                     </div>
                 </div>
             </Container>

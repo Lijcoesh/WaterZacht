@@ -2,10 +2,10 @@ import { Container, Typography } from '@mui/material';
 import { makeStyles } from 'tss-react/mui';
 
 import { blueBright, border, navy, slate } from 'src/colors';
+import SectionHeading from 'src/Components/SectionHeading';
 import { sectionSpacing } from 'src/Theme/sizes';
 import { serifFontFamily } from 'src/Theme/typography';
 
-import SectionHeading from './SectionHeading';
 import UnderlineLink from './UnderlineLink';
 
 const benefits = [
@@ -106,7 +106,7 @@ export default function Benefits() {
                         een waterontharder droogt uw badkamer streeploos en kalkvrij op.
                     </Typography>
                     <div className={classes.cta}>
-                        <UnderlineLink href="#contact">Vraag een advies aan huis aan</UnderlineLink>
+                        <UnderlineLink to="/contact">Vraag een advies aan huis aan</UnderlineLink>
                     </div>
                 </div>
                 <ol className={classes.list}>

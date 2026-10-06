@@ -51,7 +51,7 @@ _Noteer hier tijdens het werk punten die vóór oplevering nog geregeld moeten w
 
 Uit de bouw van de homepage naar het Claude Design "Variant B" (oktober 2026):
 
-- **Offerteformulier verstuurt niets.** `src/Modules/Home/Logic/sendQuoteRequest.ts` faalt expres; het formulier toont dan een foutmelding met telefoon en e-mail. Nodig: keuze voor een backend of formulierdienst (en eventueel een verwerkersovereenkomst).
+- **Offerteformulier verstuurt niets.** `src/Modules/Contact/Logic/sendQuoteRequest.ts` faalt expres; het formulier toont dan een foutmelding met telefoon en e-mail. Nodig: keuze voor een backend of formulierdienst (en eventueel een verwerkersovereenkomst).
 - **Formulier**: link naar het privacybeleid ontbreekt nog. Nu zijn telefoon én e-mail allebei verplicht (zoals in het design). Laten bevestigen of beide nodig zijn (dataminimalisatie).
 - **Privacyverklaring** bestaat niet. De link in de footer uit het design is weggelaten tot er een pagina is. Inhoud aanvragen bij de eigenaar.
 - **Garantie- en leveringsvoorwaarden**: de link uit het design (sectie Kinetico) is weggelaten; tekst of pagina aanvragen.

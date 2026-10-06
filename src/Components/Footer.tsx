@@ -1,5 +1,6 @@
 import { Container, Link, Typography } from '@mui/material';
 import { alpha } from '@mui/material/styles';
+import { Link as RouterLink } from 'react-router';
 import { makeStyles } from 'tss-react/mui';
 
 import { navyDeep, onDarkFaint, onDarkLink, white } from 'src/colors';
@@ -17,11 +18,11 @@ import logo from 'src/Resources/Images/logo.png';
 import { footerLogoHeight } from 'src/Theme/sizes';
 
 const productLinks = [
-    { href: '#systemen', label: 'Waterontharders' },
-    { href: '#drinkwater', label: 'Drinkwaterzuivering' },
-    { href: '#drinkwater', label: 'Ontijzering' },
-    { href: '#drinkwater', label: 'Drukverhoging' },
-    { href: '#drinkwater', label: 'Vloeistoffilters' },
+    { to: '/#systemen', label: 'Waterontharders' },
+    { to: '/#drinkwater', label: 'Drinkwaterzuivering' },
+    { to: '/#drinkwater', label: 'Ontijzering' },
+    { to: '/#drinkwater', label: 'Drukverhoging' },
+    { to: '/#drinkwater', label: 'Vloeistoffilters' },
 ];
 
 const useStyles = makeStyles()(theme => ({
@@ -106,7 +107,12 @@ export default function Footer() {
                         </Typography>
                         <div className={classes.list}>
                             {productLinks.map(item => (
-                                <Link key={item.label} href={item.href} className={classes.link}>
+                                <Link
+                                    key={item.label}
+                                    component={RouterLink}
+                                    to={item.to}
+                                    className={classes.link}
+                                >
                                     {item.label}
                                 </Link>
                             ))}

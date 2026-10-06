@@ -1,5 +1,6 @@
 import { Button, Container, Typography } from '@mui/material';
 import { alpha } from '@mui/material/styles';
+import { Link as RouterLink } from 'react-router';
 import { makeStyles } from 'tss-react/mui';
 
 import { green, navy, onDarkEyebrow, onDarkHero, onDarkMuted, white } from 'src/colors';
@@ -145,7 +146,8 @@ export default function Hero() {
                         </Typography>
                         <div className={classes.actions}>
                             <Button
-                                href="#contact"
+                                component={RouterLink}
+                                to="/contact"
                                 variant="contained"
                                 color="primary"
                                 size="large"

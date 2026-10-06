@@ -14,8 +14,8 @@ import { makeStyles } from 'tss-react/mui';
 
 import { greenDark, greenTintStrong, muted, navy, slate } from 'src/colors';
 import { email, emailHref, phoneDisplay, phoneHref } from 'src/Config/contact';
-import { sendQuoteRequest } from 'src/Modules/Home/Logic/sendQuoteRequest';
-import type { QuoteRequest } from 'src/Modules/Home/Logic/sendQuoteRequest';
+import { sendQuoteRequest } from 'src/Modules/Contact/Logic/sendQuoteRequest';
+import type { QuoteRequest } from 'src/Modules/Contact/Logic/sendQuoteRequest';
 
 type Status = 'idle' | 'sending' | 'sent' | 'error';
 

@@ -8,6 +8,8 @@ interface IProps {
     title: string;
     id?: string;
     dark?: boolean;
+    // h1 voor de kop van een losse pagina, h2 voor een sectie binnen een pagina
+    level?: 'h1' | 'h2';
 }
 
 const useStyles = makeStyles()({
@@ -36,7 +38,7 @@ const useStyles = makeStyles()({
 });
 
 export default function SectionHeading(props: IProps) {
-    const { eyebrow, title, id, dark = false } = props;
+    const { eyebrow, title, id, dark = false, level = 'h2' } = props;
 
     const { classes, cx } = useStyles();
 
@@ -52,6 +54,7 @@ export default function SectionHeading(props: IProps) {
             <Typography
                 id={id}
                 variant="h2"
+                component={level}
                 className={cx(classes.title, dark && classes.titleDark)}
             >
                 {title}

@@ -9,11 +9,10 @@ import {
 import { makeStyles } from 'tss-react/mui';
 
 import { blueBright, border, slate, white } from 'src/colors';
+import SectionHeading from 'src/Components/SectionHeading';
 import { phoneDisplay, phoneHref } from 'src/Config/contact';
 import { sectionSpacing } from 'src/Theme/sizes';
 import { serifFontFamily } from 'src/Theme/typography';
-
-import SectionHeading from './SectionHeading';
 
 const questions = [
     {

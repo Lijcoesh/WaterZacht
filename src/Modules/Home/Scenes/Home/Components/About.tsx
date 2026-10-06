@@ -3,10 +3,10 @@ import { alpha } from '@mui/material/styles';
 import { makeStyles } from 'tss-react/mui';
 
 import { navy, onDarkBody, onDarkMuted, onDarkStrong, white } from 'src/colors';
+import SectionHeading from 'src/Components/SectionHeading';
 import { sectionSpacing } from 'src/Theme/sizes';
 
 import Photo from './Photo';
-import SectionHeading from './SectionHeading';
 
 const highlights = [
     { title: 'Westland en omgeving', text: 'Persoonlijk advies bij u thuis' },

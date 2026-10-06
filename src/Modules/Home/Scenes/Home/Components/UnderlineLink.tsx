@@ -1,11 +1,12 @@
 import { Link } from '@mui/material';
 import type { ReactNode } from 'react';
+import { Link as RouterLink } from 'react-router';
 import { makeStyles } from 'tss-react/mui';
 
 import { green, greenHover, navy } from 'src/colors';
 
 interface IProps {
-    href: string;
+    to: string;
     children: ReactNode;
 }
 
@@ -25,12 +26,12 @@ const useStyles = makeStyles()({
 });
 
 export default function UnderlineLink(props: IProps) {
-    const { href, children } = props;
+    const { to, children } = props;
 
     const { classes } = useStyles();
 
     return (
-        <Link href={href} className={classes.root}>
+        <Link component={RouterLink} to={to} className={classes.root}>
             {children}
         </Link>
     );

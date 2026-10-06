@@ -1,5 +1,6 @@
 import { makeStyles } from 'tss-react/mui';
 
+import { useDocumentTitle } from 'src/Hooks/useDocumentTitle';
 import appliances from 'src/Resources/Images/appliances.jpg';
 import bathroom from 'src/Resources/Images/bathroom.jpg';
 import meterCupboard from 'src/Resources/Images/meterCupboard.jpg';
@@ -9,7 +10,6 @@ import { sectionSpacing } from 'src/Theme/sizes';
 import About from './Components/About';
 import Benefits from './Components/Benefits';
 import Comparison from './Components/Comparison';
-import Contact from './Components/Contact';
 import DrinkingWater from './Components/DrinkingWater';
 import Faq from './Components/Faq';
 import Guarantees from './Components/Guarantees';
@@ -57,11 +57,14 @@ const useStyles = makeStyles()({
     },
     installationPhotos: {
         paddingTop: sectionSpacing,
+        paddingBottom: sectionSpacing,
     },
 });
 
 export default function Home() {
     const { classes } = useStyles();
+
+    useDocumentTitle();
 
     return (
         <>
@@ -85,7 +88,6 @@ export default function Home() {
                 minColumnWidth={280}
                 className={classes.installationPhotos}
             />
-            <Contact />
         </>
     );
 }

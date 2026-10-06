@@ -4,11 +4,11 @@ import { keyframes } from 'tss-react';
 import { makeStyles } from 'tss-react/mui';
 
 import { blueBright, blueStripe, borderSoft, navy, slate, track, white } from 'src/colors';
+import SectionHeading from 'src/Components/SectionHeading';
 import howItWorks from 'src/Resources/Images/howItWorks.jpg';
 import { cardRadius, sectionSpacing } from 'src/Theme/sizes';
 
 import Photo from './Photo';
-import SectionHeading from './SectionHeading';
 
 const steps = [
     {

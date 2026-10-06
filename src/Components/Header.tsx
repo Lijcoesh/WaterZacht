@@ -1,5 +1,6 @@
 import { AppBar, Button, Container, Link } from '@mui/material';
 import { alpha } from '@mui/material/styles';
+import { Link as RouterLink } from 'react-router';
 import { makeStyles } from 'tss-react/mui';
 
 import { greenLight, navy, onDarkMuted, onDarkNav, white } from 'src/colors';
@@ -9,10 +10,10 @@ import { headerLogoHeight } from 'src/Theme/sizes';
 import { serifFontFamily } from 'src/Theme/typography';
 
 const navItems = [
-    { href: '#voordelen', label: 'Voordelen' },
-    { href: '#werking', label: 'Werking' },
-    { href: '#systemen', label: 'Systemen' },
-    { href: '#faq', label: 'Vragen' },
+    { to: '/#voordelen', label: 'Voordelen' },
+    { to: '/#werking', label: 'Werking' },
+    { to: '/#systemen', label: 'Systemen' },
+    { to: '/#faq', label: 'Vragen' },
 ];
 
 const useStyles = makeStyles()(theme => ({
@@ -119,7 +120,8 @@ export default function Header() {
             <AppBar position="sticky" elevation={0} className={classes.appBar}>
                 <Container className={classes.bar}>
                     <Link
-                        href="#top"
+                        component={RouterLink}
+                        to="/#top"
                         className={classes.brand}
                         aria-label={`${companyName}, naar boven`}
                     >
@@ -133,7 +135,12 @@ export default function Header() {
                     </Link>
                     <nav aria-label="Hoofdmenu" className={classes.nav}>
                         {navItems.map(item => (
-                            <Link key={item.href} href={item.href} className={classes.navLink}>
+                            <Link
+                                key={item.to}
+                                component={RouterLink}
+                                to={item.to}
+                                className={classes.navLink}
+                            >
                                 {item.label}
                             </Link>
                         ))}
@@ -142,7 +149,12 @@ export default function Header() {
                         <Link href={phoneHref} className={classes.phone}>
                             {phoneDisplay}
                         </Link>
-                        <Button href="#contact" variant="contained" color="primary">
+                        <Button
+                            component={RouterLink}
+                            to="/contact"
+                            variant="contained"
+                            color="primary"
+                        >
                             Offerte aanvragen
                         </Button>
                     </div>

@@ -2,6 +2,7 @@ import { Container, Link, Typography } from '@mui/material';
 import { makeStyles } from 'tss-react/mui';
 
 import { background, border, borderSoft, greenHover, muted, navy, slate, white } from 'src/colors';
+import SectionHeading from 'src/Components/SectionHeading';
 import {
     email,
     emailHref,
@@ -10,18 +11,18 @@ import {
     postalCodeCity,
     street,
 } from 'src/Config/contact';
+import { useDocumentTitle } from 'src/Hooks/useDocumentTitle';
 import { cardRadius, sectionSpacing } from 'src/Theme/sizes';
 import { serifFontFamily } from 'src/Theme/typography';
 
-import QuoteForm from './QuoteForm';
-import SectionHeading from './SectionHeading';
+import QuoteForm from './Components/QuoteForm';
 
 const useStyles = makeStyles()({
     root: {
+        flex: 1,
         paddingTop: sectionSpacing,
         paddingBottom: sectionSpacing,
         backgroundColor: background,
-        borderTop: `1px solid ${borderSoft}`,
     },
     layout: {
         display: 'flex',
@@ -80,6 +81,8 @@ const useStyles = makeStyles()({
 export default function Contact() {
     const { classes } = useStyles();
 
+    useDocumentTitle('Contact en offerte aanvragen');
+
     const rows = [
         {
             label: 'Telefoon',
@@ -101,12 +104,13 @@ export default function Contact() {
     ];
 
     return (
-        <section id="contact" className={classes.root} aria-labelledby="contact-title">
+        <div className={classes.root}>
             <Container className={classes.layout}>
                 <div className={classes.info}>
                     <SectionHeading
                         id="contact-title"
-                        eyebrow="09 · Contact"
+                        eyebrow="Contact"
+                        level="h1"
                         title="Neem direct contact op"
                     />
                     <Typography className={classes.lead}>
@@ -132,6 +136,6 @@ export default function Contact() {
                     <QuoteForm />
                 </div>
             </Container>
-        </section>
+        </div>
     );
 }

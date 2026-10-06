@@ -5,11 +5,11 @@ import type { KeyboardEvent, PointerEvent } from 'react';
 import { makeStyles } from 'tss-react/mui';
 
 import { blue, greenDark, navy, placeholderBackground, slate, white } from 'src/colors';
+import SectionHeading from 'src/Components/SectionHeading';
 import { mediumShadow } from 'src/Theme/shadow';
 import { sectionSpacing } from 'src/Theme/sizes';
 
 import Photo from './Photo';
-import SectionHeading from './SectionHeading';
 
 const minPosition = 6;
 const maxPosition = 94;

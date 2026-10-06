@@ -2,8 +2,7 @@ import { Container } from '@mui/material';
 import { makeStyles } from 'tss-react/mui';
 
 import { border, muted, placeholderBackground } from 'src/colors';
-
-import Photo from './Photo';
+import Photo from 'src/Components/Photo';
 
 export interface PhotoStripItem {
     src?: string;

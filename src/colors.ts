@@ -25,10 +25,8 @@ export const slateDark = '#3E606E';
 export const muted = '#56737F'; // design: #7C97A3 / #6B8794 / #8CA5B0 (te weinig contrast)
 
 // Tekst op donker
-export const onDarkStrong = '#DCEAF0';
 export const onDarkNav = '#CFE3EA';
 export const onDarkHero = '#BCD6E0';
-export const onDarkBody = '#9EC0CE';
 export const onDarkMuted = '#7FA8B8';
 export const onDarkFaint = '#6E93A3'; // design footer-copy: #5C8090 (4.2:1)
 export const onDarkLink = '#8FB3C1';

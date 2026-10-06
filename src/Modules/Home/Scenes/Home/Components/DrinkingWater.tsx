@@ -2,11 +2,11 @@ import { Container, Typography } from '@mui/material';
 import { makeStyles } from 'tss-react/mui';
 
 import { border, slate, slateDark, white } from 'src/colors';
+import Photo from 'src/Components/Photo';
 import SectionHeading from 'src/Components/SectionHeading';
 import drinkingWater from 'src/Resources/Images/drinkingWater.jpg';
 import { cardRadius, sectionSpacing } from 'src/Theme/sizes';
 
-import Photo from './Photo';
 import UnderlineLink from './UnderlineLink';
 
 const services = ['Waterontijzering', 'Drukverhoging', 'Vloeistoffilters'];

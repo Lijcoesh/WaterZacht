@@ -7,7 +7,6 @@ import meterCupboard from 'src/Resources/Images/meterCupboard.jpg';
 import tapGlass from 'src/Resources/Images/tapGlass.jpg';
 import { sectionSpacing } from 'src/Theme/sizes';
 
-import About from './Components/About';
 import Benefits from './Components/Benefits';
 import Comparison from './Components/Comparison';
 import DrinkingWater from './Components/DrinkingWater';
@@ -80,7 +79,6 @@ export default function Home() {
             <Systems />
             <Guarantees />
             <DrinkingWater />
-            <About />
             <PhotoStrip
                 items={installationPhotos}
                 minColumnWidth={280}

@@ -1,12 +1,11 @@
 import { Container, Typography } from '@mui/material';
-import { alpha } from '@mui/material/styles';
 import { makeStyles } from 'tss-react/mui';
 
-import { navy, onDarkBody, onDarkMuted, onDarkStrong, white } from 'src/colors';
+import { border, muted, navy, slate, white } from 'src/colors';
+import Photo from 'src/Components/Photo';
 import SectionHeading from 'src/Components/SectionHeading';
+import { useDocumentTitle } from 'src/Hooks/useDocumentTitle';
 import { sectionSpacing } from 'src/Theme/sizes';
-
-import Photo from './Photo';
 
 const highlights = [
     { title: 'Westland en omgeving', text: 'Persoonlijk advies bij u thuis' },
@@ -15,8 +14,8 @@ const highlights = [
 
 const useStyles = makeStyles()({
     root: {
-        backgroundColor: navy,
-        color: onDarkStrong,
+        flex: 1,
+        backgroundColor: white,
         paddingTop: sectionSpacing,
         paddingBottom: sectionSpacing,
     },
@@ -40,7 +39,7 @@ const useStyles = makeStyles()({
         marginTop: 14,
         maxWidth: '46em',
         lineHeight: 1.7,
-        color: onDarkBody,
+        color: slate,
         '&:first-of-type': {
             marginTop: 20,
         },
@@ -51,27 +50,29 @@ const useStyles = makeStyles()({
         gap: 34,
         marginTop: 30,
         paddingTop: 26,
-        borderTop: `1px solid ${alpha(white, 0.16)}`,
+        borderTop: `1px solid ${border}`,
     },
     highlightTitle: {
         fontWeight: 600,
         fontSize: 16,
         lineHeight: 1.2,
-        color: white,
+        color: navy,
     },
     highlightText: {
         marginTop: 6,
         fontSize: 14,
         lineHeight: 1.4,
-        color: onDarkMuted,
+        color: muted,
     },
 });
 
 export default function About() {
     const { classes } = useStyles();
 
+    useDocumentTitle('Over ons');
+
     return (
-        <section className={classes.root} aria-labelledby="over-title">
+        <div className={classes.root}>
             <Container className={classes.layout}>
                 <div className={classes.portrait}>
                     <Photo
@@ -82,9 +83,9 @@ export default function About() {
                 <div className={classes.text}>
                     <SectionHeading
                         id="over-title"
-                        eyebrow="07 · Wie is Water Zacht"
+                        eyebrow="Over ons"
+                        level="h1"
                         title="De loodgieter uit het Westland die van zacht water zijn vak maakte"
-                        dark
                     />
                     <Typography className={classes.paragraph}>
                         Water Zacht is een dochteronderneming van Loodgietersbedrijf Martin van
@@ -109,6 +110,6 @@ export default function About() {
                     </div>
                 </div>
             </Container>
-        </section>
+        </div>
     );
 }

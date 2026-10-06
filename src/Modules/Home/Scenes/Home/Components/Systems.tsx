@@ -4,11 +4,10 @@ import { Link as RouterLink } from 'react-router';
 import { makeStyles } from 'tss-react/mui';
 
 import { border, greenDark, greenTint, muted, navy, slate, surface, white } from 'src/colors';
+import Photo from 'src/Components/Photo';
 import SectionHeading from 'src/Components/SectionHeading';
 import { sectionSpacing } from 'src/Theme/sizes';
 import { serifFontFamily } from 'src/Theme/typography';
-
-import Photo from './Photo';
 
 type SystemKey = 'simplex' | 'duplex' | 'external';
 

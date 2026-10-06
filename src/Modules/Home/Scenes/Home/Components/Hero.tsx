@@ -4,11 +4,10 @@ import { Link as RouterLink } from 'react-router';
 import { makeStyles } from 'tss-react/mui';
 
 import { green, navy, onDarkEyebrow, onDarkHero, onDarkMuted, white } from 'src/colors';
+import Photo from 'src/Components/Photo';
 import { phoneDisplay, phoneHref } from 'src/Config/contact';
 import hero from 'src/Resources/Images/hero.jpg';
 import { serifFontFamily } from 'src/Theme/typography';
-
-import Photo from './Photo';
 
 const stats = [
     { value: '€ 250,-', label: 'gemiddelde besparing per jaar' },

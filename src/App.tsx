@@ -4,6 +4,7 @@ import { makeStyles } from 'tss-react/mui';
 import Footer from 'src/Components/Footer';
 import Header from 'src/Components/Header';
 import { useScrollToHash } from 'src/Hooks/useScrollToHash';
+import About from 'src/Modules/About/Scenes/About/About';
 import Contact from 'src/Modules/Contact/Scenes/Contact/Contact';
 import Faq from 'src/Modules/Faq/Scenes/Faq/Faq';
 import Home from 'src/Modules/Home/Scenes/Home/Home';
@@ -34,6 +35,7 @@ export default function App() {
             <main id="main" tabIndex={-1} className={classes.main}>
                 <Routes>
                     <Route path="/" element={<Home />} />
+                    <Route path="/over-ons" element={<About />} />
                     <Route path="/contact" element={<Contact />} />
                     <Route path="/faq" element={<Faq />} />
                     <Route path="*" element={<Navigate to="/" replace />} />

@@ -13,6 +13,7 @@ const navItems = [
     { to: '/#voordelen', label: 'Voordelen' },
     { to: '/#werking', label: 'Werking' },
     { to: '/#systemen', label: 'Systemen' },
+    { to: '/over-ons', label: 'Over ons' },
 ];
 
 const useStyles = makeStyles()(theme => ({

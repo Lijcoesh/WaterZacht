@@ -25,6 +25,12 @@ const productLinks = [
     { to: '/#drinkwater', label: 'Vloeistoffilters' },
 ];
 
+const pageLinks = [
+    { to: '/over-ons', label: 'Over ons' },
+    { to: '/faq', label: 'Veelgestelde vragen' },
+    { to: '/contact', label: 'Contact' },
+];
+
 const useStyles = makeStyles()(theme => ({
     root: {
         backgroundColor: navyDeep,
@@ -109,6 +115,28 @@ export default function Footer() {
                             {productLinks.map(item => (
                                 <Link
                                     key={item.label}
+                                    component={RouterLink}
+                                    to={item.to}
+                                    className={classes.link}
+                                >
+                                    {item.label}
+                                </Link>
+                            ))}
+                        </div>
+                    </nav>
+                    <nav aria-labelledby="footer-pages">
+                        <Typography
+                            id="footer-pages"
+                            variant="caption"
+                            component="h2"
+                            className={classes.heading}
+                        >
+                            {companyName}
+                        </Typography>
+                        <div className={classes.list}>
+                            {pageLinks.map(item => (
+                                <Link
+                                    key={item.to}
                                     component={RouterLink}
                                     to={item.to}
                                     className={classes.link}

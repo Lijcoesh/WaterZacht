@@ -3,8 +3,8 @@ import { alpha } from '@mui/material/styles';
 import { Link as RouterLink } from 'react-router';
 import { makeStyles } from 'tss-react/mui';
 
-import { greenLight, navy, onDarkMuted, onDarkNav, white } from 'src/colors';
-import { companyName, phoneDisplay, phoneHref } from 'src/Config/contact';
+import { navy, onDarkMuted, onDarkNav, white } from 'src/colors';
+import { companyName } from 'src/Config/contact';
 import droplet from 'src/Resources/Images/droplet.png';
 import { headerLogoHeight } from 'src/Theme/sizes';
 import { serifFontFamily } from 'src/Theme/typography';
@@ -122,19 +122,6 @@ const useStyles = makeStyles()(theme => ({
             display: 'none',
         },
     },
-    phone: {
-        fontWeight: 600,
-        fontSize: 15,
-        whiteSpace: 'nowrap',
-        color: white,
-        '&:hover': {
-            color: greenLight,
-        },
-        // Telefoon staat ook in de footer en op de contactpagina
-        [theme.breakpoints.down('lg')]: {
-            display: 'none',
-        },
-    },
 }));
 
 export default function Header() {
@@ -174,9 +161,6 @@ export default function Header() {
                         ))}
                     </nav>
                     <div className={classes.actions}>
-                        <Link href={phoneHref} className={classes.phone}>
-                            {phoneDisplay}
-                        </Link>
                         <Button
                             component={RouterLink}
                             to="/zout-bestellen"

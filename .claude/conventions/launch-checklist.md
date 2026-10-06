@@ -63,3 +63,4 @@ Uit de bouw van de homepage naar het Claude Design "Variant B" (oktober 2026):
 - **Zout verplicht bij Water Zacht afnemen "in verband met de garantie"** (FAQ): laten checken of dat zo in de voorwaarden staat.
 - **Logo**: bevestigen dat `logo.png`/`droplet.png` van Water Zacht zelf zijn (zie `src/Resources/README.md`).
 - **Contrast**: aangepast t.o.v. het design: navy tekst op groene knoppen (wit haalde 2.3:1), en donkerdere tinten voor links, labels en grote cijfers (zie `src/colors.ts`). Laten bevestigen door de eigenaar/ontwerper.
+- **Blok over Loodgietersbedrijf Martin van Wingerden** (Over ons): tekst en dienstenlijst samengevat van lmvw.nl (oktober 2026). Laten bevestigen door de eigenaar, vooral "opgericht in 2006" en "vertrouwd adres in het Westland". Het lidmaatschap van Uneto-VNI van die site is bewust weggelaten (heet nu Techniek Nederland, niet gecontroleerd).

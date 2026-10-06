@@ -2,6 +2,8 @@
 
 export const companyName = 'Water Zacht';
 export const parentCompanyName = 'Loodgietersbedrijf Martin van Wingerden';
+export const parentCompanyUrl = 'https://www.lmvw.nl';
+export const parentCompanyDomain = 'lmvw.nl';
 
 export const phoneDisplay = '0174-240052';
 export const phoneHref = 'tel:0174240052';

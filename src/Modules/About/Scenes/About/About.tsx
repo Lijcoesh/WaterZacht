@@ -7,6 +7,8 @@ import SectionHeading from 'src/Components/SectionHeading';
 import { useDocumentTitle } from 'src/Hooks/useDocumentTitle';
 import { sectionSpacing } from 'src/Theme/sizes';
 
+import ParentCompany from './Components/ParentCompany';
+
 const highlights = [
     { title: 'Westland en omgeving', text: 'Persoonlijk advies bij u thuis' },
     { title: 'Eigen loodgieters', text: 'Installatie en service in eigen hand' },
@@ -110,6 +112,7 @@ export default function About() {
                     </div>
                 </div>
             </Container>
+            <ParentCompany />
         </div>
     );
 }

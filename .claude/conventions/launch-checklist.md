@@ -49,4 +49,17 @@ Dingen die makkelijk vergeten worden maar juridisch, ethisch of qua toegankelijk
 
 _Noteer hier tijdens het werk punten die vóór oplevering nog geregeld moeten worden. Leeg = niets bekend, niet = alles gedaan; loop de lijst hierboven altijd volledig na._
 
-- (nog niets)
+Uit de bouw van de homepage naar het Claude Design "Variant B" (oktober 2026):
+
+- **Offerteformulier verstuurt niets.** `src/Modules/Home/Logic/sendQuoteRequest.ts` faalt expres; het formulier toont dan een foutmelding met telefoon en e-mail. Nodig: keuze voor een backend of formulierdienst (en eventueel een verwerkersovereenkomst).
+- **Formulier**: link naar het privacybeleid ontbreekt nog. Nu zijn telefoon én e-mail allebei verplicht (zoals in het design). Laten bevestigen of beide nodig zijn (dataminimalisatie).
+- **Privacyverklaring** bestaat niet. De link in de footer uit het design is weggelaten tot er een pagina is. Inhoud aanvragen bij de eigenaar.
+- **Garantie- en leveringsvoorwaarden**: de link uit het design (sectie Kinetico) is weggelaten; tekst of pagina aanvragen.
+- **Bedrijfsgegevens**: KvK- en btw-nummer ontbreken in het design. Aanvragen en in de footer zetten.
+- **Social media**: de Facebook- en Instagram-knoppen en "Beoordeel uw ervaring" uit het design zijn weggelaten, omdat er geen URL's zijn.
+- **Ontbrekende foto's** (in de site gemarkeerd met "Foto nodig"): warmte-element hard en zacht water, Kinetico-dealerlogo (toestemming merkgebruik), Simplex, Duplex, External, portret van Martin, Martin tijdens installatie. Gebruik geen stockfoto van een willekeurig persoon als "Martin".
+- **Video in "De werking"**: het design toont een afspeelknop, maar er is geen video. De knop is weggelaten tot er een video-URL is (bij een YouTube-embed: privacy-enhanced mode en vermelden in het cookiebeleid).
+- **Claims laten onderbouwen**: "de Ferrari van de waterzuivering", "30% zuiniger in zout", "tot 98% gefilterd", "volgens het RIVM", "CE- en Vras-certificaat", "meest compacte systeem mét het hoogste rendement", "€ 250,- besparing per jaar", "Kinetico approved dealer", en de gezondheidsclaim over eczeem/huidklachten. De teksten komen van de huidige site; de eigenaar moet ze kunnen onderbouwen of aanpassen.
+- **Zout verplicht bij Water Zacht afnemen "in verband met de garantie"** (FAQ): laten checken of dat zo in de voorwaarden staat.
+- **Logo**: bevestigen dat `logo.png`/`droplet.png` van Water Zacht zelf zijn (zie `src/Resources/README.md`).
+- **Contrast**: aangepast t.o.v. het design: navy tekst op groene knoppen (wit haalde 2.3:1), en donkerdere tinten voor links, labels en grote cijfers (zie `src/colors.ts`). Laten bevestigen door de eigenaar/ontwerper.

@@ -22,3 +22,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Bronmateriaal van het design (Claude Design-export), geen onderdeel van de app
+design/
+Waterzacht-*.zip

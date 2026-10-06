@@ -1,7 +1,19 @@
 import { createTheme } from '@mui/material/styles';
 
-import { overrideMuiButton, overrideMuiIconButton } from './Components/buttons';
+import {
+    overrideMuiAccordion,
+    overrideMuiAccordionDetails,
+    overrideMuiAccordionSummary,
+} from './Components/accordion';
+import {
+    overrideMuiButton,
+    overrideMuiIconButton,
+    overrideMuiToggleButton,
+} from './Components/buttons';
+import { overrideMuiFilledInput } from './Components/inputs';
+import { overrideMuiContainer, overrideMuiCssBaseline, overrideMuiLink } from './Components/layout';
 import { overrideMuiPaper } from './Components/paper';
+import { overrideMuiLinearProgress } from './Components/progress';
 import palette from './palette';
 import overrideShadows from './shadow';
 import { borderRadius } from './sizes';
@@ -16,9 +28,18 @@ const theme = createTheme({
 });
 
 theme.components = {
+    MuiAccordion: overrideMuiAccordion(),
+    MuiAccordionDetails: overrideMuiAccordionDetails(),
+    MuiAccordionSummary: overrideMuiAccordionSummary(theme),
     MuiButton: overrideMuiButton(theme),
+    MuiContainer: overrideMuiContainer(theme),
+    MuiCssBaseline: overrideMuiCssBaseline(),
+    MuiFilledInput: overrideMuiFilledInput(),
     MuiIconButton: overrideMuiIconButton(),
+    MuiLinearProgress: overrideMuiLinearProgress(),
+    MuiLink: overrideMuiLink(),
     MuiPaper: overrideMuiPaper(theme),
+    MuiToggleButton: overrideMuiToggleButton(),
 };
 
 theme.shadows = overrideShadows();

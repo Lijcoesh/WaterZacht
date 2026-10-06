@@ -4,11 +4,11 @@
 import { alpha } from '@mui/material/styles';
 import type { Shadows } from '@mui/material/styles';
 
-import { black } from 'src/colors';
+import { navy } from 'src/colors';
 
-export const softShadow = `0 1px 2px ${alpha(black, 0.06)}`;
-export const mediumShadow = `0 4px 12px ${alpha(black, 0.08)}`;
-export const strongShadow = `0 12px 32px ${alpha(black, 0.12)}`;
+export const softShadow = `0 1px 2px ${alpha(navy, 0.06)}`;
+export const mediumShadow = `0 8px 20px -8px ${alpha(navy, 0.6)}`;
+export const strongShadow = `0 12px 24px -12px ${alpha(navy, 0.6)}`;
 
 export default function overrideShadows(): Shadows {
     return Array.from({ length: 25 }, (_, elevation) => {

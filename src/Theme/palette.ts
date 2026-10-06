@@ -1,38 +1,44 @@
 import type { PaletteOptions } from '@mui/material/styles';
 
 import {
-    accent,
-    black,
-    darkAccent,
-    darkGrey,
+    background,
+    blue,
+    border,
     error,
-    lightAccent,
-    lightGrey,
-    offWhite,
-    success,
-    warning,
+    green,
+    greenDark,
+    greenHover,
+    ink,
+    navy,
+    navyDeep,
+    slate,
     white,
 } from 'src/colors';
 
 const palette: PaletteOptions = {
     primary: {
-        main: accent,
-        light: lightAccent,
-        dark: darkAccent,
+        main: green,
+        dark: greenHover,
+        // Wit op het merkgroen haalt maar 2.3:1; navy haalt 7.2:1.
+        contrastText: navy,
+    },
+    secondary: {
+        main: navy,
+        dark: navyDeep,
         contrastText: white,
     },
+    info: { main: blue },
+    success: { main: greenDark },
     error: { main: error },
-    warning: { main: warning },
-    success: { main: success },
     background: {
-        default: offWhite,
+        default: background,
         paper: white,
     },
     text: {
-        primary: black,
-        secondary: darkGrey,
+        primary: ink,
+        secondary: slate,
     },
-    divider: lightGrey,
+    divider: border,
 };
 
 export default palette;

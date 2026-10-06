@@ -124,7 +124,7 @@ export default function HowItWorks() {
                 <div className={classes.intro}>
                     <SectionHeading
                         id="werking-title"
-                        eyebrow="03 · De werking"
+                        eyebrow="02 · De werking"
                         title="Hoe werkt een waterontharder?"
                     />
                     <Typography className={classes.lead}>

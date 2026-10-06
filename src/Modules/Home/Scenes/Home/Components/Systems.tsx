@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { makeStyles } from 'tss-react/mui';
 
 import { border, greenDark, greenTint, muted, navy, slate, surface, white } from 'src/colors';
-import { minimumPrice, formatEuro } from 'src/Modules/Home/Logic/savings';
+import { formatEuro, minimumPrice } from 'src/Modules/Home/Logic/pricing';
 import { sectionSpacing } from 'src/Theme/sizes';
 import { serifFontFamily } from 'src/Theme/typography';
 
@@ -188,7 +188,7 @@ export default function Systems() {
                     <div>
                         <SectionHeading
                             id="systemen-title"
-                            eyebrow="06 · Onze systemen"
+                            eyebrow="05 · Onze systemen"
                             title="Simplex, duplex of external"
                         />
                     </div>

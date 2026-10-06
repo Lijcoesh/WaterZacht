@@ -106,7 +106,7 @@ export default function Contact() {
                 <div className={classes.info}>
                     <SectionHeading
                         id="contact-title"
-                        eyebrow="10 · Contact"
+                        eyebrow="09 · Contact"
                         title="Neem direct contact op"
                     />
                     <Typography className={classes.lead}>

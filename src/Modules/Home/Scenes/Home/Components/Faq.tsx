@@ -102,7 +102,7 @@ export default function Faq() {
                 <div className={classes.intro}>
                     <SectionHeading
                         id="faq-title"
-                        eyebrow="09 · Vragen"
+                        eyebrow="08 · Vragen"
                         title="Alles wat u wilt weten"
                     />
                     <Typography className={classes.lead}>

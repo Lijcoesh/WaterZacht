@@ -92,7 +92,7 @@ export default function Kinetico() {
                 <div className={classes.story}>
                     <SectionHeading
                         id="kinetico-title"
-                        eyebrow="05 · Het merk"
+                        eyebrow="04 · Het merk"
                         title="Kinetico: de Ferrari van de waterzuivering"
                     />
                     <Typography className={classes.paragraph}>

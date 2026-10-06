@@ -82,7 +82,7 @@ export default function About() {
                 <div className={classes.text}>
                     <SectionHeading
                         id="over-title"
-                        eyebrow="08 · Wie is Water Zacht"
+                        eyebrow="07 · Wie is Water Zacht"
                         title="De loodgieter uit het Westland die van zacht water zijn vak maakte"
                         dark
                     />

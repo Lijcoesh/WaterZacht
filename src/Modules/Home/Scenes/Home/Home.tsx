@@ -18,7 +18,6 @@ import HowItWorks from './Components/HowItWorks';
 import Kinetico from './Components/Kinetico';
 import PhotoStrip from './Components/PhotoStrip';
 import type { PhotoStripItem } from './Components/PhotoStrip';
-import Savings from './Components/Savings';
 import Systems from './Components/Systems';
 
 const benefitPhotos: PhotoStripItem[] = [
@@ -73,7 +72,6 @@ export default function Home() {
                 minColumnWidth={240}
                 className={classes.benefitPhotos}
             />
-            <Savings />
             <HowItWorks />
             <Comparison />
             <Kinetico />

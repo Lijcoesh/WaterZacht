@@ -10,7 +10,6 @@ import { serifFontFamily } from 'src/Theme/typography';
 
 const navItems = [
     { href: '#voordelen', label: 'Voordelen' },
-    { href: '#besparing', label: 'Besparing' },
     { href: '#werking', label: 'Werking' },
     { href: '#systemen', label: 'Systemen' },
     { href: '#faq', label: 'Vragen' },

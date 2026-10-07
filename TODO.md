@@ -5,7 +5,6 @@ In de volgorde waarin het werk af moet. Details van juridische en inhoudelijke p
 ## Nu (zonder de PO)
 
 ### Code
-- [ ] Naamsvermelding voor de Wikimedia-foto's in de vergelijkingsslider (CC BY-SA 3.0), of ze vervangen door eigen foto's
 - [ ] Toegankelijkheid nalopen: alt-teksten, toetsenbordbediening, zichtbare focus, skip-link naar de inhoud
 - [ ] Licenties van de npm- en NuGet-dependencies nalopen
 - [ ] Concept-privacyverklaring schrijven, met open punten voor de PO

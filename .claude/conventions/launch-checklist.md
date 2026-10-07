@@ -51,7 +51,7 @@ _Noteer hier tijdens het werk punten die vóór oplevering nog geregeld moeten w
 
 Uit de bouw van de homepage naar het Claude Design "Variant B" (oktober 2026):
 
-- **Offerteformulier verstuurt niets.** `src/Modules/Contact/Logic/sendQuoteRequest.ts` faalt expres; het formulier toont dan een foutmelding met telefoon en e-mail. Nodig: keuze voor een backend of formulierdienst (en eventueel een verwerkersovereenkomst).
+- **Offerteformulier verstuurt niets.** `src/Modules/Contact/Logic/sendQuoteRequest.ts` faalt expres; het formulier toont dan een foutmelding met telefoon en e-mail. Nodig: een kleine backend op de VPS (één endpoint per formulier, versturen via een maildienst) en een verwerkersovereenkomst met die maildienst.
 - **Formulier**: link naar het privacybeleid ontbreekt nog. Nu zijn telefoon én e-mail allebei verplicht (zoals in het design). Laten bevestigen of beide nodig zijn (dataminimalisatie).
 - **Privacyverklaring** bestaat niet. De link in de footer uit het design is weggelaten tot er een pagina is. Inhoud aanvragen bij de eigenaar.
 - **Garantie- en leveringsvoorwaarden**: de link uit het design (sectie Kinetico) is weggelaten; tekst of pagina aanvragen.
@@ -67,11 +67,12 @@ Uit de bouw van de homepage naar het Claude Design "Variant B" (oktober 2026):
 
 Uit de demo op GitHub Pages (oktober 2026):
 
-- **`noindex`** in `index.html` houdt de demo uit zoekmachines. Weghalen bij de echte livegang. Bij een eigen domein ook `base` in `vite.config.ts` terugzetten naar `/` en de Pages-workflow heroverwegen.
+- **`noindex`** in `index.html` houdt de demo uit zoekmachines. Weghalen bij de echte livegang. De productie draait op een eigen VPS (besloten oktober 2026): dan ook `base` in `vite.config.ts` terugzetten naar `/` en de Pages-workflow vervangen door een deploy naar de VPS.
+- **VPS en privacy**: de hoster verwerkt bezoekers- en formulierdata. Kies een hoster in de EU, sluit een verwerkersovereenkomst af en vermeld de hoster in het privacybeleid. Webserver- en applicatielogs bevatten IP-adressen en mogelijk formulierinhoud: leg een bewaartermijn vast (logrotatie) en log geen formulierinhoud.
 
 Uit het zoutbestelformulier (`/zout-bestellen`, oktober 2026):
 
-- **Zoutbestelformulier verstuurt niets.** `src/Modules/SaltOrder/Logic/sendSaltOrder.ts` faalt expres, net als het offerteformulier. De mail aan Martin staat klaar in `formatSaltOrderMail()`. Nodig: dezelfde backend/formulierdienst, plus de bevestigingsmail aan de klant die de PO wil ("bestelling is verzonden").
+- **Zoutbestelformulier verstuurt niets.** `src/Modules/SaltOrder/Logic/sendSaltOrder.ts` faalt expres, net als het offerteformulier. De mail aan Martin staat klaar in `formatSaltOrderMail()`. Nodig: dezelfde kleine backend op de VPS als het offerteformulier, plus de bevestigingsmail aan de klant die de PO wil ("bestelling is verzonden").
 - **Ontvangstadres** `zout@waterzacht.nl` (`src/Config/saltOrder.ts`) was een voorbeeld van de PO; laten bevestigen en het adres aanmaken.
 - **Verwachte ophaaldatum**: de PO wil die tonen bij afhalen, maar de levertijd is onbekend. Zet `pickupLeadWorkdays` in `src/Config/saltOrder.ts` zodra die bekend is; tot dan staat er "Wij laten u weten wanneer uw zout klaarstaat". Ook openingstijden/afspraak voor afhalen ontbreken.
 - **Formulier**: link naar het privacybeleid ontbreekt (zelfde punt als het offerteformulier). Adresvelden zijn alleen verplicht bij bezorgen.

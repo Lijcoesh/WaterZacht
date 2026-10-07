@@ -1,19 +1,21 @@
-import {
-    Alert,
-    Button,
-    FilledInput,
-    FormControl,
-    FormLabel,
-    Link,
-    Typography,
-} from '@mui/material';
+import { Button, Typography } from '@mui/material';
 import { useState } from 'react';
 import type { ChangeEvent, FormEvent } from 'react';
 import { keyframes } from 'tss-react';
 import { makeStyles } from 'tss-react/mui';
 
 import { greenDark, greenTintStrong, muted, navy, slate } from 'src/colors';
-import { email, emailHref, phoneDisplay, phoneHref } from 'src/Config/contact';
+import FormField from 'src/Components/FormField';
+import SubmitErrorAlert from 'src/Components/SubmitErrorAlert';
+import {
+    hasErrors,
+    maxLengths,
+    validateEmail,
+    validatePhone,
+    validateRequired,
+} from 'src/Helpers/formValidation';
+import type { FieldErrors } from 'src/Helpers/formValidation';
+import { ApiError } from 'src/Logic/postJson';
 import { sendQuoteRequest } from 'src/Modules/Contact/Logic/sendQuoteRequest';
 import type { QuoteRequest } from 'src/Modules/Contact/Logic/sendQuoteRequest';
 
@@ -54,6 +56,15 @@ const fields: {
 
 const emptyRequest: QuoteRequest = { name: '', phone: '', email: '', message: '' };
 
+function validate(request: QuoteRequest): FieldErrors<QuoteRequest> {
+    return {
+        name: validateRequired(request.name, 'Vul uw naam in.'),
+        phone: validatePhone(request.phone),
+        email: validateEmail(request.email),
+        message: validateRequired(request.message, 'Vul uw bericht in.'),
+    };
+}
+
 const fadeIn = keyframes({
     from: { opacity: 0, transform: 'translateY(6px)' },
     to: { opacity: 1, transform: 'none' },
@@ -78,16 +89,6 @@ const useStyles = makeStyles()({
         display: 'grid',
         gap: 16,
         marginTop: 24,
-    },
-    label: {
-        marginBottom: 8,
-        color: muted,
-        '&.Mui-focused': {
-            color: muted,
-        },
-        '& .MuiFormLabel-asterisk': {
-            display: 'none',
-        },
     },
     error: {
         marginTop: 20,
@@ -129,21 +130,34 @@ export default function QuoteForm() {
 
     const [request, setRequest] = useState<QuoteRequest>(emptyRequest);
     const [status, setStatus] = useState<Status>('idle');
+    const [errors, setErrors] = useState<FieldErrors<QuoteRequest>>({});
+    const [errorStatus, setErrorStatus] = useState<number | null>(null);
 
     const handleChange = (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const { name, value } = event.target;
         setRequest(current => ({ ...current, [name]: value }));
+        setErrors(current => ({ ...current, [name]: null }));
     };
 
     const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault();
+
+        const fieldErrors = validate(request);
+        setErrors(fieldErrors);
+        if (hasErrors(fieldErrors)) {
+            const firstInvalid = fields.find(field => fieldErrors[field.name]);
+            document.getElementById(`quote-${firstInvalid?.name}`)?.focus();
+            return;
+        }
+
         setStatus('sending');
 
         try {
             await sendQuoteRequest(request);
             setStatus('sent');
             setRequest(emptyRequest);
-        } catch {
+        } catch (error) {
+            setErrorStatus(error instanceof ApiError ? error.status : null);
             setStatus('error');
         }
     };
@@ -167,7 +181,7 @@ export default function QuoteForm() {
     }
 
     return (
-        <form onSubmit={handleSubmit} aria-labelledby="quote-title">
+        <form onSubmit={handleSubmit} aria-labelledby="quote-title" noValidate>
             <div className={classes.header}>
                 <Typography id="quote-title" variant="h3" className={classes.title}>
                     Vraag uw offerte aan
@@ -176,30 +190,26 @@ export default function QuoteForm() {
             </div>
             <div className={classes.fields}>
                 {fields.map(field => (
-                    <FormControl key={field.name} required>
-                        <FormLabel htmlFor={`quote-${field.name}`} className={classes.label}>
-                            <Typography variant="caption">{field.label} *</Typography>
-                        </FormLabel>
-                        <FilledInput
-                            id={`quote-${field.name}`}
-                            name={field.name}
-                            type={field.type}
-                            value={request[field.name]}
-                            onChange={handleChange}
-                            placeholder={field.placeholder}
-                            autoComplete={field.autoComplete}
-                            multiline={field.multiline}
-                            minRows={field.multiline ? 4 : undefined}
-                        />
-                    </FormControl>
+                    <FormField
+                        key={field.name}
+                        id={`quote-${field.name}`}
+                        name={field.name}
+                        label={field.label}
+                        type={field.type}
+                        value={request[field.name]}
+                        onChange={handleChange}
+                        placeholder={field.placeholder}
+                        autoComplete={field.autoComplete}
+                        multiline={field.multiline}
+                        minRows={4}
+                        maxLength={maxLengths[field.name]}
+                        error={errors[field.name]}
+                        required
+                    />
                 ))}
             </div>
             {status === 'error' && (
-                <Alert severity="error" className={classes.error}>
-                    Verzenden is niet gelukt. Bel ons op{' '}
-                    <Link href={phoneHref}>{phoneDisplay}</Link> of mail naar{' '}
-                    <Link href={emailHref}>{email}</Link>.
-                </Alert>
+                <SubmitErrorAlert status={errorStatus} className={classes.error} />
             )}
             <Button
                 type="submit"

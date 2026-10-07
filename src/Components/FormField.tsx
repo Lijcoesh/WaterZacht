@@ -1,10 +1,11 @@
-import { FilledInput, FormControl, FormLabel, Typography } from '@mui/material';
+import { FilledInput, FormControl, FormHelperText, FormLabel, Typography } from '@mui/material';
 import type { ChangeEvent } from 'react';
 import { makeStyles } from 'tss-react/mui';
 
 import { muted } from 'src/colors';
 
 interface IProps {
+    id: string;
     name: string;
     label: string;
     value: string;
@@ -14,6 +15,9 @@ interface IProps {
     placeholder?: string;
     required?: boolean;
     multiline?: boolean;
+    minRows?: number;
+    maxLength?: number;
+    error?: string | null;
     className?: string;
 }
 
@@ -28,10 +32,15 @@ const useStyles = makeStyles()({
             display: 'none',
         },
     },
+    helper: {
+        marginLeft: 0,
+        marginRight: 0,
+    },
 });
 
-export default function OrderField(props: IProps) {
+export default function FormField(props: IProps) {
     const {
+        id,
         name,
         label,
         value,
@@ -41,15 +50,18 @@ export default function OrderField(props: IProps) {
         placeholder,
         required = false,
         multiline = false,
+        minRows = 3,
+        maxLength,
+        error,
         className,
     } = props;
 
     const { classes } = useStyles();
 
-    const id = `salt-${name}`;
+    const errorId = `${id}-error`;
 
     return (
-        <FormControl required={required} className={className}>
+        <FormControl required={required} error={Boolean(error)} className={className}>
             <FormLabel htmlFor={id} className={classes.label}>
                 <Typography variant="caption">
                     {label}
@@ -65,8 +77,14 @@ export default function OrderField(props: IProps) {
                 autoComplete={autoComplete}
                 placeholder={placeholder}
                 multiline={multiline}
-                minRows={multiline ? 3 : undefined}
+                minRows={multiline ? minRows : undefined}
+                inputProps={{ maxLength, 'aria-describedby': error ? errorId : undefined }}
             />
+            {error && (
+                <FormHelperText id={errorId} className={classes.helper}>
+                    {error}
+                </FormHelperText>
+            )}
         </FormControl>
     );
 }

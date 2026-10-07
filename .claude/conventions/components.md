@@ -43,3 +43,9 @@ Helpers/hooks in dezelfde file gebruiken named exports (`export function useX()`
 2. `const { classes, cx } = useStyles();`
 3. data-/query-hooks
 4. `useState` / `useMemo` / `useEffect`
+
+## Formulieren
+
+- Velden via `src/Components/FormField` (label, `maxLength`, foutmelding onder het veld). Het formulier heeft `noValidate` en controleert bij verzenden zelf met `src/Helpers/formValidation`. Bij een fout gaat de focus naar het eerste foute veld.
+- De frontend controleert even streng of strenger dan de Commands in `server/`, zodat een klant nooit een 400 van de API krijgt voor een typfout. Wijzig je een regel aan één kant, pas dan de andere ook aan.
+- Een fout bij verzenden toont `SubmitErrorAlert` met de statuscode uit `ApiError` (400, 429, of overig/netwerk).

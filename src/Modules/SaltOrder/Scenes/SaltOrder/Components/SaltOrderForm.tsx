@@ -1,13 +1,24 @@
 import LocalShippingOutlinedIcon from '@mui/icons-material/LocalShippingOutlined';
 import StorefrontOutlinedIcon from '@mui/icons-material/StorefrontOutlined';
-import { Alert, Button, Link, Typography } from '@mui/material';
+import { Button, Typography } from '@mui/material';
 import { useMemo, useState } from 'react';
 import type { ChangeEvent, FormEvent, ReactNode } from 'react';
 import { makeStyles } from 'tss-react/mui';
 
 import { border, muted, navy, slate, surface } from 'src/colors';
-import { email, emailHref, phoneDisplay, phoneHref } from 'src/Config/contact';
+import FormField from 'src/Components/FormField';
+import SubmitErrorAlert from 'src/Components/SubmitErrorAlert';
 import { bagSizes, deliveryPackages, maxPickupBagsPerSize } from 'src/Config/saltOrder';
+import {
+    hasErrors,
+    maxLengths,
+    validateEmail,
+    validatePhone,
+    validatePostalCode,
+    validateRequired,
+} from 'src/Helpers/formValidation';
+import type { FieldErrors } from 'src/Helpers/formValidation';
+import { ApiError } from 'src/Logic/postJson';
 import type {
     BagLine,
     BagSize,
@@ -21,7 +32,6 @@ import { cardRadius } from 'src/Theme/sizes';
 import BagCounter from './BagCounter';
 import ChoiceCard from './ChoiceCard';
 import OrderConfirmation from './OrderConfirmation';
-import OrderField from './OrderField';
 import OrderStep from './OrderStep';
 import PickupNotice from './PickupNotice';
 
@@ -48,6 +58,22 @@ const emptyDetails: Details = {
 };
 
 const emptyCounts: Record<BagSize, number> = { 15: 0, 25: 0 };
+
+// Op volgorde van het formulier, zodat de focus naar het eerste foute veld gaat
+function validate(details: Details, method: DeliveryMethod): FieldErrors<Details> {
+    const isDelivery = method === 'delivery';
+
+    return {
+        name: validateRequired(details.name, 'Vul uw naam in.'),
+        phone: validatePhone(details.phone),
+        email: validateEmail(details.email),
+        street: isDelivery
+            ? validateRequired(details.street, 'Vul uw straat en huisnummer in.')
+            : null,
+        postalCode: isDelivery ? validatePostalCode(details.postalCode) : null,
+        city: isDelivery ? validateRequired(details.city, 'Vul uw woonplaats in.') : null,
+    };
+}
 
 const methods: {
     value: DeliveryMethod;
@@ -149,6 +175,8 @@ export default function SaltOrderForm() {
     const [details, setDetails] = useState<Details>(emptyDetails);
     const [status, setStatus] = useState<Status>('idle');
     const [placedOrder, setPlacedOrder] = useState<SaltOrder | null>(null);
+    const [errors, setErrors] = useState<FieldErrors<Details>>({});
+    const [errorStatus, setErrorStatus] = useState<number | null>(null);
 
     const bags = useMemo<BagLine[]>(() => {
         if (method === 'delivery') {
@@ -172,6 +200,7 @@ export default function SaltOrderForm() {
     const handleDetailChange = (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const { name, value } = event.target;
         setDetails(current => ({ ...current, [name]: value }));
+        setErrors(current => ({ ...current, [name]: null }));
     };
 
     const handleCountChange = (size: BagSize, count: number) => {
@@ -183,6 +212,7 @@ export default function SaltOrderForm() {
         setPackageId(null);
         setPickupCounts(emptyCounts);
         setDetails(emptyDetails);
+        setErrors({});
         setPlacedOrder(null);
         setStatus('idle');
     };
@@ -190,6 +220,14 @@ export default function SaltOrderForm() {
     const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         if (!method || !hasBags) return;
+
+        const fieldErrors = validate(details, method);
+        setErrors(fieldErrors);
+        if (hasErrors(fieldErrors)) {
+            const firstInvalid = Object.entries(fieldErrors).find(([, error]) => error);
+            document.getElementById(`salt-${firstInvalid?.[0]}`)?.focus();
+            return;
+        }
 
         const order: SaltOrder = {
             method,
@@ -212,7 +250,8 @@ export default function SaltOrderForm() {
             await sendSaltOrder(order);
             setPlacedOrder(order);
             setStatus('sent');
-        } catch {
+        } catch (error) {
+            setErrorStatus(error instanceof ApiError ? error.status : null);
             setStatus('error');
         }
     };
@@ -222,7 +261,7 @@ export default function SaltOrderForm() {
     }
 
     return (
-        <form onSubmit={handleSubmit} aria-labelledby="salt-form-title">
+        <form onSubmit={handleSubmit} aria-labelledby="salt-form-title" noValidate>
             <div className={classes.header}>
                 <Typography id="salt-form-title" variant="h3" className={classes.title}>
                     Uw bestelling
@@ -306,63 +345,83 @@ export default function SaltOrderForm() {
                 }
             >
                 <div className={classes.fields}>
-                    <OrderField
+                    <FormField
+                        id="salt-name"
                         name="name"
                         label="Naam"
                         value={details.name}
                         onChange={handleDetailChange}
                         autoComplete="name"
+                        maxLength={maxLengths.name}
+                        error={errors.name}
                         required
                         className={classes.full}
                     />
-                    <OrderField
+                    <FormField
+                        id="salt-phone"
                         name="phone"
                         label="Telefoonnummer"
                         type="tel"
                         value={details.phone}
                         onChange={handleDetailChange}
                         autoComplete="tel"
+                        maxLength={maxLengths.phone}
+                        error={errors.phone}
                         required
                     />
-                    <OrderField
+                    <FormField
+                        id="salt-email"
                         name="email"
                         label="E-mailadres"
                         type="email"
                         value={details.email}
                         onChange={handleDetailChange}
                         autoComplete="email"
+                        maxLength={maxLengths.email}
+                        error={errors.email}
                         required
                     />
                     {method === 'delivery' && (
                         <>
-                            <OrderField
+                            <FormField
+                                id="salt-street"
                                 name="street"
                                 label="Straat en huisnummer"
                                 value={details.street}
                                 onChange={handleDetailChange}
                                 autoComplete="street-address"
+                                maxLength={maxLengths.street}
+                                error={errors.street}
                                 required
                                 className={classes.full}
                             />
-                            <OrderField
+                            <FormField
+                                id="salt-postalCode"
                                 name="postalCode"
                                 label="Postcode"
                                 value={details.postalCode}
                                 onChange={handleDetailChange}
                                 autoComplete="postal-code"
+                                placeholder="1234 AB"
+                                maxLength={maxLengths.postalCode}
+                                error={errors.postalCode}
                                 required
                             />
-                            <OrderField
+                            <FormField
+                                id="salt-city"
                                 name="city"
                                 label="Plaats"
                                 value={details.city}
                                 onChange={handleDetailChange}
                                 autoComplete="address-level2"
+                                maxLength={maxLengths.city}
+                                error={errors.city}
                                 required
                             />
                         </>
                     )}
-                    <OrderField
+                    <FormField
+                        id="salt-note"
                         name="note"
                         label="Opmerking"
                         value={details.note}
@@ -373,6 +432,7 @@ export default function SaltOrderForm() {
                                 : undefined
                         }
                         multiline
+                        maxLength={maxLengths.note}
                         className={classes.full}
                     />
                 </div>
@@ -390,11 +450,7 @@ export default function SaltOrderForm() {
                 </div>
 
                 {status === 'error' && (
-                    <Alert severity="error" className={classes.error}>
-                        Verzenden is niet gelukt. Bel ons op{' '}
-                        <Link href={phoneHref}>{phoneDisplay}</Link> of mail naar{' '}
-                        <Link href={emailHref}>{email}</Link>.
-                    </Alert>
+                    <SubmitErrorAlert status={errorStatus} className={classes.error} />
                 )}
 
                 <Button

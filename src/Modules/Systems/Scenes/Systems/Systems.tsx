@@ -1,6 +1,5 @@
-import { Button, ButtonBase, Container, Typography } from '@mui/material';
+import { ButtonBase, Container, Typography } from '@mui/material';
 import { useState } from 'react';
-import { Link as RouterLink } from 'react-router';
 import { makeStyles } from 'tss-react/mui';
 
 import {
@@ -109,7 +108,7 @@ const useStyles = makeStyles()(theme => ({
         backgroundColor: background,
     },
     photos: {
-        marginTop: sectionSpacing,
+        marginTop: 'clamp(32px, 4vw, 56px)',
     },
     header: {
         display: 'flex',
@@ -202,13 +201,6 @@ const useStyles = makeStyles()(theme => ({
         lineHeight: 1.3,
         color: navy,
     },
-    footer: {
-        display: 'flex',
-        flexWrap: 'wrap',
-        gap: 16,
-        alignItems: 'center',
-        marginTop: 30,
-    },
 }));
 
 export default function Systems() {
@@ -289,18 +281,6 @@ export default function Systems() {
                         </div>
                     ))}
                 </dl>
-
-                <div className={classes.footer}>
-                    <Button
-                        component={RouterLink}
-                        to="/contact"
-                        variant="contained"
-                        color="primary"
-                        size="large"
-                    >
-                        Bekijk ons aanbod van waterontharders
-                    </Button>
-                </div>
             </Container>
             <PhotoStrip
                 items={installationPhotos}

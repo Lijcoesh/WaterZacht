@@ -51,7 +51,7 @@ _Noteer hier tijdens het werk punten die vóór oplevering nog geregeld moeten w
 
 Uit de bouw van de homepage naar het Claude Design "Variant B" (oktober 2026):
 
-- **Offerteformulier verstuurt niets.** `src/Modules/Contact/Logic/sendQuoteRequest.ts` faalt expres; het formulier toont dan een foutmelding met telefoon en e-mail. Nodig: een kleine backend op de VPS (één endpoint per formulier, versturen via een maildienst) en een verwerkersovereenkomst met die maildienst.
+- **Formulieren live zetten.** Beide formulieren posten naar de API in `server/` (oktober 2026), die via Brevo mailt. Nog te regelen: Brevo-account op naam van Water Zacht, afzenderdomein `waterzacht.nl` verifiëren (SPF/DKIM), `Brevo:ApiKey` en `Brevo:SenderEmail` als environment variables op de VPS, de API daar draaien achter Caddy/nginx (met `Api:TrustedProxyNetworks`) en de deploy inrichten. Brevo verwerkt namen, adressen en berichten en bewaart maillogs: verwerkersovereenkomst afsluiten en Brevo in het privacybeleid noemen.
 - **Formulier**: link naar het privacybeleid ontbreekt nog. Nu zijn telefoon én e-mail allebei verplicht (zoals in het design). Laten bevestigen of beide nodig zijn (dataminimalisatie).
 - **Privacyverklaring** bestaat niet. De link in de footer uit het design is weggelaten tot er een pagina is. Inhoud aanvragen bij de eigenaar.
 - **Garantie- en leveringsvoorwaarden**: de link uit het design (sectie Kinetico) is weggelaten; tekst of pagina aanvragen.
@@ -72,7 +72,7 @@ Uit de demo op GitHub Pages (oktober 2026):
 
 Uit het zoutbestelformulier (`/zout-bestellen`, oktober 2026):
 
-- **Zoutbestelformulier verstuurt niets.** `src/Modules/SaltOrder/Logic/sendSaltOrder.ts` faalt expres, net als het offerteformulier. De mail aan Martin staat klaar in `formatSaltOrderMail()`. Nodig: dezelfde kleine backend op de VPS als het offerteformulier, plus de bevestigingsmail aan de klant die de PO wil ("bestelling is verzonden").
-- **Ontvangstadres** `zout@waterzacht.nl` (`src/Config/saltOrder.ts`) was een voorbeeld van de PO; laten bevestigen en het adres aanmaken.
+- **Bevestigingsmail** aan de klant staat in `server/Services/SaltOrderService.cs`. De tekst laten bevestigen door de PO.
+- **Ontvangstadressen** `zout@waterzacht.nl` en `info@waterzacht.nl` (`server/appsettings.json`, sectie `Mail`): het zout-adres was een voorbeeld van de PO. Laten bevestigen en het adres aanmaken.
 - **Verwachte ophaaldatum**: de PO wil die tonen bij afhalen, maar de levertijd is onbekend. Zet `pickupLeadWorkdays` in `src/Config/saltOrder.ts` zodra die bekend is; tot dan staat er "Wij laten u weten wanneer uw zout klaarstaat". Ook openingstijden/afspraak voor afhalen ontbreken.
 - **Formulier**: link naar het privacybeleid ontbreekt (zelfde punt als het offerteformulier). Adresvelden zijn alleen verplicht bij bezorgen.

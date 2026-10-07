@@ -1,0 +1,43 @@
+root = true
+
+[*.cs]
+
+# StyleCop.Analyzers: rules disabled because they conflict with established conventions
+# (zie .claude/conventions/server.md) in plaats van met dotnet_diagnostic-tuning per bestand.
+dotnet_diagnostic.SA1633.severity = none # File header - project gebruikt geen file headers
+dotnet_diagnostic.SA1200.severity = none # Using-directives binnen namespace - project gebruikt file-scoped namespaces
+dotnet_diagnostic.SA1101.severity = none # this.-prefix - niet gebruikt in combinatie met primary constructors
+dotnet_diagnostic.SA1010.severity = none # False positive op collection-expressions (`= [];`)
+dotnet_diagnostic.SA1000.severity = none # False positive op target-typed new (`return new() { ... }`)
+dotnet_diagnostic.SA1009.severity = none # False positive op primary-constructor-met-base-type syntax
+dotnet_diagnostic.SA0001.severity = none # Meta-warning dat XML-doc-analyse uit staat - project gebruikt geen XML-doc-comments
+dotnet_diagnostic.SA1600.severity = none # Elements should be documented - project gebruikt geen XML-doc-comments (build toont hem niet, de IDE wel)
+dotnet_diagnostic.S6966.severity = none # app.Run() is een bewuste keuze, geen await app.RunAsync()
+dotnet_diagnostic.SA1206.severity = none # Modifier-volgorde - project schrijft bewust `public required`, niet `required public` (zie .claude/conventions/server.md)
+dotnet_diagnostic.SA1309.severity = none # Field begint met `_` - Services en Validators gebruiken `_camelCase`-fields (zie .claude/conventions/server.md)
+dotnet_diagnostic.SA1503.severity = none # Braces weglaten - een `if` met één statement heeft geen braces (zie .claude/conventions/server.md)
+
+# Services en Validators gebruiken een klassieke constructor (zie .claude/conventions/server.md), dus geen IDE-hint om er een primary constructor van te maken.
+csharp_style_prefer_primary_constructors = false:none
+
+# Geen expression-bodied members (=>) voor methods/constructors/etc. - altijd { }.
+# Geldt niet voor properties (IDE0025, bv. `public override HttpStatusCode StatusCode => ...`), lambda-expressies (e => e.X) of switch-expressions, die blijven =>.
+csharp_style_expression_bodied_methods = false:warning
+csharp_style_expression_bodied_constructors = false:warning
+csharp_style_expression_bodied_operators = false:warning
+csharp_style_expression_bodied_indexers = false:warning
+csharp_style_expression_bodied_accessors = false:warning
+csharp_style_expression_bodied_local_functions = false:warning
+
+# De :warning-suffix hierboven geldt alleen in de IDE; dotnet build leest alleen de severity per rule-ID.
+dotnet_diagnostic.IDE0021.severity = warning # constructors
+dotnet_diagnostic.IDE0022.severity = warning # methods
+dotnet_diagnostic.IDE0023.severity = warning # conversion operators
+dotnet_diagnostic.IDE0024.severity = warning # operators
+dotnet_diagnostic.IDE0026.severity = warning # indexers
+dotnet_diagnostic.IDE0027.severity = warning # accessors
+dotnet_diagnostic.IDE0061.severity = warning # local functions
+
+# SA1516 false positive (zonder locatie) op top-level statements in StyleCop 1.1.118.
+[Program.cs]
+dotnet_diagnostic.SA1516.severity = none

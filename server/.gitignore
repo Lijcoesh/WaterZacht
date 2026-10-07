@@ -1,0 +1,4 @@
+bin/
+obj/
+# de root-.gitignore negeert *.sln (Vite-template), deze hoort erbij
+!*.sln

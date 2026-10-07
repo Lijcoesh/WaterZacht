@@ -1,9 +1,7 @@
 // Regels voor het zoutbestelformulier, zoals de PO ze heeft aangegeven (oktober 2026).
+// De API controleert dezelfde regels in server/Constants/SaltOrderConstants.cs: wijzig ze samen.
 
 import type { BagSize } from 'src/Modules/SaltOrder/Definitions/SaltOrder';
-
-// Adres waar bestellingen naartoe gaan. Voorbeeld van de PO, nog laten bevestigen.
-export const saltOrderEmail = 'zout@waterzacht.nl';
 
 export const bagSizes: BagSize[] = [15, 25];
 

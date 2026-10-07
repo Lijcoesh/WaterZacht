@@ -17,7 +17,11 @@ import {
 import Photo from 'src/Components/Photo';
 import SectionHeading from 'src/Components/SectionHeading';
 import { useDocumentTitle } from 'src/Hooks/useDocumentTitle';
+import installation from 'src/Resources/Images/installation.jpg';
 import meterCupboard from 'src/Resources/Images/meterCupboard.jpg';
+import systemDuplex from 'src/Resources/Images/systemDuplex.jpg';
+import systemExternal from 'src/Resources/Images/systemExternal.jpg';
+import systemSimplex from 'src/Resources/Images/systemSimplex.jpg';
 import { sectionSpacing } from 'src/Theme/sizes';
 import { serifFontFamily } from 'src/Theme/typography';
 
@@ -31,6 +35,7 @@ const systems: {
     tag: string;
     highlight?: boolean;
     title: string;
+    image: string;
     text: string;
     specs: { tanks: string; rinsing: string; placement: string; suitable: string };
 }[] = [
@@ -38,6 +43,7 @@ const systems: {
         key: 'simplex',
         tag: 'Voordeligst',
         title: 'Simplex systeem',
+        image: systemSimplex,
         text: 'Eén harstank: het meest compact en hiermee bent u het goedkoopste uit.',
         specs: {
             tanks: 'Eén harstank',
@@ -51,6 +57,7 @@ const systems: {
         tag: 'Altijd zacht water',
         highlight: true,
         title: 'Duplex systeem',
+        image: systemDuplex,
         text: 'Dubbele tank met alternerende spoeling, waardoor u altijd van zacht water geniet.',
         specs: {
             tanks: 'Dubbele harstank',
@@ -63,6 +70,7 @@ const systems: {
         key: 'external',
         tag: 'Flexibel te plaatsen',
         title: 'External systeem',
+        image: systemExternal,
         text: 'Harstanken en zoutvat los van elkaar te monteren, bijvoorbeeld onder de vloer.',
         specs: {
             tanks: 'Losse harstanken',
@@ -87,8 +95,8 @@ const installationPhotos: PhotoStripItem[] = [
         caption: 'Plaatsing direct na de watermeter — meestal in de meter- of trapkast.',
     },
     {
-        alt: 'Martin tijdens de installatie',
-        placeholder: 'Foto nodig: Martin tijdens de installatie',
+        src: installation,
+        alt: 'Geïnstalleerde Kinetico-waterontharder met zoutvat in een kast',
         caption: 'Installatie en service door onze eigen loodgieters.',
     },
 ];
@@ -247,10 +255,7 @@ export default function Systems() {
                             )}
                         >
                             <span className={classes.cardImage}>
-                                <Photo
-                                    alt={system.title}
-                                    placeholder={`Foto nodig: ${system.title}`}
-                                />
+                                <Photo src={system.image} alt={system.title} />
                             </span>
                             <Typography
                                 variant="caption"

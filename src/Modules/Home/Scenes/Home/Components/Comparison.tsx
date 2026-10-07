@@ -7,6 +7,8 @@ import { makeStyles } from 'tss-react/mui';
 import { blue, greenDark, navy, onDarkHero, placeholderBackground, white } from 'src/colors';
 import Photo from 'src/Components/Photo';
 import SectionHeading from 'src/Components/SectionHeading';
+import heatingElementHard from 'src/Resources/Images/heatingElementHard.jpg';
+import heatingElementSoft from 'src/Resources/Images/heatingElementSoft.jpg';
 import { mediumShadow } from 'src/Theme/shadow';
 import { sectionSpacing } from 'src/Theme/sizes';
 
@@ -49,15 +51,7 @@ const useStyles = makeStyles()({
     },
     side: {
         position: 'absolute',
-        top: 0,
-        bottom: 0,
-        overflow: 'hidden',
-    },
-    left: {
-        left: 0,
-    },
-    right: {
-        right: 0,
+        inset: 0,
     },
     badge: {
         position: 'absolute',
@@ -175,20 +169,14 @@ export default function Comparison() {
                 </Typography>
             </Container>
             <div ref={stageRef} className={classes.stage}>
-                <div
-                    className={cx(classes.side, classes.right)}
-                    style={{ width: `${100 - position}%` }}
-                >
-                    <Photo
-                        alt="Schoon warmte-element bij zacht water"
-                        placeholder="Foto nodig: schoon warmte-element (zacht water)"
-                    />
+                <div className={classes.side}>
+                    <Photo src={heatingElementSoft} alt="Schoon warmte-element bij zacht water" />
                 </div>
-                <div className={cx(classes.side, classes.left)} style={{ width: `${position}%` }}>
-                    <Photo
-                        alt="Verkalkt warmte-element bij hard water"
-                        placeholder="Foto nodig: verkalkt warmte-element (hard water)"
-                    />
+                <div
+                    className={classes.side}
+                    style={{ clipPath: `inset(0 ${100 - position}% 0 0)` }}
+                >
+                    <Photo src={heatingElementHard} alt="Verkalkt warmte-element bij hard water" />
                 </div>
                 <span className={cx(classes.badge, classes.badgeHard)}>Hard water</span>
                 <span className={cx(classes.badge, classes.badgeSoft)}>Zacht water</span>

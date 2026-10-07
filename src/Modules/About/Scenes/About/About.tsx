@@ -5,6 +5,7 @@ import { border, muted, navy, slate, white } from 'src/colors';
 import Photo from 'src/Components/Photo';
 import SectionHeading from 'src/Components/SectionHeading';
 import { useDocumentTitle } from 'src/Hooks/useDocumentTitle';
+import martin from 'src/Resources/Images/martin.jpg';
 import { sectionSpacing } from 'src/Theme/sizes';
 
 import ParentCompany from './Components/ParentCompany';
@@ -77,10 +78,7 @@ export default function About() {
         <div className={classes.root}>
             <Container className={classes.layout}>
                 <div className={classes.portrait}>
-                    <Photo
-                        alt="Martin van Wingerden"
-                        placeholder="Foto nodig: Martin van Wingerden"
-                    />
+                    <Photo src={martin} alt="Martin van Wingerden" />
                 </div>
                 <div className={classes.text}>
                     <SectionHeading

@@ -4,6 +4,7 @@ import { makeStyles } from 'tss-react/mui';
 import { background, borderSoft, green, muted, slate, slateDark, white } from 'src/colors';
 import Photo from 'src/Components/Photo';
 import SectionHeading from 'src/Components/SectionHeading';
+import kineticoDealer from 'src/Resources/Images/kineticoDealer.png';
 import { cardRadius, sectionSpacing } from 'src/Theme/sizes';
 
 const advantages = [
@@ -106,11 +107,7 @@ export default function Kinetico() {
                         storingsgevoelig, energiebesparend en 30% zuiniger in het verbruik van zout.
                     </Typography>
                     <div className={classes.dealer}>
-                        <Photo
-                            alt="Kinetico Approved Dealer"
-                            placeholder="Logo nodig: Kinetico dealer"
-                            fit="contain"
-                        />
+                        <Photo src={kineticoDealer} alt="Kinetico Approved Dealer" fit="contain" />
                     </div>
                 </div>
                 <div className={classes.card}>

@@ -13,6 +13,27 @@
 | `drinkingWater.jpg` | [engin akyurt / Unsplash](https://unsplash.com/@enginakyurt), photo-1624948465027-6f9b51067557 | Unsplash License |
 | `meterCupboard.jpg` | [Immo Wegmann / Unsplash](https://unsplash.com/@tinkerman), photo-1650551182991-b07558247564 | Unsplash License |
 
+Overgenomen van de huidige websites van de eigenaar (oktober 2026), lage resolutie:
+
+| Bestand | Bron | Licentie |
+|---|---|---|
+| `systemSimplex.jpg`, `systemDuplex.jpg`, `systemExternal.jpg` | waterzacht.nl (`water-zacht-images-*-systeem.jpg`), bijgesneden en wit aangevuld tot 4:3 | Productbeelden van Kinetico; toestemming voor gebruik bevestigen |
+| `kineticoDealer.png` | waterzacht.nl (`water-zacht-images-kinetico.png`) | Merklogo van Kinetico; toestemming voor merkgebruik bevestigen |
+| `martin.jpg` | lmvw.nl, foto bij "Over ons" | Eigendom van Loodgietersbedrijf Martin van Wingerden; bevestigen dat dit Martin is |
+| `installation.jpg` | lmvw.nl, linksboven uit de Kinetico-collage | Eigendom van Loodgietersbedrijf Martin van Wingerden (bevestigen) |
+
+Vraag de eigenaar om de originelen in hogere resolutie.
+
+Van Wikimedia Commons, gedraaid, bijgesneden tot 24:9 en verkleind naar 2400×900:
+
+| Bestand | Bron | Licentie |
+|---|---|---|
+| `heatingElementHard.jpg` | [Whirlpool 461973080572 limescale.JPG](https://commons.wikimedia.org/wiki/File:Whirlpool_461973080572_limescale.JPG), Dmitry G | [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/) |
+| `heatingElementSoft.jpg` | [ARISTON 65108913.JPG](https://commons.wikimedia.org/wiki/File:ARISTON_65108913.JPG), Dmitry G (ook gespiegeld) | [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/) |
+
+CC BY-SA vereist naamsvermelding (auteur, bron, licentie) en dat de bewerkte versies onder
+dezelfde licentie vallen. Die vermelding staat nog niet op de site.
+
 De favicons in `public/` (`favicon.ico`, `favicon-32.png`, `apple-touch-icon.png`) zijn
 gemaakt van `droplet.png` en vallen dus onder hetzelfde eigendom.
 

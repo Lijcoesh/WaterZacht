@@ -15,8 +15,6 @@ Punten voor het gesprek met de PO (Martin, Water Zacht). Wat afgesproken is, ver
 ## Gegevens en teksen
 - [ ] Kloppen alle gegevens en teksten? Staan er geen dingen in die eigenlijk helemaal niet kloppen?
 - [ ] Kunnen alle claims worden onderbouwt? "Ferrari van de waterzuivering", "30% zuiniger in zout", "tot 98% gefilterd", "volgens het RIVM", CE- en Vras-certificaat, "meest compact met het hoogste rendement", "Kinetico approved dealer", gezondheidsclaim eczeem/huid
-- [ ] Wil je je KvK- en btw-nummer in de footer?
-- [ ] Wil je nog een stukje over Privacyverklaring, garantie- en leveringsvoorwaarden?
 - [ ] Wil je een schatting zien wanneer iets word bezorgd of iets opgehaald kan worden?
 - [ ] Wil je de systemen pagina erin houden of is dit niet heel relevant?
 - [ ] Zijn er producten die juist wel belangrijk zijn die je graag wilt laten zien? moet er een product pagina komen?

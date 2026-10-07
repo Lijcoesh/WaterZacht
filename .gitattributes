@@ -1,0 +1,2 @@
+# Config die naar de Linux-VPS gaat altijd met LF, ook bij een checkout op Windows (core.autocrlf)
+deploy/** text eol=lf

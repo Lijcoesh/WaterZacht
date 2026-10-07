@@ -48,3 +48,4 @@ Wijzig je later `waterzacht.caddy` of de service, kopieer hem dan opnieuw en doe
 
 - API-status: `systemctl status waterzacht-api`; logs: `journalctl -u waterzacht-api -n 50`
 - Caddy: `systemctl status caddy`; config testen: `caddy validate --config /etc/caddy/Caddyfile`
+- Van buitenaf: `/api/health` geeft `Healthy` als de API draait. UptimeRobot controleert dat en de site zelf elke 5 minuten. Gebruik geen `/health`: zonder `/api` ervoor geeft Caddy `index.html` terug, met een 200, ook als de API plat ligt.

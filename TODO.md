@@ -14,9 +14,6 @@ In de volgorde waarin het werk af moet. Details van juridische en inhoudelijke p
 - [ ] SSH-key van de thuiscomputer toevoegen op de VPS
 - [ ] Inloggen met een wachtwoord uitzetten (`PasswordAuthentication no`)
 
-## Gesprek met de PO
-- [ ] Alle punten in `Gesprek-PO.md` doorlopen
-
 ## Na het gesprek (livegang)
 - [ ] Vóór de domeinverhuizing alle DNS-records bij YourHosting overnemen in TransIP (MX, SPF, autodiscover). Gaat de mail ook mee: eerst mailboxen bij TransIP aanmaken en de mail overzetten, pas daarna de MX omzetten en YourHosting opzeggen
 - [ ] Domein in `deploy/waterzacht.caddy` zetten, kopiëren naar de VPS en Caddy herladen

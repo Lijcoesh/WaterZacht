@@ -5,14 +5,12 @@ import type { BagSize } from 'src/Modules/SaltOrder/Definitions/SaltOrder';
 
 export const bagSizes: BagSize[] = [15, 25];
 
-// Bij bezorgen kiest de klant uit deze vaste pakketten.
-export const deliveryPackages: { id: string; size: BagSize; count: number }[] = [
-    { id: '6x15', size: 15, count: 6 },
-    { id: '4x25', size: 25, count: 4 },
-];
+// Bij bezorgen staat elke maat op 0 of op minstens dit aantal. Kiest de klant voor bezorgen,
+// dan staan de tellers standaard op deze aantallen.
+export const deliveryMinimums: Record<BagSize, number> = { 15: 6, 25: 4 };
 
-// Bij afhalen bepaalt de klant zelf het aantal; dit is alleen een bovengrens tegen tikfouten.
-export const maxPickupBagsPerSize = 99;
+// Alleen een bovengrens tegen tikfouten.
+export const maxBagsPerSize = 99;
 
 // Aantal werkdagen tot het zout klaarstaat om op te halen. null zolang de PO dit niet
 // heeft opgegeven: het formulier toont dan geen datum, alleen dat we contact opnemen.

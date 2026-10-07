@@ -10,7 +10,7 @@ public class SaltOrderValidatorTests
     private readonly SaltOrderValidator validator = new();
 
     [Fact]
-    public void ValidateAdd_WithDeliveryPackage_DoesNotThrow()
+    public void ValidateAdd_WithDeliveryOfMinimum_DoesNotThrow()
     {
         // Arrange
         var command = Dummy.CreateDeliveryOrder([Dummy.CreateBag(SaltOrderConstants.LargeBagSize, 4)]);
@@ -20,6 +20,48 @@ public class SaltOrderValidatorTests
 
         // Assert
         Assert.Null(exception);
+    }
+
+    [Fact]
+    public void ValidateAdd_WithDeliveryAboveMinimum_DoesNotThrow()
+    {
+        // Arrange
+        var command = Dummy.CreateDeliveryOrder([Dummy.CreateBag(SaltOrderConstants.SmallBagSize, 10)]);
+
+        // Act
+        var exception = Record.Exception(() => validator.ValidateAdd(command));
+
+        // Assert
+        Assert.Null(exception);
+    }
+
+    [Fact]
+    public void ValidateAdd_WithDeliveryOfBothSizesAtMinimum_DoesNotThrow()
+    {
+        // Arrange
+        var command = Dummy.CreateDeliveryOrder([
+            Dummy.CreateBag(SaltOrderConstants.SmallBagSize, 6),
+            Dummy.CreateBag(SaltOrderConstants.LargeBagSize, 4),
+        ]);
+
+        // Act
+        var exception = Record.Exception(() => validator.ValidateAdd(command));
+
+        // Assert
+        Assert.Null(exception);
+    }
+
+    [Fact]
+    public void ValidateAdd_WithDeliveryOfOneSizeBelowMinimum_ThrowsBadRequest()
+    {
+        // Arrange
+        var command = Dummy.CreateDeliveryOrder([
+            Dummy.CreateBag(SaltOrderConstants.SmallBagSize, 6),
+            Dummy.CreateBag(SaltOrderConstants.LargeBagSize, 1),
+        ]);
+
+        // Act & Assert
+        Assert.Throws<BadRequestException>(() => validator.ValidateAdd(command));
     }
 
     [Fact]
@@ -33,22 +75,35 @@ public class SaltOrderValidatorTests
     }
 
     [Fact]
-    public void ValidateAdd_WithDeliveryOfOtherCount_ThrowsBadRequest()
+    public void ValidateAdd_WithDeliveryBelowMinimum_ThrowsBadRequest()
     {
         // Arrange
-        var command = Dummy.CreateDeliveryOrder([Dummy.CreateBag(SaltOrderConstants.SmallBagSize, 4)]);
+        var command = Dummy.CreateDeliveryOrder([Dummy.CreateBag(SaltOrderConstants.SmallBagSize, 5)]);
 
         // Act & Assert
         Assert.Throws<BadRequestException>(() => validator.ValidateAdd(command));
     }
 
     [Fact]
-    public void ValidateAdd_WithDeliveryOfTwoPackages_ThrowsBadRequest()
+    public void ValidateAdd_WithDeliveryOfBothSizesBelowMinimum_ThrowsBadRequest()
+    {
+        // Arrange
+        var command = Dummy.CreateDeliveryOrder([
+            Dummy.CreateBag(SaltOrderConstants.SmallBagSize, 5),
+            Dummy.CreateBag(SaltOrderConstants.LargeBagSize, 3),
+        ]);
+
+        // Act & Assert
+        Assert.Throws<BadRequestException>(() => validator.ValidateAdd(command));
+    }
+
+    [Fact]
+    public void ValidateAdd_WithDeliveryOfSameSizeTwice_ThrowsBadRequest()
     {
         // Arrange
         var command = Dummy.CreateDeliveryOrder([
             Dummy.CreateBag(SaltOrderConstants.SmallBagSize, 6),
-            Dummy.CreateBag(SaltOrderConstants.LargeBagSize, 4),
+            Dummy.CreateBag(SaltOrderConstants.SmallBagSize, 6),
         ]);
 
         // Act & Assert

@@ -21,7 +21,7 @@ Layer-first: één map per technische rol, de feature is de bestandsnaam-prefix.
 
 - **Controllers**: route, rate-limit policy, request doorgeven. Geen logica.
 - **Services**: roepen eerst hun Validator aan, dan een eventuele limiter, dan de mail.
-- **Validators**: business rules (vaste bezorgpakketten, adres alleen bij bezorgen), één `Validate<Actie>` per Service-methode. Zonder I/O zijn ze synchroon. Ze gooien een `DomainException`. Formaatchecks horen op het Command.
+- **Validators**: business rules (minimum aantal zakken bij bezorgen, adres alleen bij bezorgen), één `Validate<Actie>` per Service-methode. Zonder I/O zijn ze synchroon. Ze gooien een `DomainException`. Formaatchecks horen op het Command.
 - Elke Service, Validator en limiter heeft een interface en wordt in `Program.cs` geregistreerd: `AddTransient`, een limiter `AddSingleton` (hij houdt de buckets bij).
 - Een externe HTTP-API is een typed client met base-URL en timeouts uit zijn Options-class (`BrevoEmailService`). Retry alleen op 429, niet op 5xx of na een timeout: de mail kan dan al verstuurd zijn.
 
@@ -58,7 +58,7 @@ Layer-first: één map per technische rol, de feature is de bestandsnaam-prefix.
 - De mail aan Water Zacht heeft de klant als reply-to. De bevestiging aan de klant heeft het ontvangstadres als reply-to.
 - Eerst gaat de mail aan Water Zacht: die mail is de bestelling. Faalt hij, dan krijgt de client een 500 en toont hij telefoon en e-mail. Daarna gaat de bevestiging, met `CancellationToken.None`. Faalt die, dan wordt het gelogd en slaagt het request toch.
 - Log nooit formulierinhoud of e-mailadressen.
-- De zoutregels (zakgroottes, pakketten, maximum) staan zowel in `Constants/SaltOrderConstants.cs` als in `src/Config/saltOrder.ts`. Wijzig ze samen.
+- De zoutregels (zakgroottes, minimum bij bezorgen, maximum) staan zowel in `Constants/SaltOrderConstants.cs` als in `src/Config/saltOrder.ts`. Wijzig ze samen.
 
 ## C#-stijl
 

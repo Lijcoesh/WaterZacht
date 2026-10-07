@@ -10,6 +10,9 @@ public class SaltOrderValidator : ISaltOrderValidator
 {
     public void ValidateAdd(AddSaltOrder command)
     {
+        if (command.Bags.DistinctBy(b => b.Size).Count() != command.Bags.Count)
+            throw new BadRequestException("Each bag size may occur only once");
+
         if (command.Method == DeliveryMethod.Delivery)
         {
             ValidateDelivery(command);
@@ -18,9 +21,6 @@ public class SaltOrderValidator : ISaltOrderValidator
 
         if (command.Address is not null)
             throw new BadRequestException("A pickup order has no address");
-
-        if (command.Bags.DistinctBy(b => b.Size).Count() != command.Bags.Count)
-            throw new BadRequestException("Each bag size may occur only once");
     }
 
     private static void ValidateDelivery(AddSaltOrder command)
@@ -28,7 +28,7 @@ public class SaltOrderValidator : ISaltOrderValidator
         if (command.Address is null)
             throw new BadRequestException("A delivery order needs an address");
 
-        if (command.Bags is not [var bag] || !SaltOrderConstants.DeliveryPackages.Contains((bag.Size, bag.Count)))
-            throw new BadRequestException("A delivery order must be exactly one of the delivery packages");
+        if (!command.Bags.TrueForAll(b => b.Count >= SaltOrderConstants.DeliveryMinimumCounts[b.Size]))
+            throw new BadRequestException("A delivery order needs the minimum number of bags for each size");
     }
 }

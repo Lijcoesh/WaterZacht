@@ -9,7 +9,7 @@ import { border, muted, navy, slate, surface } from 'src/colors';
 import FormField from 'src/Components/FormField';
 import PrivacyNotice from 'src/Components/PrivacyNotice';
 import SubmitErrorAlert from 'src/Components/SubmitErrorAlert';
-import { bagSizes, deliveryPackages, maxPickupBagsPerSize } from 'src/Config/saltOrder';
+import { bagSizes, deliveryMinimums, maxBagsPerSize } from 'src/Config/saltOrder';
 import {
     hasErrors,
     maxLengths,
@@ -26,7 +26,11 @@ import type {
     DeliveryMethod,
     SaltOrder,
 } from 'src/Modules/SaltOrder/Definitions/SaltOrder';
-import { describeBagLine, describeBags } from 'src/Modules/SaltOrder/Logic/describeBags';
+import {
+    describeBags,
+    describeDeliveryMinimum,
+    meetsDeliveryMinimum,
+} from 'src/Modules/SaltOrder/Logic/describeBags';
 import { sendSaltOrder } from 'src/Modules/SaltOrder/Logic/sendSaltOrder';
 import { cardRadius } from 'src/Theme/sizes';
 
@@ -85,7 +89,7 @@ const methods: {
     {
         value: 'delivery',
         title: 'Bezorgen',
-        description: 'Wij brengen het zout bij u thuis. Vanaf 6 zakken van 15 kg of 4 van 25 kg.',
+        description: `Wij brengen het zout bij u thuis. Vanaf ${describeDeliveryMinimum()}.`,
         icon: <LocalShippingOutlinedIcon />,
     },
     {
@@ -123,6 +127,12 @@ const useStyles = makeStyles()(theme => ({
     },
     notice: {
         marginTop: 14,
+    },
+    minimum: {
+        marginTop: 14,
+        fontSize: 14.5,
+        lineHeight: 1.55,
+        color: slate,
     },
     fields: {
         display: 'grid',
@@ -174,32 +184,20 @@ export default function SaltOrderForm() {
     const { classes } = useStyles();
 
     const [method, setMethod] = useState<DeliveryMethod | null>(null);
-    const [packageId, setPackageId] = useState<string | null>(null);
-    const [pickupCounts, setPickupCounts] = useState<Record<BagSize, number>>(emptyCounts);
+    const [counts, setCounts] = useState<Record<BagSize, number>>(emptyCounts);
     const [details, setDetails] = useState<Details>(emptyDetails);
     const [status, setStatus] = useState<Status>('idle');
     const [placedOrder, setPlacedOrder] = useState<SaltOrder | null>(null);
     const [errors, setErrors] = useState<FieldErrors<Details>>({});
     const [errorStatus, setErrorStatus] = useState<number | null>(null);
 
-    const bags = useMemo<BagLine[]>(() => {
-        if (method === 'delivery') {
-            const selected = deliveryPackages.find(item => item.id === packageId);
-
-            return selected ? [{ size: selected.size, count: selected.count }] : [];
-        }
-
-        if (method === 'pickup') {
-            return bagSizes
-                .map(size => ({ size, count: pickupCounts[size] }))
-                .filter(line => line.count > 0);
-        }
-
-        return [];
-    }, [method, packageId, pickupCounts]);
+    const bags = useMemo<BagLine[]>(
+        () => bagSizes.map(size => ({ size, count: counts[size] })).filter(line => line.count > 0),
+        [counts],
+    );
 
     const hasMethod = method !== null;
-    const hasBags = bags.length > 0;
+    const hasBags = method === 'delivery' ? meetsDeliveryMinimum(bags) : bags.length > 0;
 
     const handleDetailChange = (event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const { name, value } = event.target;
@@ -207,14 +205,20 @@ export default function SaltOrderForm() {
         setErrors(current => ({ ...current, [name]: null }));
     };
 
+    const handleMethodChange = (next: DeliveryMethod) => {
+        if (next === method) return;
+
+        setMethod(next);
+        setCounts(next === 'delivery' ? deliveryMinimums : emptyCounts);
+    };
+
     const handleCountChange = (size: BagSize, count: number) => {
-        setPickupCounts(current => ({ ...current, [size]: count }));
+        setCounts(current => ({ ...current, [size]: count }));
     };
 
     const reset = () => {
         setMethod(null);
-        setPackageId(null);
-        setPickupCounts(emptyCounts);
+        setCounts(emptyCounts);
         setDetails(emptyDetails);
         setErrors({});
         setPlacedOrder(null);
@@ -287,7 +291,7 @@ export default function SaltOrderForm() {
                             name="method"
                             value={item.value}
                             checked={method === item.value}
-                            onChange={() => setMethod(item.value)}
+                            onChange={() => handleMethodChange(item.value)}
                             title={item.title}
                             description={item.description}
                             icon={item.icon}
@@ -298,42 +302,32 @@ export default function SaltOrderForm() {
 
             <OrderStep
                 number={2}
-                title={method === 'delivery' ? 'Kies uw pakket' : 'Hoeveel zakken wilt u?'}
+                title="Hoeveel zakken wilt u?"
                 done={hasBags}
                 locked={!hasMethod}
                 lockedHint="Kies eerst of u het zout wilt laten bezorgen of zelf afhalen."
             >
+                <div className={classes.counters}>
+                    {bagSizes.map(size => (
+                        <BagCounter
+                            key={size}
+                            size={size}
+                            value={counts[size]}
+                            min={method === 'delivery' ? deliveryMinimums[size] : 0}
+                            max={maxBagsPerSize}
+                            onChange={count => handleCountChange(size, count)}
+                        />
+                    ))}
+                </div>
                 {method === 'delivery' ? (
-                    <div className={classes.choices}>
-                        {deliveryPackages.map(item => (
-                            <ChoiceCard
-                                key={item.id}
-                                name="package"
-                                value={item.id}
-                                checked={packageId === item.id}
-                                onChange={() => setPackageId(item.id)}
-                                title={describeBagLine(item)}
-                                description={`${item.size * item.count} kg in totaal, aan huis bezorgd`}
-                            />
-                        ))}
-                    </div>
+                    <Typography className={classes.minimum}>
+                        Bezorgen kan vanaf {describeDeliveryMinimum()}. Wilt u maar één maat? Zet de
+                        andere dan op 0.
+                    </Typography>
                 ) : (
-                    <>
-                        <div className={classes.counters}>
-                            {bagSizes.map(size => (
-                                <BagCounter
-                                    key={size}
-                                    size={size}
-                                    value={pickupCounts[size]}
-                                    max={maxPickupBagsPerSize}
-                                    onChange={count => handleCountChange(size, count)}
-                                />
-                            ))}
-                        </div>
-                        <div className={classes.notice}>
-                            <PickupNotice />
-                        </div>
-                    </>
+                    <div className={classes.notice}>
+                        <PickupNotice />
+                    </div>
                 )}
             </OrderStep>
 
@@ -343,9 +337,9 @@ export default function SaltOrderForm() {
                 done={false}
                 locked={!hasBags}
                 lockedHint={
-                    method === 'pickup'
-                        ? 'Kies eerst hoeveel zakken u wilt afhalen.'
-                        : 'Kies eerst een pakket.'
+                    method === 'delivery'
+                        ? `Bezorgen kan vanaf ${describeDeliveryMinimum()}.`
+                        : 'Kies eerst hoeveel zakken u wilt afhalen.'
                 }
             >
                 <div className={classes.fields}>

@@ -19,6 +19,7 @@ Punten voor het gesprek met de PO (Martin, Water Zacht). Wat afgesproken is, ver
 - [ ] Wil je de systemen pagina erin houden of is dit niet heel relevant?
 - [ ] Zijn er producten die juist wel belangrijk zijn die je graag wilt laten zien? moet er een product pagina komen?
 - [ ] Is een telefoon nummer en e-mail verplicht in de formulieren, of is 1 van de 2 genoeg?
+- [ ] **Zout bezorgen:** Bij bezorgen staat elke maat op 0 of op minstens 6 zakken (15 kg) of 4 zakken (25 kg). Bij het kiezen van bezorgen staan de tellers standaard op 6 en 4 (samen 190 kg). Een mix als 6×15 + 1×25 of 5×15 + 3×25 kan niet. Klopt dat zo?
 
 ## Belangrijkste puntje
 - [ ] Lees alsjeblieft even de privacy verklaring goed door. De data die er nu in staat is grotendeels overgenomen van de oude site, maar dit moet echt goed kloppen

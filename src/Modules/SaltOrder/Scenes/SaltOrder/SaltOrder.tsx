@@ -5,6 +5,7 @@ import { background, border, borderSoft, greenHover, muted, navy, slate, white }
 import SectionHeading from 'src/Components/SectionHeading';
 import { phoneDisplay, phoneHref, postalCodeCity, street } from 'src/Config/contact';
 import { useDocumentTitle } from 'src/Hooks/useDocumentTitle';
+import { describeDeliveryMinimum } from 'src/Modules/SaltOrder/Logic/describeBags';
 import { cardRadius, sectionSpacing } from 'src/Theme/sizes';
 
 import SaltOrderForm from './Components/SaltOrderForm';
@@ -80,7 +81,7 @@ export default function SaltOrder() {
     useDocumentTitle('Zout bestellen');
 
     const rows = [
-        { label: 'Bezorgen', value: '6 zakken van 15 kg of 4 zakken van 25 kg' },
+        { label: 'Bezorgen', value: `Vanaf ${describeDeliveryMinimum()}` },
         { label: 'Afhalen', value: `Aantal naar keuze, ${street} in ${postalCodeCity}` },
         { label: 'Betalen', value: 'Achteraf, op rekening' },
         {

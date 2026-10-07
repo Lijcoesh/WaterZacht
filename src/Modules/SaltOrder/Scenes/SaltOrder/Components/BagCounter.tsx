@@ -11,6 +11,8 @@ import { cardRadius } from 'src/Theme/sizes';
 interface IProps {
     size: BagSize;
     value: number;
+    // Onder dit aantal gaat de teller naar 0
+    min?: number;
     max: number;
     onChange: (value: number) => void;
 }
@@ -81,7 +83,7 @@ const useStyles = makeStyles()({
 });
 
 export default function BagCounter(props: IProps) {
-    const { size, value, max, onChange } = props;
+    const { size, value, min = 0, max, onChange } = props;
 
     const { classes, cx } = useStyles();
 
@@ -92,13 +94,18 @@ export default function BagCounter(props: IProps) {
         set(Number.isNaN(parsed) ? 0 : parsed);
     };
 
+    // Tijdens het typen mag het getal onder het minimum zitten ("1" op weg naar "10")
+    const handleBlur = () => {
+        if (value > 0 && value < min) onChange(min);
+    };
+
     return (
         <div className={cx(classes.root, value > 0 && classes.active)}>
             <span className={classes.label}>Zakken van {size} kg</span>
             <div className={classes.controls}>
                 <IconButton
                     className={classes.button}
-                    onClick={() => set(value - 1)}
+                    onClick={() => set(value <= min ? 0 : value - 1)}
                     disabled={value <= 0}
                     aria-label={`Eén zak van ${size} kg minder`}
                 >
@@ -111,13 +118,14 @@ export default function BagCounter(props: IProps) {
                     max={max}
                     value={value}
                     onChange={handleInput}
+                    onBlur={handleBlur}
                     onFocus={event => event.target.select()}
                     className={classes.input}
                     aria-label={`Aantal zakken van ${size} kg`}
                 />
                 <IconButton
                     className={classes.button}
-                    onClick={() => set(value + 1)}
+                    onClick={() => set(value < min ? min : value + 1)}
                     disabled={value >= max}
                     aria-label={`Eén zak van ${size} kg meer`}
                 >

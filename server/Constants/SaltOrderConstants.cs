@@ -9,7 +9,11 @@ public static class SaltOrderConstants
 
     public const int BagSizeCount = 2;
 
-    public const int MaxPickupBagsPerSize = 99;
+    public const int MaxBagsPerSize = 99;
 
-    public static readonly IReadOnlyList<(int Size, int Count)> DeliveryPackages = [(SmallBagSize, 6), (LargeBagSize, 4)];
+    public static readonly IReadOnlyDictionary<int, int> DeliveryMinimumCounts = new Dictionary<int, int>
+    {
+        [SmallBagSize] = 6,
+        [LargeBagSize] = 4,
+    };
 }

@@ -4,6 +4,9 @@ In de volgorde waarin het werk af moet. Details van juridische en inhoudelijke p
 
 ## Nu (zonder de PO)
 
+### Onderzoeken
+- [ ] Hoe werkt het met mailen? Hij heeft zijn eigen domein "Waterzacht.nl" op YourHosting, zit hier ook het mail adres bij inbegrepen. Kan ik dit ook overzetten naar TransIP als ik het domein van YourHosting overzet naar TransIP?
+
 ### VPS
 - [ ] fail2ban installeren tegen het raden van wachtwoorden via SSH
 - [ ] Uptime-monitor instellen (bv. UptimeRobot) op de site

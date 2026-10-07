@@ -9,7 +9,6 @@ In de volgorde waarin het werk af moet. Details van juridische en inhoudelijke p
 
 ### VPS
 - [ ] fail2ban installeren tegen het raden van wachtwoorden via SSH
-- [ ] Uptime-monitor in UptimeRobot: één op de site, één op `/api/health`, meldingen via de app. Zolang het domein nog niet naar de VPS wijst op het IP-adres
 
 ### Code
 - [ ] Naamsvermelding voor de Wikimedia-foto's in de vergelijkingsslider (CC BY-SA 3.0), of ze vervangen door eigen foto's

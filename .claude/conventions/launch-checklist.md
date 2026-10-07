@@ -51,7 +51,7 @@ _Noteer hier tijdens het werk punten die vóór oplevering nog geregeld moeten w
 
 Uit de bouw van de homepage naar het Claude Design "Variant B" (oktober 2026):
 
-- **Formulieren live zetten.** Beide formulieren posten naar de API in `server/` (oktober 2026), die via Brevo mailt. Nog te regelen: Brevo-account op naam van Water Zacht, afzenderdomein `waterzacht.nl` verifiëren (SPF/DKIM), `Brevo:ApiKey` en `Brevo:SenderEmail` als environment variables op de VPS, de API daar draaien achter Caddy/nginx (met `Api:TrustedProxyNetworks`) en de deploy inrichten. Brevo verwerkt namen, adressen en berichten en bewaart maillogs: verwerkersovereenkomst afsluiten en Brevo in het privacybeleid noemen.
+- **Formulieren live zetten.** Beide formulieren posten naar de API in `server/` (oktober 2026), die via Brevo mailt. De deploy naar de VPS draait (zie `deploy/README.md`). Nog te regelen: Brevo-account op naam van Water Zacht, afzenderdomein `waterzacht.nl` verifiëren (SPF/DKIM) en als afzender instellen, en de testregels `Mail__QuoteRequestRecipient`/`Mail__SaltOrderRecipient` uit `/etc/waterzacht/api.env` halen, zodat de mails naar Water Zacht gaan. Brevo verwerkt namen, adressen en berichten en bewaart maillogs: verwerkersovereenkomst afsluiten en Brevo in het privacybeleid noemen.
 - **Formulier**: link naar het privacybeleid ontbreekt nog. Nu zijn telefoon én e-mail allebei verplicht (zoals in het design). Laten bevestigen of beide nodig zijn (dataminimalisatie).
 - **Privacyverklaring** bestaat niet. De link in de footer uit het design is weggelaten tot er een pagina is. Inhoud aanvragen bij de eigenaar.
 - **Garantie- en leveringsvoorwaarden**: de link uit het design (sectie Kinetico) is weggelaten; tekst of pagina aanvragen.
@@ -69,6 +69,7 @@ Uit de demo op GitHub Pages (oktober 2026):
 
 - **`noindex`** in `index.html` houdt de demo uit zoekmachines. Weghalen bij de echte livegang. De productie draait op een eigen VPS bij TransIP (besloten oktober 2026): dan ook `base` in `vite.config.ts` terugzetten naar `/` en de Pages-workflow vervangen door een deploy naar de VPS.
 - **Domein en DNS**: `waterzacht.nl` staat met de huidige hosting bij YourHosting (de PO). Bij het omzetten naar de VPS: de MX-records (mail voor `info@`/`zout@waterzacht.nl`) laten staan, alleen de A/AAAA-records naar de VPS (`85.10.151.178`) wijzen. Tegelijk de SPF/DKIM-records van Brevo toevoegen. Samen met de PO doen; tot dan testen op het IP-adres.
+- **VPS-beveiliging**: inloggen met een wachtwoord staat nog aan, tot de SSH-key van de thuiscomputer is toegevoegd. Daarna `PasswordAuthentication no` in de SSH-config.
 - **VPS en privacy**: de VPS (TransIP, Amsterdam) wordt beheerd door de ontwikkelaar en draait ook sites van andere klanten. Daarmee is de ontwikkelaar verwerker voor Water Zacht, met TransIP als subverwerker: verwerkersovereenkomst tussen Water Zacht en de ontwikkelaar afsluiten en de hosting vermelden in het privacybeleid. Webserver- en applicatielogs bevatten IP-adressen en mogelijk formulierinhoud: leg een bewaartermijn vast (logrotatie) en log geen formulierinhoud.
 
 Uit het zoutbestelformulier (`/zout-bestellen`, oktober 2026):

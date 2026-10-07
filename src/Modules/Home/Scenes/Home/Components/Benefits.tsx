@@ -139,11 +139,7 @@ export default function Benefits() {
         <section id="voordelen" className={classes.root} aria-labelledby="voordelen-title">
             <Container className={classes.layout}>
                 <div className={classes.intro}>
-                    <SectionHeading
-                        id="voordelen-title"
-                        eyebrow="01 · Voordelen"
-                        title="Geen kalk meer, in uw hele huis"
-                    />
+                    <SectionHeading id="voordelen-title" title="Geen kalk meer, in uw hele huis" />
                     <Typography className={classes.lead}>
                         Agressieve schoonmaakmiddelen voor uw douche of bad kunnen de deur uit. Met
                         een waterontharder droogt uw badkamer streeploos en kalkvrij op.

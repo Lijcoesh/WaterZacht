@@ -227,7 +227,6 @@ export default function Systems() {
                     <div>
                         <SectionHeading
                             id="systemen-title"
-                            eyebrow="Onze systemen"
                             level="h1"
                             title="Simplex, duplex of external"
                         />

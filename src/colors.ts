@@ -30,7 +30,6 @@ export const onDarkHero = '#BCD6E0';
 export const onDarkMuted = '#7FA8B8';
 export const onDarkFaint = '#6E93A3'; // design footer-copy: #5C8090 (4.2:1)
 export const onDarkLink = '#8FB3C1';
-export const onDarkEyebrow = '#8FCBE6';
 
 // Vlakken en lijnen
 export const background = '#F3F7F8';

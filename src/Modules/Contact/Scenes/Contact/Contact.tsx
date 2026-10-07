@@ -107,12 +107,7 @@ export default function Contact() {
         <div className={classes.root}>
             <Container className={classes.layout}>
                 <div className={classes.info}>
-                    <SectionHeading
-                        id="contact-title"
-                        eyebrow="Contact"
-                        level="h1"
-                        title="Neem direct contact op"
-                    />
+                    <SectionHeading id="contact-title" level="h1" title="Neem direct contact op" />
                     <Typography className={classes.lead}>
                         Ontvang een op maat gemaakte offerte, geheel naar uw wensen — met de eerste
                         2 jaar all-in garantie en daarna nog 8 jaar garantie op alle onderdelen.

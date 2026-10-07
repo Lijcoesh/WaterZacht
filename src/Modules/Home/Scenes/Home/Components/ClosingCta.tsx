@@ -90,7 +90,6 @@ export default function ClosingCta() {
                     <div className={classes.text}>
                         <SectionHeading
                             id="afsluiting-title"
-                            eyebrow="Aan de slag"
                             title="Zacht water in huis? Wij komen graag bij u langs."
                             dark
                         />

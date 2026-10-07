@@ -133,12 +133,7 @@ export default function ParentCompany() {
             <Container>
                 <div className={classes.card}>
                     <div className={classes.story}>
-                        <SectionHeading
-                            id="lmvw-title"
-                            eyebrow="Het moederbedrijf"
-                            title={parentCompanyName}
-                            dark
-                        />
+                        <SectionHeading id="lmvw-title" title={parentCompanyName} dark />
                         <Typography className={classes.paragraph}>
                             Achter Water Zacht staat het loodgietersbedrijf dat Martin in 2006
                             oprichtte en dat door mond-tot-mondreclame is uitgegroeid tot een

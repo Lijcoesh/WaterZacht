@@ -120,11 +120,7 @@ export default function HowItWorks() {
         <section id="werking" className={classes.root} aria-labelledby="werking-title">
             <Container className={classes.layout}>
                 <div className={classes.intro}>
-                    <SectionHeading
-                        id="werking-title"
-                        eyebrow="02 · De werking"
-                        title="Hoe werkt een waterontharder?"
-                    />
+                    <SectionHeading id="werking-title" title="Hoe werkt een waterontharder?" />
                     <Typography className={classes.lead}>
                         De werking is gebaseerd op ionenuitwisseling: calciumionen (kalk) worden
                         vervangen door natriumionen (zout). Dit wordt bewerkstelligd door de hars.

@@ -73,7 +73,6 @@ export default function DrinkingWater() {
                 <div className={classes.text}>
                     <SectionHeading
                         id="drinkwater-title"
-                        eyebrow="05 · Drinkwaterzuivering"
                         title="Tot 98% eruit gefilterd wat er niet in thuishoort"
                     />
                     <Typography className={classes.lead}>

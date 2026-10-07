@@ -83,7 +83,6 @@ export default function About() {
                 <div className={classes.text}>
                     <SectionHeading
                         id="over-title"
-                        eyebrow="Over ons"
                         level="h1"
                         title="De loodgieter uit het Westland die van zacht water zijn vak maakte"
                     />

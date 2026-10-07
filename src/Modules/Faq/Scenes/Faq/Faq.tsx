@@ -95,12 +95,7 @@ export default function Faq() {
         <div className={classes.root}>
             <Container className={classes.layout}>
                 <div className={classes.intro}>
-                    <SectionHeading
-                        id="faq-title"
-                        eyebrow="Veelgestelde vragen"
-                        level="h1"
-                        title="Alles wat u wilt weten"
-                    />
+                    <SectionHeading id="faq-title" level="h1" title="Alles wat u wilt weten" />
                     <Typography className={classes.lead}>
                         Staat uw vraag er niet bij? Bel <Link href={phoneHref}>{phoneDisplay}</Link>{' '}
                         — u spreekt direct iemand die het toestel zelf plaatst.

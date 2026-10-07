@@ -158,7 +158,6 @@ export default function Comparison() {
                 <div>
                     <SectionHeading
                         id="verschil-title"
-                        eyebrow="03 · Zie het verschil"
                         title="Hard water tegenover zacht water"
                         dark
                     />

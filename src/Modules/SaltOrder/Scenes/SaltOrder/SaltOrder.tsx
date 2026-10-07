@@ -99,7 +99,6 @@ export default function SaltOrder() {
                 <div className={classes.info}>
                     <SectionHeading
                         id="salt-title"
-                        eyebrow="Zout bestellen"
                         level="h1"
                         title="Zout voor uw waterontharder"
                     />

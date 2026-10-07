@@ -38,14 +38,6 @@ const typography: TypographyVariantsOptions = {
         fontSize: '0.875rem',
         lineHeight: 1.5,
     },
-    // Sectielabel boven een kop ("01 · Voordelen")
-    overline: {
-        fontWeight: 500,
-        fontSize: '0.72rem',
-        lineHeight: 1,
-        letterSpacing: '0.22em',
-        textTransform: 'uppercase',
-    },
     // Kleine labels boven waarden en velden
     caption: {
         fontWeight: 500,

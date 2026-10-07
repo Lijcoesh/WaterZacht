@@ -3,7 +3,7 @@ import { alpha } from '@mui/material/styles';
 import { Link as RouterLink } from 'react-router';
 import { makeStyles } from 'tss-react/mui';
 
-import { green, navy, onDarkEyebrow, onDarkHero, onDarkMuted, white } from 'src/colors';
+import { navy, onDarkHero, onDarkMuted, white } from 'src/colors';
 import Photo from 'src/Components/Photo';
 import { phoneDisplay, phoneHref } from 'src/Config/contact';
 import hero from 'src/Resources/Images/hero.jpg';
@@ -44,20 +44,7 @@ const useStyles = makeStyles()(theme => ({
     text: {
         maxWidth: 680,
     },
-    eyebrow: {
-        display: 'flex',
-        alignItems: 'center',
-        gap: 12,
-        color: onDarkEyebrow,
-        '&::before': {
-            content: '""',
-            width: 34,
-            height: 1,
-            backgroundColor: green,
-        },
-    },
     title: {
-        marginTop: 24,
         color: white,
     },
     intro: {
@@ -132,9 +119,6 @@ export default function Hero() {
                 <div className={classes.overlay} />
                 <Container className={classes.content}>
                     <div className={classes.text}>
-                        <Typography variant="overline" component="p" className={classes.eyebrow}>
-                            Kinetico approved dealer · Westland
-                        </Typography>
                         <Typography id="hero-title" variant="h1" className={classes.title}>
                             Dé bescherming van uw apparatuur en gezondheid
                         </Typography>

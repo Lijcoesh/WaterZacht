@@ -5,7 +5,6 @@ In de volgorde waarin het werk af moet. Details van juridische en inhoudelijke p
 ## Nu (zonder de PO)
 
 ### VPS
-- [ ] Snapshot maken in het TransIP-paneel van de werkende situatie
 - [ ] Automatische beveiligingsupdates controleren: `systemctl status unattended-upgrades` is *active*
 - [ ] fail2ban installeren tegen het raden van wachtwoorden via SSH
 - [ ] Uptime-monitor instellen (bv. UptimeRobot) op de site

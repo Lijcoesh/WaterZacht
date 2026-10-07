@@ -255,7 +255,7 @@ export default function Systems() {
                             )}
                         >
                             <span className={classes.cardImage}>
-                                <Photo src={system.image} alt={system.title} />
+                                <Photo src={system.image} alt="" />
                             </span>
                             <Typography
                                 variant="caption"

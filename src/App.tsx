@@ -3,6 +3,7 @@ import { makeStyles } from 'tss-react/mui';
 
 import Footer from 'src/Components/Footer';
 import Header from 'src/Components/Header';
+import { useFocusMainOnNavigate } from 'src/Hooks/useFocusMainOnNavigate';
 import { useScrollToHash } from 'src/Hooks/useScrollToHash';
 import About from 'src/Modules/About/Scenes/About/About';
 import Contact from 'src/Modules/Contact/Scenes/Contact/Contact';
@@ -23,6 +24,8 @@ const useStyles = makeStyles()({
         flex: 1,
         display: 'flex',
         flexDirection: 'column',
+        // Krijgt focus via de skip-link en na navigatie, maar is zelf niet bedienbaar
+        outline: 'none',
     },
 });
 
@@ -30,6 +33,7 @@ export default function App() {
     const { classes } = useStyles();
 
     useScrollToHash();
+    useFocusMainOnNavigate();
 
     return (
         <div className={classes.root}>

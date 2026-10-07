@@ -45,6 +45,14 @@ Alleen voor one-off responsive overrides of korte tweaks — geen complexe style
 
 Kleurconstanten uit `src/colors.ts`, nooit hardcoded hex in componenten.
 
+## Focus
+
+Haal een focusrand nooit weg zonder vervanging. MUI-knoppen (alles op `ButtonBase`) krijgen hun rand centraal in `src/Theme/Components/layout.ts`. Een eigen bedienbaar element krijgt dezelfde rand:
+
+```tsx
+'&:focus-visible': { outline: `2px solid ${blue}`, outlineOffset: 2 }
+```
+
 ## Responsive
 
 MUI breakpoints, nooit eigen media queries:

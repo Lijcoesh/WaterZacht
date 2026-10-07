@@ -24,6 +24,11 @@ export function overrideMuiCssBaseline(): Overrides['MuiCssBaseline'] {
             '[id]': {
                 scrollMarginTop: 80,
             },
+            // MUI-knoppen tonen bij toetsenbordfocus alleen een vage ripple
+            '.MuiButtonBase-root.Mui-focusVisible': {
+                outline: `2px solid ${blue}`,
+                outlineOffset: 2,
+            },
         },
     };
 }

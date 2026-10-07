@@ -117,6 +117,6 @@ app.UseHttpsRedirection();
 app.UseRateLimiter();
 
 app.MapControllers();
-app.MapHealthChecks("/health");
+app.MapHealthChecks("/api/health");
 
 app.Run();

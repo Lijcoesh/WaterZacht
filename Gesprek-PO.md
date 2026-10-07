@@ -9,7 +9,7 @@ Punten voor het gesprek met de PO (Martin, Water Zacht). Wat afgesproken is, ver
 
 ## Hosting
 - [ ] **Ter info, nachtelijke herstart:** De server waar de site op word gehost doet een dagelijkse update in de nacht. Hierbij herstart de server. De site ligt er dan ongeveer een minuut uit. Hier heb ik zelf voor gekozen. Als je dit liever niet hebt is dat ook goed, ik heb het nu ingesteld omdat het mij wat moeite bespaard.
-- [ ] **Live status:** Zodra de site plat ligt (wat mij sterk lijkt aangezien de site vrijwel statisch is), krijg ik een melding op mijn telefoon. Ik heb een uptime dashboard die elke 5 seconde checkt of de site nog bereikbaar is. 
+- [ ] **Live status:** Zodra de site plat ligt (wat mij sterk lijkt aangezien de site vrijwel statisch is), krijg ik een melding op mijn telefoon. Ik heb een uptime dashboard die elke 5 minuten checkt of de site nog bereikbaar is. 
 
 ## Gegevens en teksen
 - [ ] Kloppen alle gegevens en teksten? Staan er geen dingen in die eigenlijk helemaal niet kloppen?

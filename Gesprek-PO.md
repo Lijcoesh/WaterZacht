@@ -4,6 +4,7 @@ Punten voor het gesprek met de PO (Martin, Water Zacht). Wat afgesproken is, ver
 
 ## Domein en mail
 - [ ] **Domein bij YourHosting:** Verhuiscode opvragen en verhuizen naar TransIP onder mijn account. Kijken wat de kosten zijn en of dit veranderd
+- [ ] **Mail bij YourHosting:** Welke mailadressen gebruik je nu, en op welke apparaten? Mail laten staan bij YourHosting (pakket blijft lopen, alleen het domein verhuist) of ook de mail naar TransIP (± €1 p/m excl. btw voor 3 mailboxen, YourHosting kan dan opgezegd worden, mail moet overgezet en opnieuw ingesteld worden op je telefoon/computer)?
 - [ ] **Brevo:** Brevo account aanmaken onder Martin zijn naam en mail zodat hij de mailtjes binnen krijgt. Keuze tussen 300 mails (150 bestellingen) per dag of 5000 mails (2500 bestellingen) per dag voor 9$
 - [ ] **Ontvangstadressen:** Welke mail adressen moeten waar worden gebruikt? `info@waterzacht.nl`, `contact@waterzacht.nl`, `zout@waterzacht.nl`?
 

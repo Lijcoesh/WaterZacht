@@ -65,6 +65,10 @@ Uit de bouw van de homepage naar het Claude Design "Variant B" (oktober 2026):
 - **Contrast**: aangepast t.o.v. het design: navy tekst op groene knoppen (wit haalde 2.3:1), en donkerdere tinten voor links, labels en grote cijfers (zie `src/colors.ts`). Laten bevestigen door de eigenaar/ontwerper.
 - **Blok over Loodgietersbedrijf Martin van Wingerden** (Over ons): tekst en dienstenlijst samengevat van lmvw.nl (oktober 2026). Laten bevestigen door de eigenaar, vooral "opgericht in 2006" en "vertrouwd adres in het Westland". Het lidmaatschap van Uneto-VNI van die site is bewust weggelaten (heet nu Techniek Nederland, niet gecontroleerd).
 
+Uit de demo op GitHub Pages (oktober 2026):
+
+- **`noindex`** in `index.html` houdt de demo uit zoekmachines. Weghalen bij de echte livegang. Bij een eigen domein ook `base` in `vite.config.ts` terugzetten naar `/` en de Pages-workflow heroverwegen.
+
 Uit het zoutbestelformulier (`/zout-bestellen`, oktober 2026):
 
 - **Zoutbestelformulier verstuurt niets.** `src/Modules/SaltOrder/Logic/sendSaltOrder.ts` faalt expres, net als het offerteformulier. De mail aan Martin staat klaar in `formatSaltOrderMail()`. Nodig: dezelfde backend/formulierdienst, plus de bevestigingsmail aan de klant die de PO wil ("bestelling is verzonden").

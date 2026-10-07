@@ -28,7 +28,7 @@ export default function PrivacyNotice(props: IProps) {
         <Typography className={cx(classes.root, className)}>
             Wij gebruiken uw gegevens alleen om uw {subject} af te handelen. Lees meer in onze{' '}
             <Link component={RouterLink} to="/privacy" target="_blank" rel="noopener">
-                privacyverklaring (opent in een nieuw tabblad)
+                privacyverklaring
             </Link>
             .
         </Typography>

@@ -67,7 +67,7 @@ Uit de bouw van de homepage naar het Claude Design "Variant B" (oktober 2026):
 
 Uit de demo op GitHub Pages (oktober 2026):
 
-- **`noindex`** in `index.html` houdt de demo uit zoekmachines. Weghalen bij de echte livegang. De productie draait op een eigen VPS (besloten oktober 2026): dan ook `base` in `vite.config.ts` terugzetten naar `/` en de Pages-workflow vervangen door een deploy naar de VPS.
+- **`noindex`** in `index.html` houdt de demo uit zoekmachines. Weghalen bij de echte livegang. De productie draait op een eigen VPS bij TransIP (besloten oktober 2026): dan ook `base` in `vite.config.ts` terugzetten naar `/` en de Pages-workflow vervangen door een deploy naar de VPS.
 - **VPS en privacy**: de hoster verwerkt bezoekers- en formulierdata. Kies een hoster in de EU, sluit een verwerkersovereenkomst af en vermeld de hoster in het privacybeleid. Webserver- en applicatielogs bevatten IP-adressen en mogelijk formulierinhoud: leg een bewaartermijn vast (logrotatie) en log geen formulierinhoud.
 
 Uit het zoutbestelformulier (`/zout-bestellen`, oktober 2026):

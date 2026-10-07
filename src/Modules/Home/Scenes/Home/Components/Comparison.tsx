@@ -20,7 +20,7 @@ function clamp(value: number) {
     return Math.min(maxPosition, Math.max(minPosition, Math.round(value)));
 }
 
-const useStyles = makeStyles()({
+const useStyles = makeStyles()(theme => ({
     root: {
         paddingTop: sectionSpacing,
         paddingBottom: sectionSpacing,
@@ -43,11 +43,16 @@ const useStyles = makeStyles()({
         position: 'relative',
         marginTop: 34,
         aspectRatio: '24 / 9',
-        minHeight: 320,
         overflow: 'hidden',
         backgroundColor: placeholderBackground,
         touchAction: 'none',
         userSelect: 'none',
+        [theme.breakpoints.down('md')]: {
+            aspectRatio: '16 / 9',
+        },
+        [theme.breakpoints.down('sm')]: {
+            aspectRatio: '4 / 3',
+        },
     },
     side: {
         position: 'absolute',
@@ -110,7 +115,7 @@ const useStyles = makeStyles()({
         color: blue,
         boxShadow: mediumShadow,
     },
-});
+}));
 
 export default function Comparison() {
     const { classes, cx } = useStyles();

@@ -61,6 +61,8 @@ MUI breakpoints, nooit eigen media queries:
 [theme.breakpoints.down('md')]: { flexDirection: 'column' }
 ```
 
+Zet geen `minHeight` naast `aspectRatio`: de browser rekent de minimale hoogte via de verhouding om naar een minimale breedte, en op een telefoon wordt het element dan breder dan het scherm. Geef kleinere schermen in plaats daarvan per breakpoint een hogere `aspectRatio`.
+
 ## MUI varianten
 
 Gebruik component-props (`variant`, `color`, `size`) in plaats van styles overriden:

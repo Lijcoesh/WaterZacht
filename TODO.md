@@ -9,7 +9,7 @@ In de volgorde waarin het werk af moet. Details van juridische en inhoudelijke p
 
 ### VPS
 - [ ] fail2ban installeren tegen het raden van wachtwoorden via SSH
-- [ ] Uptime-monitor instellen (bv. UptimeRobot) op de site
+- [ ] Uptime-monitor in UptimeRobot: één op de site, één op `/api/health`, meldingen via de app. Zolang het domein nog niet naar de VPS wijst op het IP-adres
 
 ### Code
 - [ ] Naamsvermelding voor de Wikimedia-foto's in de vergelijkingsslider (CC BY-SA 3.0), of ze vervangen door eigen foto's
@@ -27,6 +27,7 @@ In de volgorde waarin het werk af moet. Details van juridische en inhoudelijke p
 ## Na het gesprek (livegang)
 - [ ] Domein in `deploy/waterzacht.caddy` zetten, kopiëren naar de VPS en Caddy herladen
 - [ ] Brevo-key en afzender van Water Zacht in `/etc/waterzacht/api.env`, de `Mail__`-testregels eruit
+- [ ] De monitors in UptimeRobot van het IP-adres naar `https://waterzacht.nl` zetten
 - [ ] `noindex` uit `index.html` halen
 - [ ] GitHub Pages-workflow (`deploy.yml`) en `BASE_PATH` opruimen
 - [ ] Launch-checklist volledig nalopen

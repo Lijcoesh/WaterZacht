@@ -9,11 +9,20 @@ import droplet from 'src/Resources/Images/droplet.png';
 import { headerLogoHeight } from 'src/Theme/sizes';
 import { serifFontFamily } from 'src/Theme/typography';
 
-const navItems = [
+import MobileMenu from './MobileMenu';
+import type { MenuItem } from './MobileMenu';
+
+const navItems: MenuItem[] = [
     { to: '/', label: 'Home' },
     { to: '/systemen', label: 'Systemen' },
     { to: '/over-ons', label: 'Over ons' },
     { to: '/faq', label: 'FAQ' },
+];
+
+const mobileItems: MenuItem[] = [
+    ...navItems,
+    { to: '/zout-bestellen', label: 'Zout bestellen' },
+    { to: '/contact', label: 'Contact' },
 ];
 
 const useStyles = makeStyles()(theme => ({
@@ -115,8 +124,8 @@ const useStyles = makeStyles()(theme => ({
             backgroundColor: alpha(white, 0.12),
         },
     },
-    // Op smalle schermen alleen "Zout", zodat logo en beide knoppen naast elkaar passen
-    wide: {
+    // Op een telefoon staat "Zout bestellen" in het menu, zodat logo, Contact en de menuknop passen
+    hideOnPhone: {
         [theme.breakpoints.down('sm')]: {
             display: 'none',
         },
@@ -124,7 +133,7 @@ const useStyles = makeStyles()(theme => ({
 }));
 
 export default function Header() {
-    const { classes } = useStyles();
+    const { classes, cx } = useStyles();
 
     return (
         <>
@@ -164,9 +173,9 @@ export default function Header() {
                             component={RouterLink}
                             to="/zout-bestellen"
                             variant="outlined"
-                            className={classes.outlined}
+                            className={cx(classes.outlined, classes.hideOnPhone)}
                         >
-                            Zout<span className={classes.wide}>&nbsp;bestellen</span>
+                            Zout bestellen
                         </Button>
                         <Button
                             component={RouterLink}
@@ -176,6 +185,7 @@ export default function Header() {
                         >
                             Contact
                         </Button>
+                        <MobileMenu items={mobileItems} />
                     </div>
                 </Container>
             </AppBar>

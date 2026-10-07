@@ -19,13 +19,7 @@ In de volgorde waarin het werk af moet. Details van juridische en inhoudelijke p
 - [ ] Inloggen met een wachtwoord uitzetten (`PasswordAuthentication no`)
 
 ## Gesprek met de PO
-- [ ] Domein bij YourHosting: DNS-toegang, A/AAAA naar de VPS, MX-records laten staan
-- [ ] Brevo: account op naam van Water Zacht, domein `waterzacht.nl` verifiëren, afzenderadres kiezen
-- [ ] Ontvangstadressen `info@` en `zout@waterzacht.nl` bevestigen
-- [ ] Gegevens en teksten: KvK- en btw-nummer, privacyverklaring, garantie- en leveringsvoorwaarden, levertijd zout en afhaaltijden
-- [ ] Claims laten onderbouwen, foto's bevestigen (Martin, toestemming Kinetico), logo
-- [ ] Verwerkersovereenkomst (hosting door de ontwikkelaar, Brevo)
-- [ ] Teksten van de bevestigingsmail en het blok over Loodgietersbedrijf Martin van Wingerden laten bevestigen
+- [ ] Alle punten in `Gesprek-PO.md` doorlopen
 
 ## Na het gesprek (livegang)
 - [ ] Domein in `deploy/waterzacht.caddy` zetten, kopiëren naar de VPS en Caddy herladen

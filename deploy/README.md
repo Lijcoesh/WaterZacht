@@ -16,6 +16,17 @@ Gebruikers: `deploy` (GitHub logt hiermee in en mag alleen deze service herstart
 
 Eenmalig voor de hele VPS: `sudo apt install -y aspnetcore-runtime-10.0 caddy rsync`, de firewall (`ufw allow OpenSSH`, `80/tcp`, `443`), de `deploy`-gebruiker met een deploy-key, en [Caddyfile](Caddyfile) als `/etc/caddy/Caddyfile`.
 
+fail2ban blokkeert een IP-adres een uur na 5 mislukte SSH-logins binnen 10 minuten: `sudo apt install -y fail2ban`, dan in `/etc/fail2ban/jail.local`:
+```
+[sshd]
+enabled = true
+backend = systemd
+maxretry = 5
+findtime = 10m
+bantime = 1h
+```
+en `sudo systemctl enable --now fail2ban`. Controleren met `sudo fail2ban-client status sshd`. Jezelf buitengesloten? Log in via de console in het TransIP-paneel en doe `sudo fail2ban-client set sshd unbanip <IP>`.
+
 Per site (hier `waterzacht`, poort 5080; een volgende site krijgt een eigen naam en poort):
 
 1. Gebruiker en mappen:

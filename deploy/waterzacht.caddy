@@ -1,0 +1,18 @@
+# /etc/caddy/sites/waterzacht.caddy
+# Tot het domein naar de VPS wijst alleen http op het IP-adres. Daarna de eerste regel vervangen
+# door `waterzacht.nl, www.waterzacht.nl {`; Caddy regelt dan zelf HTTPS.
+http://85.10.151.178 {
+	encode zstd gzip
+
+	handle /api/* {
+		reverse_proxy 127.0.0.1:5080
+	}
+
+	handle {
+		root * /var/www/waterzacht/site
+		# Vite zet een hash in de bestandsnamen, dus die mogen een jaar in de cache
+		header /assets/* Cache-Control "public, max-age=31536000, immutable"
+		try_files {path} /index.html
+		file_server
+	}
+}

@@ -1,0 +1,2 @@
+# /etc/caddy/Caddyfile: elke site op de VPS heeft een eigen bestand in /etc/caddy/sites/.
+import /etc/caddy/sites/*.caddy

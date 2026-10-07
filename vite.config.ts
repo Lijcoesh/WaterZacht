@@ -4,9 +4,9 @@ import react from '@vitejs/plugin-react';
 import { defineConfig } from 'vite';
 
 // https://vite.dev/config/
-export default defineConfig(({ command }) => ({
-    // GitHub Pages serveert de site onder https://lijcoesh.github.io/WaterZacht/
-    base: command === 'build' ? '/WaterZacht/' : '/',
+export default defineConfig(() => ({
+    // De VPS serveert de site op /; de demo op GitHub Pages zet BASE_PATH=/WaterZacht/
+    base: process.env.BASE_PATH ?? '/',
     plugins: [react()],
     resolve: {
         alias: {

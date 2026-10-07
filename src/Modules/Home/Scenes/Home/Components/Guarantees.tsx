@@ -11,13 +11,13 @@ import { sansFontFamily } from 'src/Theme/typography';
 const periods = [
     {
         years: 2,
-        label: 'Jaar 1 – 2',
+        label: 'Jaar 1 - 2',
         title: 'All-in garantie',
         text: 'Alles inbegrepen, zonder onderhoud te hoeven plegen.',
     },
     {
         years: 8,
-        label: 'Jaar 3 – 10',
+        label: 'Jaar 3 - 10',
         title: 'Garantie op onderdelen',
         text: 'Daarna blijven alle onderdelen nog acht jaar onder garantie.',
     },

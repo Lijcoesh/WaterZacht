@@ -89,7 +89,7 @@ const methods: {
     {
         value: 'delivery',
         title: 'Bezorgen',
-        description: `Wij brengen het zout bij u thuis. Vanaf ${describeDeliveryMinimum()}.`,
+        description: `Wij brengen het zout bij u thuis.`,
         icon: <LocalShippingOutlinedIcon />,
     },
     {
@@ -321,8 +321,7 @@ export default function SaltOrderForm() {
                 </div>
                 {method === 'delivery' ? (
                     <Typography className={classes.minimum}>
-                        Bezorgen kan vanaf {describeDeliveryMinimum()}. Wilt u maar één maat? Zet de
-                        andere dan op 0.
+                        Bezorgen kan vanaf {describeDeliveryMinimum()}.
                     </Typography>
                 ) : (
                     <div className={classes.notice}>

@@ -68,6 +68,7 @@ Uit de bouw van de homepage naar het Claude Design "Variant B" (oktober 2026):
 Uit de demo op GitHub Pages (oktober 2026):
 
 - **`noindex`** in `index.html` houdt de demo uit zoekmachines. Weghalen bij de echte livegang. De productie draait op een eigen VPS bij TransIP (besloten oktober 2026): dan ook `base` in `vite.config.ts` terugzetten naar `/` en de Pages-workflow vervangen door een deploy naar de VPS.
+- **Domein en DNS**: `waterzacht.nl` staat met de huidige hosting bij YourHosting (de PO). Bij het omzetten naar de VPS: de MX-records (mail voor `info@`/`zout@waterzacht.nl`) laten staan, alleen de A/AAAA-records naar de VPS (`85.10.151.178`) wijzen. Tegelijk de SPF/DKIM-records van Brevo toevoegen. Samen met de PO doen; tot dan testen op het IP-adres.
 - **VPS en privacy**: de VPS (TransIP, Amsterdam) wordt beheerd door de ontwikkelaar en draait ook sites van andere klanten. Daarmee is de ontwikkelaar verwerker voor Water Zacht, met TransIP als subverwerker: verwerkersovereenkomst tussen Water Zacht en de ontwikkelaar afsluiten en de hosting vermelden in het privacybeleid. Webserver- en applicatielogs bevatten IP-adressen en mogelijk formulierinhoud: leg een bewaartermijn vast (logrotatie) en log geen formulierinhoud.
 
 Uit het zoutbestelformulier (`/zout-bestellen`, oktober 2026):

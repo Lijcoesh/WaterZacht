@@ -4,7 +4,7 @@
 
 | Bestand | Bron | Licentie |
 |---|---|---|
-| `logo.png`, `droplet.png` | Logo van Water Zacht, uit de Claude Design-export | Eigendom van Water Zacht (bevestigen bij oplevering) |
+| `logo.png`, `droplet.png` | Logo van Water Zacht, uit de Claude Design-export | Eigendom van Water Zacht (bevestigd als het echte logo, oktober 2026) |
 | `hero.jpg` | [99.films / Unsplash](https://unsplash.com/@99films), photo-1587527901949-ab0341697c1e | [Unsplash License](https://unsplash.com/license) |
 | `bathroom.jpg` | [Curology / Unsplash](https://unsplash.com/@curology), photo-1571781418606-70265b9cce90 | Unsplash License |
 | `appliances.jpg` | [iSawRed / Unsplash](https://unsplash.com/@isawred), photo-1660543228680-748e1abd1f9e | Unsplash License |

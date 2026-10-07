@@ -1,25 +1,25 @@
+import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
 import { Container, Typography } from '@mui/material';
 import { alpha } from '@mui/material/styles';
 import { makeStyles } from 'tss-react/mui';
 
 import { blue, green, navy, white } from 'src/colors';
-import { serifFontFamily } from 'src/Theme/typography';
+import SectionHeading from 'src/Components/SectionHeading';
+import { sansFontFamily } from 'src/Theme/typography';
 
-const guarantees = [
+// De balk toont de periodes naar verhouding: 2 van de 10 jaar all-in, de rest op onderdelen
+const periods = [
     {
-        value: '2 jaar',
+        years: 2,
+        label: 'Jaar 1 – 2',
         title: 'All-in garantie',
-        text: 'De eerste twee jaar alles inbegrepen, zonder onderhoud te hoeven plegen.',
+        text: 'Alles inbegrepen, zonder onderhoud te hoeven plegen.',
     },
     {
-        value: '+ 8 jaar',
-        title: 'Op alle onderdelen',
-        text: 'Samen 10 jaar garantie — en dat zonder onderhoudscontract.',
-    },
-    {
-        value: 'Elke 2 mnd',
-        title: 'E-mailservice zoutvat',
-        text: 'Wij herinneren u eraan uw zoutvat na te kijken.',
+        years: 8,
+        label: 'Jaar 3 – 10',
+        title: 'Garantie op onderdelen',
+        text: 'Daarna blijven alle onderdelen nog acht jaar onder garantie.',
     },
 ];
 
@@ -27,77 +27,158 @@ const useStyles = makeStyles()(theme => ({
     // Blauwe band als rustpunt tussen de lichte secties. Alle tekst is wit:
     // lichtere tinten halen geen 4.5:1 op dit blauw.
     root: {
+        paddingTop: 'clamp(48px, 5.6vw, 80px)',
+        paddingBottom: 'clamp(48px, 5.6vw, 80px)',
         backgroundColor: blue,
         backgroundImage: `linear-gradient(110deg, ${alpha(navy, 0)} 30%, ${alpha(navy, 0.35)} 100%)`,
     },
-    grid: {
+    layout: {
         display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
-    },
-    item: {
-        padding: 'clamp(36px, 4.4vw, 60px) 28px',
-        borderLeft: `1px solid ${alpha(white, 0.22)}`,
-        '&:first-of-type': {
-            paddingLeft: 0,
-            borderLeft: 0,
-        },
-        '&:last-of-type': {
-            paddingRight: 0,
-        },
-        [theme.breakpoints.down('sm')]: {
-            padding: '28px 0',
-            borderLeft: 0,
-            borderTop: `1px solid ${alpha(white, 0.22)}`,
-            '&:first-of-type': {
-                borderTop: 0,
-            },
+        gridTemplateColumns: 'minmax(0, 2fr) minmax(0, 1fr)',
+        gap: 'clamp(32px, 5vw, 80px)',
+        [theme.breakpoints.down('md')]: {
+            gridTemplateColumns: '1fr',
         },
     },
-    value: {
-        display: 'flex',
-        alignItems: 'center',
-        gap: 12,
-        fontFamily: serifFontFamily,
-        fontWeight: 300,
-        fontSize: 'clamp(34px, 3.2vw, 44px)',
-        lineHeight: 1,
+    subtitle: {
+        marginTop: 10,
+        fontSize: 17,
         color: white,
-        '&::before': {
-            content: '""',
-            width: 8,
-            height: 8,
-            borderRadius: '50%',
+    },
+    bar: {
+        display: 'flex',
+        gap: 3,
+        marginTop: 32,
+        height: 10,
+    },
+    segment: {
+        borderRadius: 5,
+        backgroundColor: alpha(white, 0.35),
+        '&:first-of-type': {
             backgroundColor: green,
         },
     },
-    title: {
-        marginTop: 16,
+    periods: {
+        display: 'grid',
+        gridTemplateColumns: '1fr 1fr',
+        gap: 'clamp(20px, 3vw, 40px)',
+        marginTop: 22,
+        [theme.breakpoints.down('sm')]: {
+            gridTemplateColumns: '1fr',
+        },
+    },
+    periodLabel: {
+        display: 'flex',
+        alignItems: 'center',
+        gap: 10,
+        color: white,
+        '&::before': {
+            content: '""',
+            width: 18,
+            height: 6,
+            borderRadius: 3,
+            backgroundColor: alpha(white, 0.35),
+        },
+    },
+    periodLabelFirst: {
+        '&::before': {
+            backgroundColor: green,
+        },
+    },
+    periodTitle: {
+        marginTop: 8,
+        fontFamily: sansFontFamily,
         fontSize: 16.5,
         color: white,
     },
     text: {
-        marginTop: 8,
+        marginTop: 6,
         fontSize: 15.5,
         lineHeight: 1.6,
+        color: white,
+    },
+    service: {
+        alignSelf: 'center',
+        paddingLeft: 'clamp(32px, 4vw, 56px)',
+        borderLeft: `1px solid ${alpha(white, 0.22)}`,
+        [theme.breakpoints.down('md')]: {
+            paddingLeft: 0,
+            paddingTop: 32,
+            borderLeft: 0,
+            borderTop: `1px solid ${alpha(white, 0.22)}`,
+        },
+    },
+    serviceIcon: {
+        display: 'grid',
+        placeItems: 'center',
+        width: 48,
+        height: 48,
+        borderRadius: '50%',
+        border: `1px solid ${alpha(white, 0.35)}`,
+        color: white,
+    },
+    serviceTitle: {
+        marginTop: 18,
+        fontFamily: sansFontFamily,
+        fontSize: 16.5,
         color: white,
     },
 }));
 
 export default function Guarantees() {
-    const { classes } = useStyles();
+    const { classes, cx } = useStyles();
 
     return (
-        <section className={classes.root} aria-label="Garantie en service">
-            <Container className={classes.grid}>
-                {guarantees.map(item => (
-                    <div key={item.title} className={classes.item}>
-                        <div className={classes.value}>{item.value}</div>
-                        <Typography variant="h4" component="h3" className={classes.title}>
-                            {item.title}
-                        </Typography>
-                        <Typography className={classes.text}>{item.text}</Typography>
+        <section className={classes.root} aria-labelledby="guarantees-title">
+            <Container className={classes.layout}>
+                <div>
+                    <SectionHeading id="guarantees-title" title="10 jaar garantie" dark />
+                    <Typography className={classes.subtitle}>Zonder onderhoudscontract.</Typography>
+                    <div className={classes.bar} aria-hidden="true">
+                        {periods.map(period => (
+                            <div
+                                key={period.label}
+                                className={classes.segment}
+                                style={{ flexGrow: period.years }}
+                            />
+                        ))}
                     </div>
-                ))}
+                    <div className={classes.periods}>
+                        {periods.map((period, index) => (
+                            <div key={period.label}>
+                                <Typography
+                                    variant="caption"
+                                    component="p"
+                                    className={cx(
+                                        classes.periodLabel,
+                                        index === 0 && classes.periodLabelFirst,
+                                    )}
+                                >
+                                    {period.label}
+                                </Typography>
+                                <Typography
+                                    variant="h4"
+                                    component="h3"
+                                    className={classes.periodTitle}
+                                >
+                                    {period.title}
+                                </Typography>
+                                <Typography className={classes.text}>{period.text}</Typography>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+                <div className={classes.service}>
+                    <div className={classes.serviceIcon} aria-hidden="true">
+                        <EmailOutlinedIcon />
+                    </div>
+                    <Typography variant="h4" component="h3" className={classes.serviceTitle}>
+                        E-mailservice zoutvat
+                    </Typography>
+                    <Typography className={classes.text}>
+                        Elke twee maanden een herinnering om uw zoutvat na te kijken.
+                    </Typography>
+                </div>
             </Container>
         </section>
     );

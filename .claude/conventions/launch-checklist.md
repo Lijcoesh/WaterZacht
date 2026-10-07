@@ -43,7 +43,7 @@ Dingen die makkelijk vergeten worden maar juridisch, ethisch of qua toegankelijk
 ## Licenties
 
 - [ ] **Fonts en afbeeldingen**: elke font, foto, illustratie en icoon heeft een licentie die commercieel gebruik toestaat; bronvermelding waar vereist. Leg herkomst vast (bv. in `src/Resources/` README of `LICENSES.md`).
-- [ ] **Dependencies**: geen pakketten met een licentie die niet bij het project past (bv. AGPL/GPL in een gesloten project).
+- [ ] **Dependencies**: geen pakketten met een licentie die niet bij het project past (bv. AGPL/GPL in een gesloten project). Bij een nieuwe npm- of NuGet-dependency: licentie checken en `LICENSES.md` bijwerken.
 
 ## Openstaand
 

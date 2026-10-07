@@ -8,6 +8,10 @@ export default defineConfig(() => ({
     // De VPS serveert de site op /; de demo op GitHub Pages zet BASE_PATH=/WaterZacht/
     base: process.env.BASE_PATH ?? '/',
     plugins: [react()],
+    build: {
+        // MIT/BSD/ISC eisen dat de copyrightvermelding met de gebundelde code meegaat
+        license: { fileName: 'licenses.md' },
+    },
     resolve: {
         alias: {
             src: fileURLToPath(new URL('./src', import.meta.url)),

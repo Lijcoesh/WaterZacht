@@ -61,7 +61,6 @@ Uit de bouw van de homepage naar het Claude Design "Variant B" (oktober 2026):
 - **Video in "De werking"**: het design toont een afspeelknop, maar er is geen video. De knop is weggelaten tot er een video-URL is (bij een YouTube-embed: privacy-enhanced mode en vermelden in het cookiebeleid).
 - **Claims laten onderbouwen**: "de Ferrari van de waterzuivering", "30% zuiniger in zout", "tot 98% gefilterd", "volgens het RIVM", "CE- en Vras-certificaat", "meest compacte systeem mét het hoogste rendement", "Kinetico approved dealer", en de gezondheidsclaim over eczeem/huidklachten. De teksten komen van de huidige site; de eigenaar moet ze kunnen onderbouwen of aanpassen.
 - **Zout verplicht bij Water Zacht afnemen "in verband met de garantie"** (FAQ): laten checken of dat zo in de voorwaarden staat.
-- **Logo**: bevestigen dat `logo.png`/`droplet.png` van Water Zacht zelf zijn (zie `src/Resources/README.md`).
 - **Contrast**: aangepast t.o.v. het design: navy tekst op groene knoppen (wit haalde 2.3:1), en donkerdere tinten voor links, labels en grote cijfers (zie `src/colors.ts`). Laten bevestigen door de eigenaar/ontwerper.
 - **Blok over Loodgietersbedrijf Martin van Wingerden** (Over ons): tekst en dienstenlijst samengevat van lmvw.nl (oktober 2026). Laten bevestigen door de eigenaar, vooral "opgericht in 2006" en "vertrouwd adres in het Westland". Het lidmaatschap van Uneto-VNI van die site is bewust weggelaten (heet nu Techniek Nederland, niet gecontroleerd).
 

@@ -168,6 +168,9 @@ export default function Footer() {
                 </div>
                 <div className={classes.bottom}>
                     <span>© {companyName} — waterontharders &amp; waterzuivering</span>
+                    <Link component={RouterLink} to="/privacy" className={classes.link}>
+                        Privacyverklaring
+                    </Link>
                 </div>
             </Container>
         </footer>

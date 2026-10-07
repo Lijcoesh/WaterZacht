@@ -7,6 +7,7 @@ import { makeStyles } from 'tss-react/mui';
 
 import { border, muted, navy, slate, surface } from 'src/colors';
 import FormField from 'src/Components/FormField';
+import PrivacyNotice from 'src/Components/PrivacyNotice';
 import SubmitErrorAlert from 'src/Components/SubmitErrorAlert';
 import { bagSizes, deliveryPackages, maxPickupBagsPerSize } from 'src/Config/saltOrder';
 import {
@@ -163,6 +164,9 @@ const useStyles = makeStyles()(theme => ({
     submit: {
         marginTop: 20,
         fontSize: 16.5,
+    },
+    privacy: {
+        marginTop: 14,
     },
 }));
 
@@ -464,6 +468,7 @@ export default function SaltOrderForm() {
                 >
                     {status === 'sending' ? 'Bezig met verzenden…' : 'Bestelling versturen'}
                 </Button>
+                <PrivacyNotice subject="bestelling" className={classes.privacy} />
             </OrderStep>
         </form>
     );

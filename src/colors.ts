@@ -44,3 +44,7 @@ export const borderInput = '#D3E1E7';
 
 export const white = '#ffffff';
 export const error = '#C62828';
+
+// Open punten in concept-teksten; moeten vóór de livegang weg zijn
+export const openPoint = '#FFE58A';
+export const openPointBorder = '#B98900';

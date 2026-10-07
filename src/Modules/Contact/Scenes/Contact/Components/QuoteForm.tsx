@@ -6,6 +6,7 @@ import { makeStyles } from 'tss-react/mui';
 
 import { greenDark, greenTintStrong, muted, navy, slate } from 'src/colors';
 import FormField from 'src/Components/FormField';
+import PrivacyNotice from 'src/Components/PrivacyNotice';
 import SubmitErrorAlert from 'src/Components/SubmitErrorAlert';
 import {
     hasErrors,
@@ -96,6 +97,9 @@ const useStyles = makeStyles()({
     submit: {
         marginTop: 24,
         fontSize: 16.5,
+    },
+    privacy: {
+        marginTop: 14,
     },
     sent: {
         padding: '24px 0',
@@ -222,6 +226,7 @@ export default function QuoteForm() {
             >
                 {status === 'sending' ? 'Bezig met verzenden…' : 'Verzenden'}
             </Button>
+            <PrivacyNotice subject="aanvraag" className={classes.privacy} />
         </form>
     );
 }

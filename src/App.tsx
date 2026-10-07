@@ -9,6 +9,7 @@ import About from 'src/Modules/About/Scenes/About/About';
 import Contact from 'src/Modules/Contact/Scenes/Contact/Contact';
 import Faq from 'src/Modules/Faq/Scenes/Faq/Faq';
 import Home from 'src/Modules/Home/Scenes/Home/Home';
+import Privacy from 'src/Modules/Privacy/Scenes/Privacy/Privacy';
 import SaltOrder from 'src/Modules/SaltOrder/Scenes/SaltOrder/SaltOrder';
 import Systems from 'src/Modules/Systems/Scenes/Systems/Systems';
 
@@ -46,6 +47,7 @@ export default function App() {
                     <Route path="/contact" element={<Contact />} />
                     <Route path="/faq" element={<Faq />} />
                     <Route path="/zout-bestellen" element={<SaltOrder />} />
+                    <Route path="/privacy" element={<Privacy />} />
                     <Route path="*" element={<Navigate to="/" replace />} />
                 </Routes>
             </main>

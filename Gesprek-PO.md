@@ -22,3 +22,6 @@ Punten voor het gesprek met de PO (Martin, Water Zacht). Wat afgesproken is, ver
 - [ ] Zijn er producten die juist wel belangrijk zijn die je graag wilt laten zien? moet er een product pagina komen?
 - [ ] Is een telefoon nummer en e-mail verplicht in de formulieren, of is 1 van de 2 genoeg?
 
+## Belangrijkste puntje
+- [ ] Lees alsjeblieft even de privacy verklaring goed door. De data die er nu in staat is grotendeels overgenomen van de oude site, maar dit moet echt goed kloppen
+

@@ -19,6 +19,7 @@ React 19 + Vite + TypeScript + MUI. Backend voor de formulieren in `server/`: AS
 - **Structuur & naming**: zie @.claude/conventions/structure.md
 - **Backend (`server/`)**: Controllers → Services + Validators, Commands met validatie-attributen, rate limiting, geen database. Zie @.claude/conventions/server.md
 - **Content**: geen bedragen op de site (prijzen, kosten, besparingen in euro's, btw), want de PO wil die niet hoeven bijhouden. Voor prijzen verwijzen naar contact of een offerte.
+- **Open punten in teksten**: wat de PO nog moet invullen of bevestigen, en elke bewering zonder bron (de oude site, de PO of de code), staat op de pagina zelf in een `OpenPoint` (geel, met het label "Open punt:"), niet als stille placeholder. Vóór de livegang moeten ze allemaal weg zijn.
 - **Geen social media** op de site (geen Facebook- of Instagram-knoppen, feeds of "Beoordeel uw ervaring"): de PO is daar geen fan van.
 - **TODO.md**: het werk in de volgorde waarin het af moet. Zet nieuw werk op de plek waar het in die volgorde hoort, en vink af of verwijder wat klaar is. Juridische en inhoudelijke details blijven in de launch-checklist. Vragen en beslissingen voor de PO gaan in `Gesprek-PO.md`.
 - **Commits**: subject begint met een werkwoord in de gebiedende wijs, Engels, geen punt.

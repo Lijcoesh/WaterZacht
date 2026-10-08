@@ -173,17 +173,18 @@ export default function Comparison() {
                 </Typography>
             </Container>
             <div ref={stageRef} className={classes.stage}>
+                {/* Elk label staat in zijn eigen kant, zodat de schuif het meeknipt */}
                 <div className={classes.side}>
                     <Photo src={heatingElementSoft} alt="Schoon warmte-element bij zacht water" />
+                    <span className={cx(classes.badge, classes.badgeSoft)}>Zacht water</span>
                 </div>
                 <div
                     className={classes.side}
                     style={{ clipPath: `inset(0 ${100 - position}% 0 0)` }}
                 >
                     <Photo src={heatingElementHard} alt="Verkalkt warmte-element bij hard water" />
+                    <span className={cx(classes.badge, classes.badgeHard)}>Hard water</span>
                 </div>
-                <span className={cx(classes.badge, classes.badgeHard)}>Hard water</span>
-                <span className={cx(classes.badge, classes.badgeSoft)}>Zacht water</span>
                 <div
                     role="slider"
                     tabIndex={0}

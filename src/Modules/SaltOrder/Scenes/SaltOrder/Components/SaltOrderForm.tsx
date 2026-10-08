@@ -209,7 +209,7 @@ export default function SaltOrderForm() {
         if (next === method) return;
 
         setMethod(next);
-        setCounts(next === 'delivery' ? deliveryMinimums : emptyCounts);
+        setCounts(emptyCounts);
     };
 
     const handleCountChange = (size: BagSize, count: number) => {

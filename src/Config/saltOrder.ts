@@ -5,8 +5,8 @@ import type { BagSize } from 'src/Modules/SaltOrder/Definitions/SaltOrder';
 
 export const bagSizes: BagSize[] = [15, 25];
 
-// Bij bezorgen staat elke maat op 0 of op minstens dit aantal. Kiest de klant voor bezorgen,
-// dan staan de tellers standaard op deze aantallen.
+// Bij bezorgen staat elke maat op 0 of op minstens dit aantal: de teller springt van 0 naar
+// dit aantal en weer terug.
 export const deliveryMinimums: Record<BagSize, number> = { 15: 6, 25: 4 };
 
 // Alleen een bovengrens tegen tikfouten.

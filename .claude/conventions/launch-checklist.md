@@ -76,4 +76,3 @@ Uit het zoutbestelformulier (`/zout-bestellen`, oktober 2026):
 - **Ontvangstadressen** `zout@waterzacht.nl` en `info@waterzacht.nl` (`server/appsettings.json`, sectie `Mail`): het zout-adres was een voorbeeld van de PO. Laten bevestigen en het adres aanmaken.
 - **Verwachte ophaaldatum**: de PO wil die tonen bij afhalen, maar de levertijd is onbekend. Zet `pickupLeadWorkdays` in `src/Config/saltOrder.ts` zodra die bekend is; tot dan staat er "Wij laten u weten wanneer uw zout klaarstaat". Ook openingstijden/afspraak voor afhalen ontbreken.
 - **Formulier**: adresvelden zijn alleen verplicht bij bezorgen.
-- **Vooraf ingevuld aantal bij bezorgen**: kiest de klant bezorgen, dan staan de tellers op 6×15 en 4×25 kg (samen 190 kg). Dat is een bewuste keuze van de ontwikkelaar (oktober 2026), maar het blijft een vooraf ingevulde, grotere bestelling. Bij de dark-patterns-check opnieuw bekijken, en laten bevestigen door de PO (zie `Gesprek-PO.md`).

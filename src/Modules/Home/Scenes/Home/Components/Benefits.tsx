@@ -107,9 +107,15 @@ const useStyles = makeStyles()(theme => ({
         backgroundColor: background,
         borderRadius: cardRadius,
     },
+    cardHeader: {
+        display: 'flex',
+        alignItems: 'center',
+        gap: 16,
+    },
     icon: {
-        width: 48,
-        height: 48,
+        flexShrink: 0,
+        width: 56,
+        height: 56,
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
@@ -117,15 +123,14 @@ const useStyles = makeStyles()(theme => ({
         backgroundColor: greenTintStrong,
         color: greenDark,
         '& svg': {
-            fontSize: 24,
+            fontSize: 30,
         },
     },
     cardTitle: {
-        marginTop: 18,
         color: navy,
     },
     cardText: {
-        marginTop: 8,
+        marginTop: 14,
         fontSize: 15.5,
         lineHeight: 1.6,
         color: slate,
@@ -168,12 +173,18 @@ export default function Benefits() {
                 <ul className={classes.cards}>
                     {benefits.map(benefit => (
                         <li key={benefit.title} className={classes.card}>
-                            <span className={classes.icon} aria-hidden="true">
-                                {benefit.icon}
-                            </span>
-                            <Typography variant="h4" component="h3" className={classes.cardTitle}>
-                                {benefit.title}
-                            </Typography>
+                            <div className={classes.cardHeader}>
+                                <span className={classes.icon} aria-hidden="true">
+                                    {benefit.icon}
+                                </span>
+                                <Typography
+                                    variant="h4"
+                                    component="h3"
+                                    className={classes.cardTitle}
+                                >
+                                    {benefit.title}
+                                </Typography>
+                            </div>
                             <Typography className={classes.cardText}>{benefit.text}</Typography>
                         </li>
                     ))}

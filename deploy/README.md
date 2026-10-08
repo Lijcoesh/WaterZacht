@@ -27,6 +27,13 @@ bantime = 1h
 ```
 en `sudo systemctl enable --now fail2ban`. Controleren met `sudo fail2ban-client status sshd`. Jezelf buitengesloten? Log in via de console in het TransIP-paneel en doe `sudo fail2ban-client set sshd unbanip <IP>`.
 
+Updates installeert `unattended-upgrades` elke ochtend. Vraagt een update om een herstart (meestal een nieuwe kernel), dan herstart de VPS om 07:00 Nederlandse tijd, als de ontwikkelaar er is. Dus `sudo timedatectl set-timezone Europe/Amsterdam`, en in `/etc/apt/apt.conf.d/52unattended-upgrades-local`:
+```
+Unattended-Upgrade::Automatic-Reboot "true";
+Unattended-Upgrade::Automatic-Reboot-Time "07:00";
+```
+Controleren met `apt-config dump | grep Automatic-Reboot`. Elke dienst moet op `enable` staan (`systemctl is-enabled <naam>`), anders komt hij na de herstart niet terug. Start de nieuwe kernel niet, kies dan via de console in het TransIP-paneel in GRUB (*Advanced options for Ubuntu*) de vorige.
+
 Per site (hier `waterzacht`, poort 5080; een volgende site krijgt een eigen naam en poort):
 
 1. Gebruiker en mappen:

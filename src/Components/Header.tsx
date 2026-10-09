@@ -1,9 +1,9 @@
 import { AppBar, Button, Container, Link } from '@mui/material';
 import { alpha } from '@mui/material/styles';
-import { Link as RouterLink } from 'react-router';
+import { NavLink, Link as RouterLink } from 'react-router';
 import { makeStyles } from 'tss-react/mui';
 
-import { navy, onDarkMuted, onDarkNav, white } from 'src/colors';
+import { green, navy, onDarkMuted, onDarkNav, white } from 'src/colors';
 import { companyName } from 'src/Config/contact';
 import droplet from 'src/Resources/Images/droplet.png';
 import { headerLogoHeight } from 'src/Theme/sizes';
@@ -19,10 +19,12 @@ const navItems: MenuItem[] = [
     { to: '/faq', label: 'FAQ' },
 ];
 
+// Op een telefoon staan de twee deuren (zout en offerte) direct onder Home
 const mobileItems: MenuItem[] = [
-    ...navItems,
+    navItems[0],
     { to: '/zout-bestellen', label: 'Zout bestellen' },
     { to: '/contact', label: 'Contact' },
+    ...navItems.slice(1),
 ];
 
 const useStyles = makeStyles()(theme => ({
@@ -81,9 +83,9 @@ const useStyles = makeStyles()(theme => ({
         display: 'block',
         marginTop: 5,
         fontWeight: 500,
-        fontSize: 9,
+        fontSize: theme.typography.caption.fontSize,
         lineHeight: 1,
-        letterSpacing: '0.22em',
+        letterSpacing: theme.typography.caption.letterSpacing,
         textTransform: 'uppercase',
         color: onDarkMuted,
         [theme.breakpoints.down('lg')]: {
@@ -106,6 +108,16 @@ const useStyles = makeStyles()(theme => ({
     },
     navLink: {
         color: onDarkNav,
+        '&:hover': {
+            color: white,
+        },
+        '&[aria-current="page"]': {
+            color: white,
+            textDecoration: 'underline',
+            textDecorationColor: green,
+            textDecorationThickness: 2,
+            textUnderlineOffset: 8,
+        },
     },
     actions: {
         display: 'flex',
@@ -160,8 +172,9 @@ export default function Header() {
                         {navItems.map(item => (
                             <Link
                                 key={item.to}
-                                component={RouterLink}
+                                component={NavLink}
                                 to={item.to}
+                                end
                                 className={classes.navLink}
                             >
                                 {item.label}

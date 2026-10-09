@@ -1,0 +1,703 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-09T13:39:17.232Z",
+  "title": "Design System: Water Zacht",
+  "extensions": {
+    "colorMeta": {
+      "green": {
+        "role": "primary",
+        "displayName": "Westlands Groen",
+        "tonalRamp": [
+          "oklch(15% 0.057 128.3)",
+          "oklch(26% 0.121 128.3)",
+          "oklch(37% 0.18 128.3)",
+          "oklch(48% 0.18 128.3)",
+          "oklch(60% 0.18 128.3)",
+          "oklch(71% 0.18 128.3)",
+          "oklch(83% 0.126 128.3)",
+          "oklch(95% 0.057 128.3)"
+        ]
+      },
+      "green-hover": {
+        "role": "primary",
+        "displayName": "Kasgroen (hover)",
+        "tonalRamp": [
+          "oklch(15% 0.053 129.8)",
+          "oklch(26% 0.112 129.8)",
+          "oklch(37% 0.166 129.8)",
+          "oklch(48% 0.166 129.8)",
+          "oklch(60% 0.166 129.8)",
+          "oklch(71% 0.166 129.8)",
+          "oklch(83% 0.117 129.8)",
+          "oklch(95% 0.053 129.8)"
+        ]
+      },
+      "green-dark": {
+        "role": "primary",
+        "displayName": "Kasgroen",
+        "tonalRamp": [
+          "oklch(15% 0.043 128.6)",
+          "oklch(26% 0.09 128.6)",
+          "oklch(37% 0.134 128.6)",
+          "oklch(48% 0.134 128.6)",
+          "oklch(60% 0.134 128.6)",
+          "oklch(71% 0.134 128.6)",
+          "oklch(83% 0.095 128.6)",
+          "oklch(95% 0.043 128.6)"
+        ]
+      },
+      "green-light": {
+        "role": "primary",
+        "displayName": "Lichtgroen",
+        "tonalRamp": [
+          "oklch(15% 0.053 127.8)",
+          "oklch(26% 0.112 127.8)",
+          "oklch(37% 0.167 127.8)",
+          "oklch(48% 0.167 127.8)",
+          "oklch(60% 0.167 127.8)",
+          "oklch(71% 0.167 127.8)",
+          "oklch(83% 0.118 127.8)",
+          "oklch(95% 0.053 127.8)"
+        ]
+      },
+      "green-tint": {
+        "role": "primary",
+        "displayName": "Groene Waas",
+        "tonalRamp": [
+          "oklch(15% 0.008 121.2)",
+          "oklch(26% 0.017 121.2)",
+          "oklch(37% 0.026 121.2)",
+          "oklch(48% 0.026 121.2)",
+          "oklch(60% 0.026 121.2)",
+          "oklch(71% 0.026 121.2)",
+          "oklch(83% 0.018 121.2)",
+          "oklch(95% 0.008 121.2)"
+        ]
+      },
+      "green-tint-strong": {
+        "role": "primary",
+        "displayName": "Groene Waas (sterk)",
+        "tonalRamp": [
+          "oklch(15% 0.012 122.1)",
+          "oklch(26% 0.025 122.1)",
+          "oklch(37% 0.037 122.1)",
+          "oklch(48% 0.037 122.1)",
+          "oklch(60% 0.037 122.1)",
+          "oklch(71% 0.037 122.1)",
+          "oklch(83% 0.026 122.1)",
+          "oklch(95% 0.012 122.1)"
+        ]
+      },
+      "blue": {
+        "role": "secondary",
+        "displayName": "Diep Leidingblauw",
+        "tonalRamp": [
+          "oklch(15% 0.036 235.2)",
+          "oklch(26% 0.075 235.2)",
+          "oklch(37% 0.111 235.2)",
+          "oklch(48% 0.111 235.2)",
+          "oklch(60% 0.111 235.2)",
+          "oklch(71% 0.111 235.2)",
+          "oklch(83% 0.078 235.2)",
+          "oklch(95% 0.036 235.2)"
+        ]
+      },
+      "blue-bright": {
+        "role": "secondary",
+        "displayName": "Helder Waterblauw",
+        "tonalRamp": [
+          "oklch(15% 0.04 234.3)",
+          "oklch(26% 0.083 234.3)",
+          "oklch(37% 0.124 234.3)",
+          "oklch(48% 0.124 234.3)",
+          "oklch(60% 0.124 234.3)",
+          "oklch(71% 0.124 234.3)",
+          "oklch(83% 0.087 234.3)",
+          "oklch(95% 0.04 234.3)"
+        ]
+      },
+      "blue-stripe": {
+        "role": "secondary",
+        "displayName": "Streepblauw",
+        "tonalRamp": [
+          "oklch(15% 0.028 225.7)",
+          "oklch(26% 0.059 225.7)",
+          "oklch(37% 0.088 225.7)",
+          "oklch(48% 0.088 225.7)",
+          "oklch(60% 0.088 225.7)",
+          "oklch(71% 0.088 225.7)",
+          "oklch(83% 0.062 225.7)",
+          "oklch(95% 0.028 225.7)"
+        ]
+      },
+      "navy": {
+        "role": "neutral",
+        "displayName": "Nachtnavy",
+        "tonalRamp": [
+          "oklch(15% 0.014 234.2)",
+          "oklch(26% 0.029 234.2)",
+          "oklch(37% 0.043 234.2)",
+          "oklch(48% 0.043 234.2)",
+          "oklch(60% 0.043 234.2)",
+          "oklch(71% 0.043 234.2)",
+          "oklch(83% 0.03 234.2)",
+          "oklch(95% 0.014 234.2)"
+        ]
+      },
+      "navy-deep": {
+        "role": "neutral",
+        "displayName": "Diepzee",
+        "tonalRamp": [
+          "oklch(15% 0.011 230.2)",
+          "oklch(26% 0.023 230.2)",
+          "oklch(37% 0.035 230.2)",
+          "oklch(48% 0.035 230.2)",
+          "oklch(60% 0.035 230.2)",
+          "oklch(71% 0.035 230.2)",
+          "oklch(83% 0.024 230.2)",
+          "oklch(95% 0.011 230.2)"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Inkt",
+        "tonalRamp": [
+          "oklch(15% 0.013 227.3)",
+          "oklch(26% 0.028 227.3)",
+          "oklch(37% 0.042 227.3)",
+          "oklch(48% 0.042 227.3)",
+          "oklch(60% 0.042 227.3)",
+          "oklch(71% 0.042 227.3)",
+          "oklch(83% 0.03 227.3)",
+          "oklch(95% 0.013 227.3)"
+        ]
+      },
+      "slate": {
+        "role": "neutral",
+        "displayName": "Leisteen",
+        "tonalRamp": [
+          "oklch(15% 0.014 225.1)",
+          "oklch(26% 0.028 225.1)",
+          "oklch(37% 0.042 225.1)",
+          "oklch(48% 0.042 225.1)",
+          "oklch(60% 0.042 225.1)",
+          "oklch(71% 0.042 225.1)",
+          "oklch(83% 0.03 225.1)",
+          "oklch(95% 0.014 225.1)"
+        ]
+      },
+      "slate-dark": {
+        "role": "neutral",
+        "displayName": "Donker Leisteen",
+        "tonalRamp": [
+          "oklch(15% 0.015 225.8)",
+          "oklch(26% 0.03 225.8)",
+          "oklch(37% 0.045 225.8)",
+          "oklch(48% 0.045 225.8)",
+          "oklch(60% 0.045 225.8)",
+          "oklch(71% 0.045 225.8)",
+          "oklch(83% 0.032 225.8)",
+          "oklch(95% 0.015 225.8)"
+        ]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Gedempt Leisteen",
+        "tonalRamp": [
+          "oklch(15% 0.012 225.3)",
+          "oklch(26% 0.026 225.3)",
+          "oklch(37% 0.038 225.3)",
+          "oklch(48% 0.038 225.3)",
+          "oklch(60% 0.038 225.3)",
+          "oklch(71% 0.038 225.3)",
+          "oklch(83% 0.027 225.3)",
+          "oklch(95% 0.012 225.3)"
+        ]
+      },
+      "on-dark-nav": {
+        "role": "neutral",
+        "displayName": "Navigatie op donker",
+        "tonalRamp": [
+          "oklch(15% 0.007 220.7)",
+          "oklch(26% 0.016 220.7)",
+          "oklch(37% 0.023 220.7)",
+          "oklch(48% 0.023 220.7)",
+          "oklch(60% 0.023 220.7)",
+          "oklch(71% 0.023 220.7)",
+          "oklch(83% 0.016 220.7)",
+          "oklch(95% 0.007 220.7)"
+        ]
+      },
+      "on-dark-hero": {
+        "role": "neutral",
+        "displayName": "Introtekst op donker",
+        "tonalRamp": [
+          "oklch(15% 0.01 222.9)",
+          "oklch(26% 0.021 222.9)",
+          "oklch(37% 0.031 222.9)",
+          "oklch(48% 0.031 222.9)",
+          "oklch(60% 0.031 222.9)",
+          "oklch(71% 0.031 222.9)",
+          "oklch(83% 0.022 222.9)",
+          "oklch(95% 0.01 222.9)"
+        ]
+      },
+      "on-dark-muted": {
+        "role": "neutral",
+        "displayName": "Gedempt op donker",
+        "tonalRamp": [
+          "oklch(15% 0.016 223.9)",
+          "oklch(26% 0.034 223.9)",
+          "oklch(37% 0.05 223.9)",
+          "oklch(48% 0.05 223.9)",
+          "oklch(60% 0.05 223.9)",
+          "oklch(71% 0.05 223.9)",
+          "oklch(83% 0.035 223.9)",
+          "oklch(95% 0.016 223.9)"
+        ]
+      },
+      "on-dark-faint": {
+        "role": "neutral",
+        "displayName": "Vaag op donker",
+        "tonalRamp": [
+          "oklch(15% 0.015 226.4)",
+          "oklch(26% 0.032 226.4)",
+          "oklch(37% 0.047 226.4)",
+          "oklch(48% 0.047 226.4)",
+          "oklch(60% 0.047 226.4)",
+          "oklch(71% 0.047 226.4)",
+          "oklch(83% 0.033 226.4)",
+          "oklch(95% 0.015 226.4)"
+        ]
+      },
+      "on-dark-link": {
+        "role": "neutral",
+        "displayName": "Link op donker",
+        "tonalRamp": [
+          "oklch(15% 0.014 223.6)",
+          "oklch(26% 0.029 223.6)",
+          "oklch(37% 0.044 223.6)",
+          "oklch(48% 0.044 223.6)",
+          "oklch(60% 0.044 223.6)",
+          "oklch(71% 0.044 223.6)",
+          "oklch(83% 0.031 223.6)",
+          "oklch(95% 0.014 223.6)"
+        ]
+      },
+      "background": {
+        "role": "neutral",
+        "displayName": "Mistgrijs",
+        "tonalRamp": [
+          "oklch(15% 0.001 214.3)",
+          "oklch(26% 0.003 214.3)",
+          "oklch(37% 0.004 214.3)",
+          "oklch(48% 0.004 214.3)",
+          "oklch(60% 0.004 214.3)",
+          "oklch(71% 0.004 214.3)",
+          "oklch(83% 0.003 214.3)",
+          "oklch(95% 0.001 214.3)"
+        ]
+      },
+      "surface": {
+        "role": "neutral",
+        "displayName": "Licht Vlak",
+        "tonalRamp": [
+          "oklch(15% 0.001 214.3)",
+          "oklch(26% 0.003 214.3)",
+          "oklch(37% 0.004 214.3)",
+          "oklch(48% 0.004 214.3)",
+          "oklch(60% 0.004 214.3)",
+          "oklch(71% 0.004 214.3)",
+          "oklch(83% 0.003 214.3)",
+          "oklch(95% 0.001 214.3)"
+        ]
+      },
+      "input-background": {
+        "role": "neutral",
+        "displayName": "Veldvlak",
+        "tonalRamp": [
+          "oklch(15% 0.001 219.5)",
+          "oklch(26% 0.002 219.5)",
+          "oklch(37% 0.003 219.5)",
+          "oklch(48% 0.003 219.5)",
+          "oklch(60% 0.003 219.5)",
+          "oklch(71% 0.003 219.5)",
+          "oklch(83% 0.002 219.5)",
+          "oklch(95% 0.001 219.5)"
+        ]
+      },
+      "placeholder-background": {
+        "role": "neutral",
+        "displayName": "Fotovak",
+        "tonalRamp": [
+          "oklch(15% 0.003 216.6)",
+          "oklch(26% 0.005 216.6)",
+          "oklch(37% 0.008 216.6)",
+          "oklch(48% 0.008 216.6)",
+          "oklch(60% 0.008 216.6)",
+          "oklch(71% 0.008 216.6)",
+          "oklch(83% 0.006 216.6)",
+          "oklch(95% 0.003 216.6)"
+        ]
+      },
+      "track": {
+        "role": "neutral",
+        "displayName": "Spoor",
+        "tonalRamp": [
+          "oklch(15% 0.002 219.6)",
+          "oklch(26% 0.005 219.6)",
+          "oklch(37% 0.007 219.6)",
+          "oklch(48% 0.007 219.6)",
+          "oklch(60% 0.007 219.6)",
+          "oklch(71% 0.007 219.6)",
+          "oklch(83% 0.005 219.6)",
+          "oklch(95% 0.002 219.6)"
+        ]
+      },
+      "border": {
+        "role": "neutral",
+        "displayName": "Haarlijn",
+        "tonalRamp": [
+          "oklch(15% 0.004 221.4)",
+          "oklch(26% 0.009 221.4)",
+          "oklch(37% 0.013 221.4)",
+          "oklch(48% 0.013 221.4)",
+          "oklch(60% 0.013 221.4)",
+          "oklch(71% 0.013 221.4)",
+          "oklch(83% 0.009 221.4)",
+          "oklch(95% 0.004 221.4)"
+        ]
+      },
+      "border-soft": {
+        "role": "neutral",
+        "displayName": "Zachte Haarlijn",
+        "tonalRamp": [
+          "oklch(15% 0.003 222.1)",
+          "oklch(26% 0.006 222.1)",
+          "oklch(37% 0.009 222.1)",
+          "oklch(48% 0.009 222.1)",
+          "oklch(60% 0.009 222.1)",
+          "oklch(71% 0.009 222.1)",
+          "oklch(83% 0.007 222.1)",
+          "oklch(95% 0.003 222.1)"
+        ]
+      },
+      "border-input": {
+        "role": "neutral",
+        "displayName": "Veldlijn",
+        "tonalRamp": [
+          "oklch(15% 0.005 225.2)",
+          "oklch(26% 0.012 225.2)",
+          "oklch(37% 0.017 225.2)",
+          "oklch(48% 0.017 225.2)",
+          "oklch(60% 0.017 225.2)",
+          "oklch(71% 0.017 225.2)",
+          "oklch(83% 0.012 225.2)",
+          "oklch(95% 0.005 225.2)"
+        ]
+      },
+      "white": {
+        "role": "neutral",
+        "displayName": "Kalkvrij Wit",
+        "tonalRamp": [
+          "oklch(15% 0 89.9)",
+          "oklch(26% 0 89.9)",
+          "oklch(37% 0 89.9)",
+          "oklch(48% 0 89.9)",
+          "oklch(60% 0 89.9)",
+          "oklch(71% 0 89.9)",
+          "oklch(83% 0 89.9)",
+          "oklch(95% 0 89.9)"
+        ]
+      },
+      "error": {
+        "role": "tertiary",
+        "displayName": "Foutrood",
+        "tonalRamp": [
+          "oklch(15% 0.062 26.7)",
+          "oklch(26% 0.13 26.7)",
+          "oklch(37% 0.194 26.7)",
+          "oklch(48% 0.194 26.7)",
+          "oklch(60% 0.194 26.7)",
+          "oklch(71% 0.194 26.7)",
+          "oklch(83% 0.136 26.7)",
+          "oklch(95% 0.062 26.7)"
+        ]
+      },
+      "open-point": {
+        "role": "tertiary",
+        "displayName": "Open-punt-geel",
+        "tonalRamp": [
+          "oklch(15% 0.037 93.9)",
+          "oklch(26% 0.077 93.9)",
+          "oklch(37% 0.115 93.9)",
+          "oklch(48% 0.115 93.9)",
+          "oklch(60% 0.115 93.9)",
+          "oklch(71% 0.115 93.9)",
+          "oklch(83% 0.081 93.9)",
+          "oklch(95% 0.037 93.9)"
+        ]
+      },
+      "open-point-border": {
+        "role": "tertiary",
+        "displayName": "Open-punt-rand",
+        "tonalRamp": [
+          "oklch(15% 0.043 83.6)",
+          "oklch(26% 0.091 83.6)",
+          "oklch(37% 0.135 83.6)",
+          "oklch(48% 0.135 83.6)",
+          "oklch(60% 0.135 83.6)",
+          "oklch(71% 0.135 83.6)",
+          "oklch(83% 0.095 83.6)",
+          "oklch(95% 0.043 83.6)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "De h1 in hero of paginakop, één per pagina."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Sectiekoppen (h2) via SectionHeading."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Kleinere serif-koppen (h3)."
+      },
+      "title-sans": {
+        "displayName": "Title Sans",
+        "purpose": "Kaarttitels en periodes (h4)."
+      },
+      "stat": {
+        "displayName": "Stat",
+        "purpose": "Grote kerncijfers, zoals in de statsbalk van de hero."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Broodtekst; intro’s begrensd op ±33–36em."
+      },
+      "body-small": {
+        "displayName": "Body Small",
+        "purpose": "Hulpteksten en kleine beschrijvingen."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Kleine labels in hoofdletters boven waarden en velden."
+      },
+      "button": {
+        "displayName": "Button",
+        "purpose": "Knoptekst, nooit in hoofdletters."
+      },
+      "lead": {
+        "displayName": "Lead",
+        "purpose": "De intro onder de h1 in de hero."
+      }
+    },
+    "shadows": [
+      {
+        "name": "soft",
+        "value": "0 1px 2px rgba(6, 34, 48, 0.06)",
+        "purpose": "MUI elevation 1–2; nauwelijks zichtbaar."
+      },
+      {
+        "name": "medium",
+        "value": "0 8px 20px -8px rgba(6, 34, 48, 0.6)",
+        "purpose": "Alleen voor iets wat je vastpakt, zoals de greep van de vergelijkingsslider."
+      },
+      {
+        "name": "strong",
+        "value": "0 12px 24px -12px rgba(6, 34, 48, 0.6)",
+        "purpose": "Elevation 9+, nu ongebruikt."
+      },
+      {
+        "name": "checked-inset",
+        "value": "inset 0 0 0 1px #557B10",
+        "purpose": "Dubbele rand van een gekozen keuzekaart."
+      }
+    ],
+    "motion": [
+      {
+        "name": "quick",
+        "value": "0.15s ease",
+        "purpose": "Rand- en vlakwissel van keuzekaarten en radio’s."
+      },
+      {
+        "name": "standard",
+        "value": "0.2s ease",
+        "purpose": "Hover van knoppen en keuzeknoppen."
+      },
+      {
+        "name": "reveal",
+        "value": "0.25s ease",
+        "purpose": "Draaien van het accordion-icoon."
+      },
+      {
+        "name": "progress",
+        "value": "0.4s ease",
+        "purpose": "Voortgangsbalk in \"De werking\"."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "sm",
+        "value": "600px"
+      },
+      {
+        "name": "md",
+        "value": "900px"
+      },
+      {
+        "name": "lg",
+        "value": "1200px"
+      },
+      {
+        "name": "xl",
+        "value": "1536px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primaire knop",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "De hoofdactie: offerte aanvragen, zout bestellen, verzenden.",
+      "html": "<button class=\"ds-btn-primary\">Gratis offerte op maat</button>",
+      "css": ".ds-btn-primary { background: #86BC25; color: #062230; font-family: \"IBM Plex Sans\", system-ui, -apple-system, \"Segoe UI\", sans-serif; font-weight: 600; font-size: 0.9rem; line-height: 1; padding: 11px 18px; border: 0; border-radius: 3px; cursor: pointer; transition: filter .2s ease; } .ds-btn-primary:hover { filter: brightness(0.93); } .ds-btn-primary:focus-visible { outline: 2px solid #0D77A5; outline-offset: 2px; }"
+    },
+    {
+      "name": "Outline-knop op donker",
+      "kind": "button",
+      "refersTo": "button-outline-on-dark",
+      "description": "De tweede actie op navy: bellen of zout bestellen naast de primaire knop.",
+      "html": "<div class=\"ds-dark\"><button class=\"ds-btn-outline\">Bel 0174-240052</button></div>",
+      "css": ".ds-dark { background: #062230; padding: 24px; } .ds-btn-outline { background: transparent; color: #FFFFFF; font-family: \"IBM Plex Sans\", system-ui, -apple-system, \"Segoe UI\", sans-serif; font-weight: 600; font-size: 0.9rem; line-height: 1; padding: 10px 17px; border: 1px solid rgba(255,255,255,0.4); border-radius: 3px; cursor: pointer; transition: background-color .2s ease; } .ds-btn-outline:hover { background: rgba(255,255,255,0.12); } .ds-btn-outline:focus-visible { outline: 2px solid #0D77A5; outline-offset: 2px; }"
+    },
+    {
+      "name": "Keuzeknoppen",
+      "kind": "chip",
+      "refersTo": "step-toggle",
+      "description": "Stappen in \"De werking\": licht vlak, gekozen vol navy.",
+      "html": "<div class=\"ds-toggles\" role=\"group\"><button class=\"ds-toggle ds-toggle--on\">01 Hars</button><button class=\"ds-toggle\">02 Zoutvat</button></div>",
+      "css": ".ds-toggles { display: flex; gap: 8px; } .ds-toggle { padding: 12px 16px; border: 1px solid #DCE7EB; border-radius: 3px; background: #F5F9FA; color: #0B2A36; font-family: \"IBM Plex Sans\", system-ui, -apple-system, \"Segoe UI\", sans-serif; font-weight: 600; font-size: 0.9rem; line-height: 1; cursor: pointer; transition: all .2s ease; } .ds-toggle:hover { background: #DCE7EB; } .ds-toggle--on, .ds-toggle--on:hover { background: #062230; border-color: #062230; color: #FFFFFF; } .ds-toggle:focus-visible { outline: 2px solid #0D77A5; outline-offset: 2px; }"
+    },
+    {
+      "name": "Tekstveld",
+      "kind": "input",
+      "refersTo": "input-filled",
+      "description": "Gevuld veld zonder hoeken; de onderlijn wordt blauw bij focus. Label altijd erboven.",
+      "html": "<label class=\"ds-field\"><span class=\"ds-field__label\">Naam</span><input class=\"ds-input\" placeholder=\"Uw naam\" /></label>",
+      "css": ".ds-field { display: grid; gap: 6px; font-family: \"IBM Plex Sans\", system-ui, -apple-system, \"Segoe UI\", sans-serif; } .ds-field__label { font-weight: 600; font-size: 0.875rem; color: #062230; } .ds-input { padding: 13px 14px; border: 0; border-bottom: 1px solid #D3E1E7; border-radius: 0; background: #F8FBFC; color: #0B2A36; font: inherit; font-size: 1rem; outline: none; transition: border-color .15s ease; } .ds-input::placeholder { color: #56737F; } .ds-input:focus { border-bottom: 2px solid #0D77A5; padding-bottom: 12px; }"
+    },
+    {
+      "name": "Keuzekaart",
+      "kind": "card",
+      "refersTo": "choice-card-checked",
+      "description": "Selecteerbare kaart rond een zelf gestylede native radio (afhalen/bezorgen).",
+      "html": "<div class=\"ds-choices\"><label class=\"ds-choice ds-choice--on\"><input type=\"radio\" name=\"ds\" checked class=\"ds-radio\" /><span><strong>Afhalen</strong><small>In De Lier</small></span></label><label class=\"ds-choice\"><input type=\"radio\" name=\"ds\" class=\"ds-radio\" /><span><strong>Bezorgen</strong><small>Vanaf een minimum aantal zakken</small></span></label></div>",
+      "css": ".ds-choices { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; font-family: \"IBM Plex Sans\", system-ui, -apple-system, \"Segoe UI\", sans-serif; } .ds-choice { display: flex; gap: 14px; padding: 18px 18px 18px 16px; background: #FFFFFF; border: 1px solid #DCE7EB; border-radius: 4px; cursor: pointer; transition: border-color .15s ease, background-color .15s ease, box-shadow .15s ease; } .ds-choice:hover { border-color: #56737F; } .ds-choice--on, .ds-choice--on:hover { background: #F1F7E4; border-color: #557B10; box-shadow: inset 0 0 0 1px #557B10; } .ds-choice strong { display: block; font-weight: 600; font-size: 16px; color: #062230; } .ds-choice small { display: block; margin-top: 4px; font-size: 14.5px; color: #4E6E7B; } .ds-radio { appearance: none; flex-shrink: 0; width: 22px; height: 22px; margin: 1px 0 0; border-radius: 50%; border: 2px solid #56737F; background: #FFFFFF; } .ds-radio:checked { border-color: #557B10; background: #557B10; box-shadow: inset 0 0 0 4px #FFFFFF; } .ds-radio:focus-visible { outline: 2px solid #0D77A5; outline-offset: 3px; }"
+    },
+    {
+      "name": "Voordeelkaart",
+      "kind": "card",
+      "refersTo": "benefit-card",
+      "description": "Vlakke kaart met rond icoonbadge en sans-titel; geen schaduw.",
+      "html": "<div class=\"ds-benefit\"><div class=\"ds-benefit__head\"><span class=\"ds-badge\" aria-hidden=\"true\"><svg viewBox=\"0 0 24 24\" width=\"30\" height=\"30\"><path fill=\"currentColor\" d=\"M12 2c-5.33 4.55-8 8.48-8 11.8 0 4.98 3.8 8.2 8 8.2s8-3.22 8-8.2c0-3.32-2.67-7.25-8-11.8z\"/></svg></span><h3>Betere kwaliteit water</h3></div><p>Minder kalk, een betere smaak.</p></div>",
+      "css": ".ds-benefit { padding: 24px; background: #F3F7F8; border-radius: 4px; font-family: \"IBM Plex Sans\", system-ui, -apple-system, \"Segoe UI\", sans-serif; } .ds-benefit__head { display: flex; align-items: center; gap: 16px; } .ds-badge { flex-shrink: 0; width: 56px; height: 56px; display: flex; align-items: center; justify-content: center; border-radius: 50%; background: #EEF7DC; color: #557B10; } .ds-benefit h3 { margin: 0; font-weight: 600; font-size: 1.125rem; line-height: 1.3; color: #062230; } .ds-benefit p { margin: 12px 0 0; font-size: 1.03rem; line-height: 1.65; color: #4E6E7B; }"
+    },
+    {
+      "name": "Afsluitend navy-blok",
+      "kind": "custom",
+      "refersTo": "cta-card",
+      "description": "Navy blok met groene bovenrand en blauwe gloed in de hoek; de handtekening van de donkere ankers.",
+      "html": "<div class=\"ds-cta\"><h2>Zacht water in huis? Wij komen graag bij u langs.</h2><button class=\"ds-cta__btn\">Gratis offerte op maat</button></div>",
+      "css": ".ds-cta { position: relative; overflow: hidden; padding: 48px; border-radius: 4px; background-color: #062230; background-image: radial-gradient(circle at 100% 0%, rgba(13,119,165,0.45) 0%, rgba(13,119,165,0) 55%); } .ds-cta::before { content: \"\"; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: #86BC25; } .ds-cta h2 { margin: 0 0 24px; font-family: \"Newsreader\", Georgia, serif; font-weight: 400; font-size: 36px; line-height: 1.1; letter-spacing: -0.02em; color: #FFFFFF; } .ds-cta__btn { background: #86BC25; color: #062230; font-family: \"IBM Plex Sans\", system-ui, -apple-system, \"Segoe UI\", sans-serif; font-weight: 600; font-size: 1rem; line-height: 1; padding: 16px 28px; border: 0; border-radius: 3px; cursor: pointer; } .ds-cta__btn:hover { filter: brightness(0.93); } .ds-cta__btn:focus-visible { outline: 2px solid #0D77A5; outline-offset: 2px; }"
+    },
+    {
+      "name": "Header",
+      "kind": "nav",
+      "refersTo": "header",
+      "description": "Sticky navy-balk met serif-merknaam, sans-navigatie en twee knoppen.",
+      "html": "<nav class=\"ds-nav\"><span class=\"ds-nav__brand\">Water Zacht</span><a href=\"#\" aria-current=\"page\">Systemen</a><a href=\"#\">Over ons</a><a href=\"#\">FAQ</a><button class=\"ds-nav__btn\">Contact</button></nav>",
+      "css": ".ds-nav { display: flex; align-items: center; gap: 24px; padding: 14px 28px; background: rgba(6,34,48,0.96); backdrop-filter: blur(8px); border-bottom: 1px solid rgba(255,255,255,0.12); font-family: \"IBM Plex Sans\", system-ui, -apple-system, \"Segoe UI\", sans-serif; font-weight: 500; font-size: 14px; } .ds-nav__brand { margin-right: auto; font-family: \"Newsreader\", Georgia, serif; font-weight: 500; font-size: 21px; color: #FFFFFF; } .ds-nav a { color: #CFE3EA; text-decoration: none; } .ds-nav a:hover { color: #FFFFFF; } .ds-nav a[aria-current=\"page\"] { color: #FFFFFF; text-decoration: underline; text-decoration-color: #86BC25; text-decoration-thickness: 2px; text-underline-offset: 8px; } .ds-nav a:focus-visible { outline: 2px solid #0D77A5; outline-offset: 2px; } .ds-nav__btn { background: #86BC25; color: #062230; font: inherit; font-weight: 600; padding: 11px 18px; border: 0; border-radius: 3px; cursor: pointer; } .ds-nav__btn:focus-visible { outline: 2px solid #0D77A5; outline-offset: 2px; }"
+    },
+    {
+      "name": "Onderstreepte link",
+      "kind": "custom",
+      "refersTo": "underline-link",
+      "description": "\"Lees meer\"-actie binnen secties: navy met groene onderrand.",
+      "html": "<a class=\"ds-ulink\" href=\"#\">Vraag een advies aan huis aan</a>",
+      "css": ".ds-ulink { display: inline-block; padding-bottom: 3px; border-bottom: 1px solid #86BC25; font-family: \"IBM Plex Sans\", system-ui, -apple-system, \"Segoe UI\", sans-serif; font-weight: 600; font-size: 0.97rem; line-height: 1.4; color: #062230; text-decoration: none; } .ds-ulink:hover { color: #557B10; } .ds-ulink:focus-visible { outline: 2px solid #0D77A5; outline-offset: 2px; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "Strak vakwerk",
+    "overview": "De site is gebouwd zoals een goede loodgieter een installatie oplevert: leidingen recht en evenwijdig, elke verbinding precies, niets wat er niet hoeft te zitten, en materiaal dat er na jaren nog goed uitziet. Luxe zit hier niet in glans of decoratie, maar in afwerking: een serif die rust uitstraalt in de koppen, ruime witmarges, bijna rechte hoeken en kleurvlakken die strak tegen elkaar aan liggen.\n\nHet palet is koel en schoon (blauwgrijze vlakken, diep navy), met één levendig merkgroen als handtekening. Diepte komt van wisselende vlakken, niet van schaduw: wit, lichtblauwgrijs, navy en een blauwe band wisselen elkaar af als de lagen van een doorsnede. Zo leest een lange homepage als een rustige reeks hoofdstukken.\n\nDe dichtheid is laag tot gemiddeld: grote koppen en veel ruimte op de verkooppagina's, compacter en heel duidelijk in de formulieren (offerte, zout bestellen), waar de bezoeker iets moet doen.",
+    "keyCharacteristics": [
+      "Newsreader-serif voor koppen en grote cijfers, IBM Plex Sans voor alles wat je leest of bedient.",
+      "Navy als fundament (header, hero, donkere blokken), groen als accent: knoppen, een dunne bovenrand, vinkjes.",
+      "Vlak in rust: geen kaartschaduwen; lagen via tonale vlakken.",
+      "Bijna rechte hoeken (3–4px); velden zonder hoeken met alleen een onderlijn.",
+      "Contrast boven het oorspronkelijke design: tinten zijn waar nodig donkerder gemaakt voor WCAG AA."
+    ],
+    "rules": [
+      {
+        "name": "De Navy-op-Groen-regel",
+        "body": "Tekst op een groene knop is altijd navy, nooit wit. Wit op dit groen haalt 2.3:1, navy 7.2:1.",
+        "section": "colors"
+      },
+      {
+        "name": "De Groene-Draad-regel",
+        "body": "Groen is een accent: knoppen, een bovenrand, een vinkje, een balksegment. Een groot groen vlak of groene broodtekst hoort er niet in.",
+        "section": "colors"
+      },
+      {
+        "name": "De Contrast-wint-regel",
+        "body": "Waar `src/colors.ts` bij een kleur de waarde uit het design noemt, is die bewust verlaten om AA te halen. Zet hem nooit terug.",
+        "section": "colors"
+      },
+      {
+        "name": "De Serif-vertelt-regel",
+        "body": "Newsreader is voor koppen en grote cijfers: wat de bezoeker leest als verhaal. Alles wat je bedient (knoppen, velden, navigatie, labels) is Plex Sans.",
+        "section": "typography"
+      },
+      {
+        "name": "De Gewone-Letters-regel",
+        "body": "Knoppen en koppen staan nooit in hoofdletters; hoofdletters met spatiëring zijn alleen voor het kleine label.",
+        "section": "typography"
+      },
+      {
+        "name": "De Waterpas-regel",
+        "body": "Alles lijnt uit op de containerrand. Een kolom of statscel die afwijkt (zoals de eerste en laatste statscel zonder buitenpadding), doet dat om de buitenrand recht te houden.",
+        "section": "layout"
+      },
+      {
+        "name": "De Vlak-in-rust-regel",
+        "body": "Geen schaduw onder kaarten, foto's of secties. Een schaduw betekent \"dit kun je bewegen\", niet \"dit is belangrijk\".",
+        "section": "elevation"
+      },
+      {
+        "name": "De Drie-Pixel-regel",
+        "body": "Bedieningselementen 3px, vlakken 4px, velden 0. Groter afronden maakt het zachter en goedkoper; dat is niet deze wereld.",
+        "section": "shapes"
+      }
+    ],
+    "dos": [
+      "Do importeer elke kleur uit `src/colors.ts` en elke maat uit `src/Theme/sizes.ts`; nooit hardcoded hex.",
+      "Do zet navy tekst op groene vlakken en alleen wit op het blauw van de garantieband.",
+      "Do wissel sectieachtergronden af (white / background, met navy of blue als anker) om secties te scheiden.",
+      "Do houd elke focusrand zichtbaar: 2px blue, offset 2 (3 bij radio's).",
+      "Do respecteer `prefers-reduced-motion`; bewegingen blijven kort (0.15–0.25s ease)."
+    ],
+    "donts": [
+      "Don't gebruik kaartschaduwen of zwevende kaarten; schaduw is alleen voor iets wat je vastpakt.",
+      "Don't rond verder af dan 4px, behalve bij wat echt rond is (badges, radio's).",
+      "Don't zet groen als tekst op wit of als groot vlak.",
+      "Don't gebruik Newsreader voor knoppen, labels of velden, en zet knoppen niet in hoofdletters.",
+      "Don't gebruik de lichtere waarden uit het oorspronkelijke design waar `src/colors.ts` ze heeft verdonkerd.",
+      "Don't zet social-mediaknoppen of feeds in het ontwerp."
+    ]
+  }
+}

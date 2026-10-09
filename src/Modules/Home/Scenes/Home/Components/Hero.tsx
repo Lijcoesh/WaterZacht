@@ -1,19 +1,20 @@
-import { Button, Container, Typography } from '@mui/material';
+import { Button, Container, Link, Typography } from '@mui/material';
 import { alpha } from '@mui/material/styles';
 import { Link as RouterLink } from 'react-router';
 import { makeStyles } from 'tss-react/mui';
 
-import { navy, onDarkHero, onDarkMuted, white } from 'src/colors';
+import { green, navy, onDarkHero, onDarkMuted, white } from 'src/colors';
 import Photo from 'src/Components/Photo';
 import { phoneDisplay, phoneHref } from 'src/Config/contact';
 import hero from 'src/Resources/Images/hero.jpg';
 import { serifFontFamily } from 'src/Theme/typography';
 
+// De vakman eerst: lokaal en eigen loodgieters vóór de Kinetico-feiten
 const stats = [
-    { value: '€ 250,-', label: 'gemiddelde besparing per jaar' },
+    { value: 'Westland', label: 'Persoonlijk advies bij u thuis' },
+    { value: 'Eigen loodgieters', label: 'Installatie en service in eigen hand' },
     { value: '10 jaar', label: 'garantie zonder onderhoudscontract' },
     { value: 'Geen elektra', label: 'regeneratie op waterdruk, sinds 1970' },
-    { value: '30%', label: 'zuiniger in zoutverbruik' },
 ];
 
 const useStyles = makeStyles()(theme => ({
@@ -66,6 +67,22 @@ const useStyles = makeStyles()(theme => ({
         '&:hover': {
             borderColor: alpha(white, 0.4),
             backgroundColor: alpha(white, 0.12),
+        },
+    },
+    // Tweede deur voor bestaande klanten, rustiger dan de knoppen
+    saltNote: {
+        marginTop: 20,
+        color: onDarkHero,
+    },
+    saltLink: {
+        marginLeft: 6,
+        paddingBottom: 2,
+        borderBottom: `1px solid ${green}`,
+        fontWeight: 600,
+        color: white,
+        '&:hover': {
+            color: white,
+            borderBottomColor: white,
         },
     },
     stats: {
@@ -146,6 +163,16 @@ export default function Hero() {
                                 Bel {phoneDisplay}
                             </Button>
                         </div>
+                        <Typography className={classes.saltNote}>
+                            Heeft u al een ontharder?
+                            <Link
+                                component={RouterLink}
+                                to="/zout-bestellen"
+                                className={classes.saltLink}
+                            >
+                                Zout bestellen
+                            </Link>
+                        </Typography>
                     </div>
                 </Container>
             </div>

@@ -1,6 +1,6 @@
 import type { Theme } from '@mui/material/styles';
 
-import { blue, greenHover } from 'src/colors';
+import { blue, greenDark } from 'src/colors';
 import { contentMaxWidth, pageGutter, pageGutterSmall } from 'src/Theme/sizes';
 
 type Overrides = NonNullable<Theme['components']>;
@@ -62,7 +62,8 @@ export function overrideMuiLink(): Overrides['MuiLink'] {
             root: {
                 color: blue,
                 '&:hover': {
-                    color: greenHover,
+                    // greenHover haalt op wit geen 4.5:1
+                    color: greenDark,
                 },
             },
         },

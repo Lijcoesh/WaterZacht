@@ -7,6 +7,8 @@ import { blue, green, navy, white } from 'src/colors';
 import SectionHeading from 'src/Components/SectionHeading';
 import { sansFontFamily } from 'src/Theme/typography';
 
+import UnderlineLink from './UnderlineLink';
+
 // De balk toont de periodes naar verhouding: 2 van de 10 jaar all-in, de rest op onderdelen
 const periods = [
     {
@@ -123,6 +125,9 @@ const useStyles = makeStyles()(theme => ({
         fontSize: 16.5,
         color: white,
     },
+    serviceLink: {
+        marginTop: 18,
+    },
 }));
 
 export default function Guarantees() {
@@ -178,6 +183,11 @@ export default function Guarantees() {
                     <Typography className={classes.text}>
                         Elke twee maanden een herinnering om uw zoutvat na te kijken.
                     </Typography>
+                    <div className={classes.serviceLink}>
+                        <UnderlineLink to="/zout-bestellen" dark>
+                            Zout bestellen
+                        </UnderlineLink>
+                    </div>
                 </div>
             </Container>
         </section>

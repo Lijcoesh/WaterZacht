@@ -17,12 +17,13 @@ import {
 import logo from 'src/Resources/Images/logo.png';
 import { footerLogoHeight } from 'src/Theme/sizes';
 
-const productLinks = [
+// Zonder eigen pagina of sectie geen link, anders landen ze allemaal op hetzelfde anker
+const products: { label: string; to?: string }[] = [
     { to: '/systemen', label: 'Waterontharders' },
     { to: '/#drinkwater', label: 'Drinkwaterzuivering' },
-    { to: '/#drinkwater', label: 'Ontijzering' },
-    { to: '/#drinkwater', label: 'Drukverhoging' },
-    { to: '/#drinkwater', label: 'Vloeistoffilters' },
+    { label: 'Ontijzering' },
+    { label: 'Drukverhoging' },
+    { label: 'Vloeistoffilters' },
 ];
 
 const pageLinks = [
@@ -113,16 +114,20 @@ export default function Footer() {
                             Onze producten
                         </Typography>
                         <div className={classes.list}>
-                            {productLinks.map(item => (
-                                <Link
-                                    key={item.label}
-                                    component={RouterLink}
-                                    to={item.to}
-                                    className={classes.link}
-                                >
-                                    {item.label}
-                                </Link>
-                            ))}
+                            {products.map(item =>
+                                item.to ? (
+                                    <Link
+                                        key={item.label}
+                                        component={RouterLink}
+                                        to={item.to}
+                                        className={classes.link}
+                                    >
+                                        {item.label}
+                                    </Link>
+                                ) : (
+                                    <span key={item.label}>{item.label}</span>
+                                ),
+                            )}
                         </div>
                     </nav>
                     <nav aria-labelledby="footer-pages">

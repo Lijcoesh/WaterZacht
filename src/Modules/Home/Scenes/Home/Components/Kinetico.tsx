@@ -1,7 +1,8 @@
+import CheckIcon from '@mui/icons-material/Check';
 import { Container, Typography } from '@mui/material';
 import { makeStyles } from 'tss-react/mui';
 
-import { background, borderSoft, green, muted, slate, slateDark, white } from 'src/colors';
+import { background, borderSoft, greenDark, muted, slate, slateDark, white } from 'src/colors';
 import Photo from 'src/Components/Photo';
 import SectionHeading from 'src/Components/SectionHeading';
 import kineticoDealer from 'src/Resources/Images/kineticoDealer.png';
@@ -55,6 +56,7 @@ const useStyles = makeStyles()({
     },
     card: {
         flex: '1 1 380px',
+        alignSelf: 'flex-start',
         backgroundColor: background,
         border: `1px solid ${borderSoft}`,
         borderRadius: cardRadius,
@@ -77,10 +79,12 @@ const useStyles = makeStyles()({
         fontSize: 15.5,
         lineHeight: 1.55,
         color: slateDark,
-        '&::before': {
-            content: '"✓"',
-            color: green,
-        },
+    },
+    check: {
+        flexShrink: 0,
+        marginTop: 2,
+        fontSize: 20,
+        color: greenDark,
     },
 });
 
@@ -116,6 +120,7 @@ export default function Kinetico() {
                     <ul className={classes.list}>
                         {advantages.map(advantage => (
                             <li key={advantage} className={classes.item}>
+                                <CheckIcon className={classes.check} aria-hidden="true" />
                                 {advantage}
                             </li>
                         ))}

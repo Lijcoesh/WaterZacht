@@ -1,3 +1,5 @@
+import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
+import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import { Container, Typography } from '@mui/material';
 import { alpha } from '@mui/material/styles';
 import { useRef, useState } from 'react';
@@ -45,7 +47,8 @@ const useStyles = makeStyles()(theme => ({
         aspectRatio: '24 / 9',
         overflow: 'hidden',
         backgroundColor: placeholderBackground,
-        touchAction: 'none',
+        // Verticaal vegen scrolt de pagina; alleen de greep vangt het slepen af
+        touchAction: 'pan-y',
         userSelect: 'none',
         [theme.breakpoints.down('md')]: {
             aspectRatio: '16 / 9',
@@ -82,13 +85,14 @@ const useStyles = makeStyles()(theme => ({
         position: 'absolute',
         top: 0,
         bottom: 0,
-        width: 40,
-        marginLeft: -20,
+        width: 48,
+        marginLeft: -24,
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
         cursor: 'ew-resize',
         outline: 'none',
+        touchAction: 'none',
         '&::before': {
             content: '""',
             position: 'absolute',
@@ -104,16 +108,20 @@ const useStyles = makeStyles()(theme => ({
     },
     knob: {
         position: 'relative',
-        width: 42,
-        height: 42,
+        width: 48,
+        height: 48,
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
         backgroundColor: white,
-        fontWeight: 600,
-        fontSize: 14,
         color: blue,
         boxShadow: mediumShadow,
+        '& svg': {
+            fontSize: 20,
+        },
+        '& svg + svg': {
+            marginLeft: -6,
+        },
     },
 }));
 
@@ -168,8 +176,8 @@ export default function Comparison() {
                     />
                 </div>
                 <Typography className={classes.lead}>
-                    Links een warmte-element uit een woning met hard water, rechts hetzelfde element
-                    met zacht water. Sleep de schuif.
+                    Links een warmte-element uit een woning met hard water, rechts een element met
+                    zacht water. Sleep de schuif.
                 </Typography>
             </Container>
             <div ref={stageRef} className={classes.stage}>
@@ -200,7 +208,8 @@ export default function Comparison() {
                     onKeyDown={handleKeyDown}
                 >
                     <span className={classes.knob} aria-hidden="true">
-                        ‹ ›
+                        <ChevronLeftIcon />
+                        <ChevronRightIcon />
                     </span>
                 </div>
             </div>

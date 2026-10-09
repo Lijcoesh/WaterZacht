@@ -9,7 +9,16 @@ import SectionHeading from 'src/Components/SectionHeading';
 import howItWorks from 'src/Resources/Images/howItWorks.jpg';
 import { cardRadius, sectionSpacing } from 'src/Theme/sizes';
 
-const steps = [
+import UnderlineLink from './UnderlineLink';
+
+interface Step {
+    label: string;
+    title: string;
+    text: string;
+    link?: { to: string; label: string };
+}
+
+const steps: Step[] = [
     {
         label: 'Harscilinder',
         title: 'Een cilinder gevuld met hars',
@@ -19,6 +28,7 @@ const steps = [
         label: 'Zoutvoorraadvat',
         title: 'Een zoutvoorraadvat',
         text: 'Het zoutvat bewaart de zouttabletten waarmee de hars wordt gereinigd. Reken op ongeveer één zak van 25 kg per persoon per jaar. Onze e-mailservice herinnert u elke 2 maanden om het zoutvat na te kijken, zodat u er zelf niet aan hoeft te denken.',
+        link: { to: '/zout-bestellen', label: 'Zout bestellen' },
     },
     {
         label: 'Besturingsklep',
@@ -31,11 +41,6 @@ const steps = [
         text: 'Raakt de hars verzadigd met kalk, dan regenereert de ontharder volautomatisch: een zoutwateroplossing spoelt door het harsvat en weekt de kalkdeeltjes los van de harsbolletjes. De natriumdeeltjes hechten zich weer aan de hars, het zoute water met kalk wordt geloosd op het riool. Daarna is de capaciteit van de hars hersteld.',
     },
 ];
-
-const flow = keyframes({
-    from: { backgroundPosition: '0 0' },
-    to: { backgroundPosition: '40px 0' },
-});
 
 const fadeIn = keyframes({
     from: { opacity: 0, transform: 'translateY(6px)' },
@@ -84,12 +89,11 @@ const useStyles = makeStyles()({
     },
     progressBar: {
         height: '100%',
+        // Stilstaande strepen: alleen de breedte beweegt, bij het wisselen van stap
         background: `repeating-linear-gradient(115deg, ${blueBright} 0 12px, ${blueStripe} 12px 20px)`,
-        backgroundSize: '40px 100%',
-        animation: `${flow} 1.1s linear infinite`,
         transition: 'width .4s ease',
         '@media (prefers-reduced-motion: reduce)': {
-            animation: 'none',
+            transition: 'none',
         },
     },
     panel: {
@@ -103,9 +107,13 @@ const useStyles = makeStyles()({
     },
     panelText: {
         marginTop: 14,
-        maxWidth: '46em',
+        // ±70 tekens per regel
+        maxWidth: '36em',
         lineHeight: 1.7,
         color: slate,
+    },
+    panelLink: {
+        marginTop: 18,
     },
 });
 
@@ -123,7 +131,7 @@ export default function HowItWorks() {
                     <SectionHeading id="werking-title" title="Hoe werkt een waterontharder?" />
                     <Typography className={classes.lead}>
                         De werking is gebaseerd op ionenuitwisseling: calciumionen (kalk) worden
-                        vervangen door natriumionen (zout). Dit wordt bewerkstelligd door de hars.
+                        vervangen door natriumionen (zout).
                     </Typography>
                     <div className={classes.visual}>
                         <Photo src={howItWorks} alt="Witte waterleidingen langs een muur" />
@@ -163,6 +171,11 @@ export default function HowItWorks() {
                             {step.title}
                         </Typography>
                         <Typography className={classes.panelText}>{step.text}</Typography>
+                        {step.link && (
+                            <div className={classes.panelLink}>
+                                <UnderlineLink to={step.link.to}>{step.link.label}</UnderlineLink>
+                            </div>
+                        )}
                     </div>
                 </div>
             </Container>

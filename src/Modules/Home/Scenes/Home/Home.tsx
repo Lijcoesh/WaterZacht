@@ -18,9 +18,10 @@ export default function Home() {
             <Benefits />
             <HowItWorks />
             <Comparison />
+            {/* Drinkwater vóór Kinetico: de pagina eindigt op garantie en afspraak */}
+            <DrinkingWater />
             <Kinetico />
             <Guarantees />
-            <DrinkingWater />
             <ClosingCta />
         </>
     );

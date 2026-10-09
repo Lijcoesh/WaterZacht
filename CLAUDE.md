@@ -16,6 +16,7 @@ React 19 + Vite + TypeScript + MUI. Backend voor de formulieren in `server/`: AS
 - **Styling**: `makeStyles` uit `tss-react/mui`, kleuren uit `src/colors.ts`, MUI breakpoints. Zie @.claude/conventions/styling.md
 - **Imports**: absoluut via `src/*`, relatief binnen dezelfde map, `import type` voor types. Zie @.claude/conventions/imports.md
 - **Theme**: opgesplitst in `src/Theme/` (palette, typography, shadow, sizes, `Components/`), `theme.ts` doet alleen compositie. Zie @.claude/conventions/styling.md
+- **Design**: `PRODUCT.md` (doelgroep, positie, principes) en `DESIGN.md` (visueel systeem "Strak vakwerk": luxe en strak, vlak met tonale lagen) zijn leidend voor UI-werk. Wijzig je tokens of componentstijl, werk DESIGN.md mee bij.
 - **Structuur & naming**: zie @.claude/conventions/structure.md
 - **Backend (`server/`)**: Controllers → Services + Validators, Commands met validatie-attributen, rate limiting, geen database. Zie @.claude/conventions/server.md
 - **Content**: geen bedragen op de site (prijzen, kosten, besparingen in euro's, btw), want de PO wil die niet hoeven bijhouden. Voor prijzen verwijzen naar contact of een offerte.

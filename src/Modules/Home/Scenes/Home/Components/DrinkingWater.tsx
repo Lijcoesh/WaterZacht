@@ -1,7 +1,7 @@
 import { Container, Typography } from '@mui/material';
 import { makeStyles } from 'tss-react/mui';
 
-import { background, border, slate, slateDark, white } from 'src/colors';
+import { background, border, slate, slateDark } from 'src/colors';
 import Photo from 'src/Components/Photo';
 import SectionHeading from 'src/Components/SectionHeading';
 import drinkingWater from 'src/Resources/Images/drinkingWater.jpg';
@@ -11,11 +11,12 @@ import UnderlineLink from './UnderlineLink';
 
 const services = ['Waterontijzering', 'Drukverhoging', 'Vloeistoffilters'];
 
-const useStyles = makeStyles()({
+const useStyles = makeStyles()(theme => ({
+    // Staat tussen de navy vergelijking en de witte Kinetico-sectie
     root: {
         paddingTop: sectionSpacing,
         paddingBottom: sectionSpacing,
-        backgroundColor: white,
+        backgroundColor: background,
     },
     layout: {
         display: 'flex',
@@ -27,9 +28,11 @@ const useStyles = makeStyles()({
         flex: '1 1 340px',
         position: 'relative',
         aspectRatio: '16 / 11',
-        minHeight: 280,
         borderRadius: cardRadius,
         overflow: 'hidden',
+        [theme.breakpoints.down('sm')]: {
+            aspectRatio: '4 / 3',
+        },
     },
     text: {
         flex: '1 1 340px',
@@ -39,27 +42,30 @@ const useStyles = makeStyles()({
         lineHeight: 1.7,
         color: slate,
     },
+    // Gewone opsomming, gescheiden door haarlijnen: geen vlakken die op knoppen lijken
     services: {
         display: 'flex',
         flexWrap: 'wrap',
-        gap: 10,
+        rowGap: 8,
         margin: '24px 0 0',
         padding: 0,
         listStyle: 'none',
     },
     service: {
-        padding: '9px 15px',
-        backgroundColor: background,
-        border: `1px solid ${border}`,
+        padding: '0 16px',
+        borderLeft: `1px solid ${border}`,
         fontWeight: 500,
-        fontSize: 14.5,
-        lineHeight: 1,
+        lineHeight: 1.4,
         color: slateDark,
+        '&:first-of-type': {
+            paddingLeft: 0,
+            borderLeft: 0,
+        },
     },
     cta: {
         marginTop: 24,
     },
-});
+}));
 
 export default function DrinkingWater() {
     const { classes } = useStyles();
@@ -89,7 +95,7 @@ export default function DrinkingWater() {
                         ))}
                     </ul>
                     <div className={classes.cta}>
-                        <UnderlineLink to="/contact">Meer over drinkwaterzuivering</UnderlineLink>
+                        <UnderlineLink to="/contact">Vraag een advies aan huis aan</UnderlineLink>
                     </div>
                 </div>
             </Container>
